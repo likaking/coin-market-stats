@@ -21,7 +21,7 @@ import {FaUser} from 'react-icons/fa'
 import {FaStopwatch20} from 'react-icons/fa'
 import {FaFacebook, FaTwitter, FaTiktok, FaYoutube, FaCopyright, FaArrowUp, FaArrowRight, FaUserFriends,FaShoppingBasket,FaHamburger} from 'react-icons/fa'
 import { useState,useEffect } from 'react';
-import ScrollToTop from "react-scroll-to-top";
+
 
 
 export default function Home() {
