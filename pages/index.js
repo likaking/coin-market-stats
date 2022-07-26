@@ -147,7 +147,7 @@ const productList = [[{burgerName:'Smoked Brisket',description:'Pulled Pork, Bee
 {tittle:'New resturant town', info:'Lorem ipsum dolor sit amet, conse ipsum dolor sit.', usser:'WPTWUSSER', date:'10, OCT 2020',pix:'/burgerNchips2.jpg'},
 {tittle:'Starbucks invest $100M', info:'Lorem ipsum dolor sit amet, conse ipsum dolor sit.', usser:'WPTWUSSER', date:'10, OCT 2020',pix:'/burger1.jpg'}]
 
-const gallery = ['/gallary1.jpg','/gallary2.jpg','/gallary3.jpg','/bugera.jpg','/burgerNchips.jpg','/2burger.png']
+const gallery = ['/gallary1.jpg','/gallary2.jpg','/gallary3.jpg','/bugera.jpg','/burgerNchips.jpg','/2burger.PNG']
 
 
 
@@ -262,7 +262,7 @@ const menuToRed = (i)=>{
       <Link href = '/#'><a><FaShoppingCart className={styles.shopingIcon}/>
       <div className={styles.shopingBadge}>0</div></a></Link>
       </div>
-      <button className={styles.secondMenu} ><FaDiceTwo className={styles.dice}/>{' '}<FaHeart className={styles.dice}/>{' '}<FaListOl className={styles.listMenu} /></button>
+      <button className={styles.secondMenu} ><FaDiceTwo className={styles.dice}/>{' '}<FaHeart className={styles.dice}/>{' '}<FaBars className={styles.listMenu} /></button>
        </div>
        <div className={styles.bannerContents}>
         <div className={styles.bannerContents_L}>
@@ -313,7 +313,7 @@ const menuToRed = (i)=>{
           </div>
           <div className={styles.welcome__ContentsContainer_R}>
             <div className={styles.welcome__ContentsContainer_R__imgHolder}>
-            <image src={'/PepsiNburger.png'}  alt='Advert' className={styles.welcome__ContentsContainer_R__img} loading = 'lazy'/>
+            <img src={'/PepsiNburger.png'}  alt='Advert' className={styles.welcome__ContentsContainer_R__img} loading = 'lazy'/>
             </div>
           </div>
         </div>
@@ -497,8 +497,8 @@ const menuToRed = (i)=>{
       <div  className={styles.burgerGallery_fig}><img src = {gallery[0]} alt = 'gallery images1' loading = 'lazy' className={styles.burgerGallery_images} /></div>
       <div className={styles.burgerGallery_fig}><img src = {gallery[1]} alt = 'gallery images2' loading = 'lazy' className={styles.burgerGallery_images} /></div>
       <div className={styles.burgerGallery_fig}><img src = {gallery[2]} alt = 'gallery images3' loading = 'lazy' className={styles.burgerGallery_images} /></div>
-      <div   className={styles.burgerGallery_fig + ' ' + styles.hide} ><img src = {''} alt = 'gallery images' loading = 'lazy' className={styles.burgerGallery_images} /></div>
-      <div  className={styles.burgerGallery_fig + ' ' + styles.hide}><img src = {''} alt = 'gallery images' loading = 'lazy' className={styles.burgerGallery_images} /></div>
+      <div   className={styles.burgerGallery_fig + ' ' + styles.hide} ></div>
+      <div  className={styles.burgerGallery_fig + ' ' + styles.hide}></div>
       <div className={styles.burgerGallery_fig}><img src = {gallery[3]} alt = 'gallery images4' loading = 'lazy' className={styles.burgerGallery_images} /></div>
       <div className={styles.burgerGallery_fig}><img src = {gallery[4]} alt = 'gallery images5' loading = 'lazy' className={styles.burgerGallery_images} /></div>
       <div className={styles.burgerGallery_fig}><img src = {gallery[5]} alt = 'gallery images6' loading = 'lazy' className={styles.burgerGallery_images} /></div>
