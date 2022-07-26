@@ -1,0 +1,72 @@
+.leaders {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.leaders li {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 5px;
+  justify-items: start;
+  align-items: center;
+  justify-content: start;
+}
+
+.dots {
+  border-bottom: 1px dashed #000;
+  width: 100%;
+}
+<ul class="leaders">
+  <li>
+    <span>Grilled Cheese</span>
+    <span class="dots"></span>
+    <span>7.95</span>
+  </li>
+  <li>
+    <span>Wonton Soup</span>
+    <span class="dots"></span>
+    <span>8.95</span>
+  </li>
+  <li>
+    <span>Waffles</span>
+    <span class="dots"></span>
+    <span>7.95</span>
+  </li>
+  <li>
+    <span>Shrimp Etouffee</span>
+    <span class="dots"></span>
+    <span>15.25</span>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ol.toc a::after {
+  content: leader('.') target-counter(attr(href url), page);
+}
+
+<h1>Table of Contents</h1>
+<ol class="toc">
+<li><a href="#chapter1">Loomings</a></li>
+<li><a href="#chapter2">The Carpet-Bag</a></li>
+<li><a href="#chapter3">The Spouter-Inn</a></li>
+</ol>
+
+This might result in:
+Table of Contents
+
+1. Loomings.....................1
+2. The Carpet-Bag...............9
+3. The Spouter-Inn.............13
