@@ -147,7 +147,7 @@ const productList = [[{burgerName:'Smoked Brisket',description:'Pulled Pork, Bee
 {tittle:'New resturant town', info:'Lorem ipsum dolor sit amet, conse ipsum dolor sit.', usser:'WPTWUSSER', date:'10, OCT 2020',pix:'/burgerNchips2.jpg'},
 {tittle:'Starbucks invest $100M', info:'Lorem ipsum dolor sit amet, conse ipsum dolor sit.', usser:'WPTWUSSER', date:'10, OCT 2020',pix:'/burger1.jpg'}]
 
-const gallery = ['/gallary1.jpg','/gallary2.jpg','/gallary3.jpg','/bugera.jpg','/burgerNchips.jpg','/2burger.PNG']
+const gallery = ['/gallary1.jpg','/gallary2.jpg','/gallary3.jpg','/bugera.jpg','/burgerNchips.jpg','/twoburger.PNG']
 
 
 
@@ -313,7 +313,7 @@ const menuToRed = (i)=>{
           </div>
           <div className={styles.welcome__ContentsContainer_R}>
             <div className={styles.welcome__ContentsContainer_R__imgHolder}>
-            <img src={'/PepsiNburger.png'}  alt='Advert' className={styles.welcome__ContentsContainer_R__img} loading = 'lazy'/>
+            <img src={'/pepsiburger.png'}  alt='Advert' className={styles.welcome__ContentsContainer_R__img} loading = 'lazy'/>
             </div>
           </div>
         </div>
