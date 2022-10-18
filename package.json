@@ -1,5 +1,5 @@
 {
-  "name": "burgerden",
+  "name": "coin-market-voice",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -22,5 +22,25 @@
   "devDependencies": {
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/likaking/coin-market-voice.git"
+  },
+  "keywords": [
+    "Monitor",
+    "te",
+    "crypto",
+    "market",
+    "via",
+    "audio"
+  ],
+  "author": "like a King Comp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/likaking/coin-market-voice/issues"
+  },
+  "homepage": "https://github.com/likaking/coin-market-voice#readme"
 }

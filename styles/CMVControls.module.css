@@ -1,0 +1,376 @@
+.CMVControls{
+width: 80%;
+margin: auto;
+padding-top: 0.3rem;
+}
+.CMVControls_main{
+height: auto;
+width: 60%;
+border: 1px solid rgb(94, 129, 139);
+margin: auto;
+position: relative;
+box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2), 0 1px 2px 0 rgba(177, 177, 177, 0.19);
+}
+.CMVControls_main1{
+padding: 0.5em;
+display: flex;
+
+}
+.CMVControls_main2{
+
+}
+.CMVControls_main1_playPause{
+display: flex;
+justify-content: flex-start;
+align-items: center;
+flex: 0.7;
+
+}
+.CMVControls_main1_btns{
+flex: 0.7;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+font-size: 3.6vw;
+gap: 7%;
+}
+.CMVControls_main1_notification{
+flex: 0.3;
+color: rgb(53, 91, 102);
+}
+.CMVControls_main1_inputControl{
+flex: 0.3;
+display: flex;
+gap: 3%;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+position: relative;
+}
+.CMVControls_main1_updateTxt{
+margin-left: auto;
+display: flex;
+font-size: 1vw;
+font-weight: 500;
+flex-direction: column;
+color: rgb(53, 91, 102);
+}
+.CMVControls_main1_input_box{
+width: 7vw;
+height: 7vh;
+font-size: 3.5vw;
+color: rgb(53, 91, 102);
+border: 0;
+background-color: transparent;
+}
+.CMVControls_main1_minute{
+position: absolute;
+font-size: 0.9vw;
+right: 3%;
+padding: 0rem 0.3rem 0rem 0.3rem;
+border-radius: 10vw;
+border: 0px solid rgb(34, 33, 33);
+color: rgb(53, 91, 102);
+background-color: rgba(251, 253, 253, 0.836);
+box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2), 0 2px 2px 0 rgba(177, 177, 177, 0.19);
+
+}
+.CMVControls_main1_play_btn{
+padding: 0;
+}
+.CMVControls_main1_pause_btn{
+padding: 0;
+}
+.cmv_device_play_error{
+font-size: 0.7rem;
+width: fit-content;
+padding: 0rem 0.7rem 0rem 0.7rem;
+color: rgb(53, 91, 102);
+border-radius: 10vw;
+position: absolute;
+top: 0%;
+left:0;
+right: 0;
+margin-left: auto;
+margin-right: auto;
+transition: 0.5s;
+box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2), 0 2px 2px 0 rgba(177, 177, 177, 0.19);
+background-color: rgb(255, 255, 255);
+display:none;
+}
+.CMVControls_main1_voices{
+display: flex;
+line-height: 100%;
+padding-top: 1rem;
+}
+#firstCbtnColor{
+color:rgb(153, 178, 185);
+ transition: .8s;
+}
+#secondCbtnColor{
+color:rgb(86, 137, 153);
+transition: .5s; 
+}
+
+
+@media screen and (max-width: 920px) {
+.CMVControls{
+width: 75%;
+margin: auto;
+
+}      
+.CMVControls_main{
+height: auto;
+width: 100%;
+margin: auto;
+position: relative;
+}
+.CMVControls_main1_btns{
+flex: 0.7;
+font-size: 7vw;
+gap: 10%
+}
+.CMVControls_main1_inputControl{
+flex: 0.3;
+display: flex;
+gap: 5%;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+position: relative;   
+}
+.CMVControls_main1_updateTxt{
+margin-left: auto;
+font-size: 2vw;
+}
+.CMVControls_main1_input_box{
+width: 12vw;
+height: 5vh;
+font-size: 6vw;
+}
+.CMVControls_main1_minute{
+position: absolute;
+font-size: 1.5vw;
+right: 3%;
+padding: 0rem 0.3rem 0.2rem 0.3rem;
+border-radius: 10vw;
+box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2), 0 2px 2px 0 rgba(177, 177, 177, 0.19);  
+}
+.CMVControls_main1_play_btn{
+padding: 0;
+}
+.CMVControls_main1_pause_btn{
+padding: 0;
+}
+.cmv_device_play_error{
+font-size: 1rem;
+width: fit-content;
+padding: 0rem 0.7rem 0rem 0.7rem;
+border-radius: 10vw;
+position: absolute;
+top: -10%;
+left:0;
+right: 0;
+margin-left: auto;
+margin-right: auto;
+transition: 0.5s;
+box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2), 0 2px 2px 0 rgba(177, 177, 177, 0.19);
+   
+}
+.CMVControls_main1_voices{
+line-height: 150%;
+}
+
+}
+
+@media screen and (max-width: 550px) {
+    .CMVControls{
+        width: 98%;
+        margin: auto;
+       
+        }
+        .CMVControls_main{
+        height: auto;
+        width: 100%;
+        margin: auto;
+        position: relative;
+        }
+        .CMVControls_main1{
+        padding: 0.5em;
+        display: flex;
+        
+        }
+        .CMVControls_main2{
+        }
+        .CMVControls_main1_playPause{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 0.6;
+        
+        }
+        .CMVControls_main1_btns{
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 10vw;
+        gap: 7%;
+        }
+        .CMVControls_main1_notification{
+        flex: 0.3;
+        display: none;
+        }
+        .CMVControls_main1_inputControl{
+        flex: 0.4;
+        display: flex;
+        gap: 3%;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        }
+        .CMVControls_main1_updateTxt{
+        display: flex;
+        font-size: 3vw;
+        font-weight: 500;
+        flex-direction: column;
+        }
+        .CMVControls_main1_input_box{
+        width: 19vw;
+        height: 7vh;
+        font-size: 8vw;
+        }
+        .CMVControls_main1_minute{
+        position: absolute;
+        font-size: 2.5vw;
+        right: 3%;
+        padding: 0rem 0.3rem 0rem 0.3rem;
+        border-radius: 10vw;
+        padding-bottom: 0.2rem;
+        box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2), 0 2px 2px 0 rgba(177, 177, 177, 0.19);
+        
+        }
+        .CMVControls_main1_play_btn{
+        padding: 0;
+        }
+        .CMVControls_main1_pause_btn{
+        padding: 0;
+        }
+        .cmv_device_play_error{
+        font-size: 1rem;
+        width: fit-content;
+        padding: 0rem 0.7rem 0.1rem 0.7rem;
+        border-radius: 10vw;
+        position: absolute;
+        top: -10%;
+        left:0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        transition: 0.5s;
+        box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2), 0 2px 2px 0 rgba(177, 177, 177, 0.19);
+        z-index: 2;
+        }
+        .CMVControls_main1_voices{
+        line-height: 150%;
+        }
+        
+    }
+
+    @media screen and (max-width: 430px) {
+        .CMVControls{
+            width: 98%;
+            margin: auto;
+           
+            }
+            .CMVControls_main{
+            height: auto;
+            width: 100%;
+            margin: auto;
+            position: relative;
+            }
+            .CMVControls_main1{
+            padding: 0.5em;
+            display: flex;
+            
+            }
+            .CMVControls_main2{
+            }
+            .CMVControls_main1_playPause{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex: 0.6;
+            
+            }
+            .CMVControls_main1_btns{
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 12vw;
+            gap: 5%;
+            }
+            .CMVControls_main1_notification{
+            flex: 0.3;
+            display: none;
+            }
+            .CMVControls_main1_inputControl{
+            flex: 0.4;
+            display: flex;
+            gap: 3%;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            }
+            .CMVControls_main1_updateTxt{
+            display: flex;
+            font-size: 4vw;
+            font-weight: 500;
+            flex-direction: column;
+            }
+            .CMVControls_main1_input_box{
+            width: 22vw;
+            height: 7vh;
+            font-size: 12vw;
+            }
+            .CMVControls_main1_minute{
+            position: absolute;
+            font-size: 3vw;
+            right: 3%;
+            padding: 0rem 0.3rem 0rem 0.3rem;
+            border-radius: 10vw;
+            padding-bottom: 0.2rem;
+            box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2), 0 2px 2px 0 rgba(177, 177, 177, 0.19);
+            
+            }
+            .CMVControls_main1_play_btn{
+            padding: 0;
+            }
+            .CMVControls_main1_pause_btn{
+            padding: 0;
+            }
+            .cmv_device_play_error{
+            font-size: 0.9rem;
+            width: fit-content;
+            padding: 0rem 0.7rem 0.1rem 0.7rem;
+            border-radius: 10vw;
+            position: absolute;
+            top: -10%;
+            left:0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            transition: 0.5s;
+            box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2), 0 2px 2px 0 rgba(177, 177, 177, 0.19);
+            z-index: 2;
+            }
+            .CMVControls_main1_voices{
+            line-height: 150%;
+            }
+            
+        }
+    
+        

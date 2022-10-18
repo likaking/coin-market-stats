@@ -18,9 +18,8 @@ import {DisplayCoin} from '../src/removecoin.js'
 import {CMVControls} from '../src/cmvcontrolbuttons.js'
 import {Currencies} from '../src/currencies.js'
 import {UseCases} from '../src/useCases.js'
-import { ImageList } from '@mui/material';
 
-
+//import Footerx from './footer/footer.js';
 
 
 
@@ -53,26 +52,64 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
   const [currencySingular,setCurrencySingular] = useState('US dollar')
   const [finalComp, setFinalComp] = useState([])   
   const [coinArr, setCoinArr] = useState([])
+  var currencyxy  = 'usd'
   const [info, setInfo] = useState(true)
   const [quickData, setQuickData] = useState(false)
-  const [runOrStop,setRunOrStop] = useState(true)
+  const [runOrStop,setRunOrStop] = useState(false)
   
 
   
 
   const  [activeCoins,setActiveCoins]  = useState(
-  [ {"id":"bitcoin","symbol":"btc","name":"Bitcoin","image":"https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579","current_price":193680.32,"market_cap":371074048905,"market_cap_rank":1,"fully_diluted_valuation":406734771812,"total_volume":35265134033,"high_24h":19475.03,"low_24h":18641.21,"price_change_24h":-42.92339586948219,"price_change_percentage_24h":-0.22113,"market_cap_change_24h":-804856389.1931763,"market_cap_change_percentage_24h":-0.21643,"circulating_supply":19158812.0,"total_supply":21000000.0,"max_supply":21000000.0,"ath":69045,"ath_change_percentage":-71.92872,"ath_date":"2021-11-10T14:24:11.849Z","atl":67.81,"atl_change_percentage":28482.85436,"atl_date":"2013-07-06T00:00:00.000Z","roi":null,"last_updated":"2022-09-23T23:41:24.232Z"},
-  {"id":"ethereum","symbol":"eth","name":"Ethereum","image":"https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880","current_price":1333.12,"market_cap":160913745643,"market_cap_rank":2,"fully_diluted_valuation":null,"total_volume":17611631455,"high_24h":1355.04,"low_24h":1272.94,"price_change_24h":2.78,"price_change_percentage_24h":0.20921,"market_cap_change_24h":680084121,"market_cap_change_percentage_24h":0.42443,"circulating_supply":120649326.21125,"total_supply":120648876.21125,"max_supply":null,"ath":4878.26,"ath_change_percentage":-72.65968,"ath_date":"2021-11-10T14:24:19.604Z","atl":0.432979,"atl_change_percentage":307936.23918,"atl_date":"2015-10-20T00:00:00.000Z","roi":{"times":91.04801061018243,"currency":"btc","percentage":9104.801061018243},"last_updated":"2022-09-23T23:40:57.294Z"},
-  {"id":"binancecoin","symbol":"bnb","name":"BNB","image":"https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1644979850","current_price":276.89,"market_cap":45219653297,"market_cap_rank":5,"fully_diluted_valuation":45729182927,"total_volume":752896849,"high_24h":277.59,"low_24h":270.15,"price_change_24h":1.59,"price_change_percentage_24h":0.57799,"market_cap_change_24h":311873075,"market_cap_change_percentage_24h":0.69447,"circulating_supply":163276974.63,"total_supply":163276974.63,"max_supply":165116760.0,"ath":686.31,"ath_change_percentage":-59.64623,"ath_date":"2021-05-10T07:24:17.097Z","atl":0.0398177,"atl_change_percentage":695446.45911,"atl_date":"2017-10-19T00:00:00.000Z","roi":null,"last_updated":"2022-09-23T23:41:30.700Z"},
-  {"id":"ripple","symbol":"xrp","name":"XRP","image":"https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1605778731","current_price":0.507897,"market_cap":25318052692,"market_cap_rank":6,"fully_diluted_valuation":50789746933,"total_volume":6812657762,"high_24h":0.552859,"low_24h":0.46026,"price_change_24h":0.02647222,"price_change_percentage_24h":5.49872,"market_cap_change_24h":1333886411,"market_cap_change_percentage_24h":5.56153,"circulating_supply":49848747475.0,"total_supply":99989294935.0,"max_supply":100000000000.0,"ath":3.4,"ath_change_percentage":-85.05503,"ath_date":"2018-01-07T00:00:00.000Z","atl":0.00268621,"atl_change_percentage":18807.60962,"atl_date":"2014-05-22T00:00:00.000Z","roi":null,"last_updated":"2022-09-23T23:39:51.441Z"},]
+    
+  function getStaticProps(){
+
+    if(typeof window !== 'undefined'){
+      const saved = JSON.parse(window.localStorage.getItem('allActiveCrypto'))
+      return saved
+    }
+  }
+  
   )
 
+  const saveActiveCryptoList = ()=>{
+    if(typeof window !== 'undefined'){
+     const savedCrptoList = localStorage.setItem("allActiveCrypto", JSON.stringify(activeCoins));
+     const savedCryptoList = localStorage.getItem("allActiveCrypto");
+     const convertSavedCryptoList = JSON.parse(savedCryptoList);
+    
+    }
+  
+    }
+   
+ useEffect(()=>{
+  saveActiveCryptoList()
+ },[activeCoins])
  
-  const [buy, setBuy]= useState( ["bitcoin","ethereum","binancecoin","ripple"]) 
+  const [buy, setBuy]= useState( function getStaticProps(){
+
+    if(typeof window !== 'undefined'){
+      const coinlist = JSON.parse(window.localStorage.getItem('cList'))
+      return coinlist
+    }
+  }
+      
+      ) 
 
 
  
 
+ const saveBuyList = ()=>{
+  if(typeof window !== 'undefined'){
+   const saveBuy = localStorage.setItem("cList", JSON.stringify(buy));
+
+  }
+
+  }
+ 
+useEffect(()=>{
+saveBuyList()
+},[buy])
 
   const showCmvErrorsx = (msg)=>{
     cmvErrorsxHolder.current.style.display = 'block';
@@ -124,10 +161,12 @@ let currencryMap = {
 
 const detectStop = ()=>{
 if(!runOrStop){
+  console.log('I have stoped');
   setFinalComp([]);
   setCoinArr([])
 }
 else{
+  console.log('I am Runing....');
 }
 }
 
@@ -137,9 +176,11 @@ useEffect(()=>{
 
 const detectQuickData = ()=>{
   if(!quickData){
+    console.log('Quick Data have stoped');
 
   }
   else{
+    console.log('Quick Data is Runing....');
   }
   }
   
@@ -175,7 +216,7 @@ detectSpeech()
         <title>Coin Market Voice</title>
         <meta name="Coin Market Voice" content="Monitor crypto prices via audio" />
         <meta name="keywords" content="Monitor crypto prices via audio,crypto, crypto prices,crypto audio" />
-        <link rel="icon" href="/favicon.jpg" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       
   {<Header />}
@@ -192,21 +233,23 @@ detectSpeech()
     </div>
   <div className={styles.banner_div_R}></div>
   <div className={styles.banner_div_REnd}>
+ <img src ={'/bgrndCWitex.png'}   className={styles.banner_div_Img}  style ={{filter:'grayscale(100%'}}/>
+ <img src ={'/bgrndCmobilexx.png'}   className={styles.banner_div_ImgM} />
   <div className={styles.banner_div_REnd_rotoDiv}>
   <div className={styles.banner_div_REnd_rotoDiv_item}></div>
   </div>
   </div>
   </div>
 
-<ImageList  />
-  <AddCrypto activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} currency={currency} speech={Speech} quickData={quickData} setQuickData={setQuickData} setCoinArr={setCoinArr} setRunOrStop={setRunOrStop}/>
 
-  <DisplayCoin activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} Speech={Speech} setQuickData={setQuickData} setCoinArr={setCoinArr} />
+  <AddCrypto activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} currency={currency} Speech={Speech} quickData={quickData} setQuickData={setQuickData} />
+
+  <DisplayCoin activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} Speech={Speech} setQuickData={setQuickData} />
 
   <CMVControls currencryMap={currencryMap} coinArr={coinArr} activeCoins={activeCoins} finalComp={finalComp}
    setFinalComp={setFinalComp} setCoinArr={setCoinArr} currency={currency} setCurrency={setCurrency}
     buy = {buy} quickData={quickData} setQuickData={setQuickData} runOrStop={runOrStop} 
-    setRunOrStop={setRunOrStop} currencySingular={currencySingular} currencyPlural={currencyPlural}  />
+    setRunOrStop={setRunOrStop} currencySingular={currencySingular} currencyPlural={currencyPlural} />
 
   <Currencies currency={currency} setCurrency={setCurrency} currencyPlural={currencyPlural} 
   setCurrencyPlural={setCurrencyPlural} speech={Speech} runOrStop={runOrStop} 
@@ -215,7 +258,7 @@ detectSpeech()
    currencySingular={currencySingular} setCurrencySingular={setCurrencySingular} />
  
   <Suspense fallback = 'Loadng gallery'>
-  {/* <UseCases />*/}
+   <UseCases />
    </ Suspense>
 
    <Suspense fallback = 'Loadng footer'>

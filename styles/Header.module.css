@@ -1,1557 +1,465 @@
-@import url('https://fonts.googleapis.com/css?family=ABeeZee');
-
-@import url('https://fonts.googleapis.com/css?family=Swanky and Moo Moo');
-
-.dollarSign{
-  font-family:ABeeZee;
-}
-
-.headerTxt{
-    font-family:Swanky and Moo Moo; 
-    font-size: 2.2VW;
-}
-
-.container{
-    background-color: rgb(252, 179, 21);
-    width: 100%;
-    height: auto;
+.nav_bar{
+    width:100%;
+    height: 7.5vh;
+    margin: auto;
+    padding-left: 1rem;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    justify-content: flex-start;
     position: relative;
-    overflow: hidden;
-    z-index: -1; 
-}
-.liquidBg{
-    position: absolute;
-    right: -9%;
-    width: 11.3%;
-    height: 100%;
-    filter: saturate(1.1);
-    transform: rotate(20deg) ;
-    bottom: -8%;
-    display: none;
-    
-}
-.liquidBg img{
-    width: 100%;
-    height: auto;
-     
- }
-.bd1,.bd2{
-    position: absolute;
-}
-.bd1{
-    right: 14%;
-    bottom: 23%;
-    width: 27%;
-    height: auto;
-    transform: rotate(25deg);
-    filter: saturate(2);   
-    opacity: 65%;
-}
-
-.bd1 img{
-    width: 100%;
-    height: 100%;
-}
-
-.bd2{
-    right: 13%;
-    bottom: 6%;
-    width: 32%;
-    height: auto;
-    transform: rotate(24deg);
-    filter: saturate(2);
-    opacity: 65%;
-}
-
-.bd2 img{
-    width: 100%;
-    height: 100%;
-}
-
-
-.FaCircleNotch{
-    position: absolute;
-    font-size: 50vw;
-    right: -22%;
-    top: -33%;
-    color: rgb(253, 189, 52) ;
-    display: inline-block;
-    z-index: -1;
-  
-}
-.FaCircleNotch2{
-    position: absolute;
-    font-size: 28.5vw;
-    right: -13%;
-    top: -8%;
-    color: rgb(252, 179, 21);
-    display: inline-block;
-    z-index: -1;
-}
-.burger{
-    height: auto;
-    z-index: 3;
-    width: 30%;
-    animation:  burgerAnim infinite 4s linear;
-}
-.contents{
-    width: 80%;
-    height: 90%;
-    float: right;
-    padding-top: 0.7%;
-    padding-bottom: 6.5%;
-    
-}
-.menu{
-    width: 35%;
-}
-.menu>ul{
-    list-style: none;
-    color: rgb(250, 245, 245);
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 1.4vw;
-    font-size: 0.8vw;
-    font-weight: 700;
-    cursor:pointer;
-   
-}
-
-.menu>ul>li:nth-child(1){
-    color: rgb(241, 25, 25);
-}
-.menu>ul>li:hover{
-    list-style: none;
-    color: rgb(134, 30, 30);
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 1.4vw;
-    font-size: 0.9vw;
-    font-weight: 700;
-    cursor:pointer;  
-}
-
-.logo{
-    width: 6.5%;
-    height: auto;
-}
-
-.logoImage{
-    width: 100%;
-    height: 100%;
-}
-.navLogoContainer{
-    width: 100%;
-    display: flex;
+    background-color: rgb(56, 124, 151);
+    background-image: -webkit-linear-gradient(rgb(56, 124, 151),rgba(40, 156, 150, 0.651));
     align-items: center;
-    padding-right: 1%;
-}
-.onlineOrder{
-    width: 13%;
-    padding-top: 1vw; 
-}
-.onlineOrder__btn{
-    font-size: 0.7vw;
-    font-weight: bold;
-    width: 10%;
-    height: 2.5vw;
-    border-radius: 50em;
-    border: 0;
-    margin-left: auto;
-    background-color: rgb(241, 32, 32);
-    color: rgb(253, 247, 247);
-}
-.onlineOrder__btn:hover{
-    font-size: 0.7vw;
-    font-weight: bold;
-    width: 11%;
-    height: 3vw;
-    border-radius: 50em;
-    border: 0;
-    margin-top: 1.8vw;
-    margin-left: auto;
-    background-color: rgb(241, 25, 25);
-    color: rgb(226, 101, 101);
-}
-.shopingIcon{
-    color: rgb(248, 242, 242);
-    font-size: 1.8vw;
-    position: relative;
-}
-.shopingIconContainer{
-    width: 7%;
-    text-align: center;
-    position: relative;
-    margin-top: 1%;
-}
-.shopingBadge{ 
-    top: -15%;
-    right: 19%;
-    width: 27%;
-    height: 70%;
-    text-align: center;
-    align-items: center;
-    font-size: 1vw;
-    border-radius: 50%;
-    font-weight: 500;
-    background-color: rgb(241, 32, 32);
-    color: rgb(253, 247, 247);
-    position: absolute;
-}
-.secondMenu{
-    font-size: 1.5vw;
-    font-weight: bold;
-    width: 22%;
-    height: 2.5vw;
-    border-radius: 50em 0em 0em 50em;
-    border: 0;
-    background-color: rgb(241, 32, 32);
-    color: rgb(253, 247, 247);
-    text-align: left;
-    padding-left: 1.7%;
-    padding-top: 0.6%;
-}
-
-.bannerContents{
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-}
-.bannerContents_L{
-    flex: 0.53;
-    display: flex;
-    flex-direction: column;
-    padding-top: 2.5%;
-    gap: 2vw;
-  
-}
-.bannerContents_LL{
-    display: flex;
-}
-.bannerContents_R{
-    flex: 0.4;
-    padding-top: 1%;
-}
-.bannerContents_L_A{
-   color: rgb(247, 25, 25);
-   font-weight: 800;
-   font-size: 1vw;
-}
-.bannerContents_L_B{ 
-    color: rgb(250, 245, 245);
-    font-size: 5vw;
-    font-weight: bold;
-    line-height: 90%;
-}
-.bannerContents_L_C{
-    display: flex;
-    align-items: center;
-    padding: 0% 0% 0% 3%;
-    background-color: rgb(231, 34, 34);
-    color: rgb(250, 245, 245);
-    width: 111%;
-    height: 5rem;
-    z-index: 2;
-    border-radius: 0.2em;
-    position: relative;
-    z-index: 8;
-}
-.bannerContents_L_C_li{
-    display: flex;
-    flex-direction: column;
-    flex: 0.7;
-    gap: 10%;
-    font-size: 1.2vw;
-    font-weight: 500;
-}
-.bannerContents_L_C_li>ul{
-    display: flex;
-    gap: 10%;
-    font-size: 1.2vw;
-    font-weight: 500;
-    padding: 0% 0% 0% 10%;
-    margin: 0%;
-}
-.bannerContents_L_C_price{
-    flex: 0.3;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-left: auto;
-    padding: 3.2% 0% 2% 0%;
-    height: auto;
-
-    
-}
-.bannerContents_L_C_price_A{
-    font-size: 1vw;
-    padding-left: 5%;
-    
-    
-   
-}
-.bannerContents_L_C_price_B{
-    display: flex;
-    align-items: center;
-    font-size: 2.5vw;
-}
-.bannerContents_L_C_price_B__dollar{
-    font-size: 2.5vw;
-   
-    
-}
-.bannerContents_L_C_price_B__price{
-    font-size: 2.4vw;
-    margin-left: -3%;
-    padding-top: 2%;
-    font-weight: 700;
-    
-
-}
-.bannerContents_L_C_only{
-    font-size: 1vw;
-    padding-left: 5%;
-    margin-top: -0.9em;
-
-}
-.bannerContents_L_C_price_B_span{
-    padding-top: -1vw;
-    padding-left: 3%;
-    font-weight: 800;
-
-}
-.bannerContents_R_imgContainer{
-    display: flex;
-    align-items: left;
-    justify-content: left;
-}
-.bannerContents_L_C_price_plus{
-    font-size: 2.5vw;
-    position: absolute;
-    right: -2.5%;
-    color: rgb(248, 244, 244);
-    width: auto;
-    height: auto;
-    border-radius: 50vw;
-    border: 0;
-    z-index: 2;
-    
-}
-.bannerContents_L_C_price_plusB{
-    font-size: 2.5vw;
-    position: absolute;
-    right: -2.5%;
-    color: rgb(241, 32, 32);
-    width: auto;
-    height: auto;
-    border-radius: 50vw;
-    border: 0; 
-    z-index: 1; 
-}
-.bannerContents_R_img{
-    width: 100%;
-    height: auto;
-}
-.bannerContents_R_imgContaineMain{
-    width: 75%;
-    height: 100%;
+    position: fixed;
+    top:0%;
     z-index: 7;
-}
-
-.onlineOrder__btn_small{
+    box-shadow: 0 1px 2px 0 rgba(102, 102, 102, 0.2), 0 2px 2px 0 rgba(105, 105, 105, 0.19);
+    }
+    .nav_bar__logo{
+    width: auto;
+    height:60%;
+    position: relative;
+    }
+    .nav_bar__logo_icon{
+    width:100%; 
+    height: 100%;
+    vertical-align: bottom;
+  
+    }
+    .nav_bar__compName{
+    width:auto;
+    font-size: 1.5vw;
+    font-weight:500;
+    margin-left:0.7rem;
+    color:rgb(241, 250, 249);
+    padding-bottom: 0.3%;
+    text-shadow: 1px 1px rgba(133, 144, 148, 0.205);
+    }
+    .nav_bar__mobile_btn{
+    margin-top: 0.7%;
     display: none;
-}
-
-.listMenu{
-    display:none;
-}
-
-
-/* End of Header & Banner CSS */
-
-
-
-
-/*
-@keyframes burgerAnim{
-    0%{width: 30%;}
-    40%{width: 40%;}
-    50%{width: 40%;}
-    60%{width: 40%;}
-    70%{width: 40%;}
-    90%{width: 35%;}
-    100%{width: 30%;}
-}
-*/
-
-/* Header & Banner Responsive CSS */
-
-@media screen and (max-width: 920px) {
-    .container{
-        background-color: rgb(252, 179, 21);
-        width: 100%;
-        height: auto;
-        position: relative;
-        overflow: hidden;
-        z-index: -1; 
     }
-    .bd1,.bd2{
-        position: absolute;
+    .nav_bar__login{
+    width: 7vw;
+    height: 100%;
     }
-    .bd1{
-        right: 13%;
-        bottom: 20%;
-        width: 32%;
-        height: auto;
-        transform: rotate(25deg);
-        filter: saturate(3.1);   
+    .nav_bar__login_btn{
+    font-size: 1vw ;
+    width: 100%;
+    height: 100%;
+    color: rgb(197, 196, 197);
+    border: 1px solid rgb(248, 247, 248);
+    background-color: transparent;
+    
+    }
+    .nav_bar__login_btn:hover{
+      color: rgb(248, 247, 248);
+      transition: 0.4s
+      }
+    .nav_bar__wraper{
+      margin-left: auto;
+      padding-right: 0.8em;
+    }
+    .nav_bar__menu{
+    list-style-type: none;
+    margin: 0;
+    padding-top: 0%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    text-decoration: none;
+    gap: 25px;	
+    font-size: 1vw;
+    padding-bottom: 0.2vw;
+    }
+    .nav_bar__menu_a {
+    color: rgba(231, 231, 231, 0.836);
+    text-align: center;
+    text-decoration: none;
+    }
+    .nav_bar__menu_a:hover {
+    color: rgb(250, 245, 250);
+    }
+    .nav_bar__mobileBtn{
+      display: none;
+    }
+    .nav_Mobilemenu{
+      display: none;
     }
     
-    .bd1 img{
-        width: 100%;
-        height: 100%;
-    }
     
-    .bd2{
-        right: 13%;
-        bottom: 3%;
-        width: 37%;
-        height: auto;
-        transform: rotate(24deg);
-        filter: saturate(3.1);
-    }
-    
-    .bd2 img{
-        width: 100%;
-        height: 100%;
-    }
-    
-    .FaCircleNotch{
-        position: absolute;
-        font-size: 55vw;
-        right: -22%;
-        top: -33%;
-        color: rgb(253, 189, 52) ;
-        display: inline-block;
-        z-index: -1;
-      
-    }
-    .FaCircleNotch2{
-        position: absolute;
-        font-size: 32vw;
-        right: -13%;
-        top: -13%;
-        color: rgb(252, 179, 21);
-        display: inline-block;
-        z-index: -1;
-    }
-    .burger{
-        border: 1px solid red;
-        height: auto;
-        z-index: 3;
-        width: 30%;
-        animation:  burgerAnim infinite 4s linear;
-    }
-    .contents{
-        width: 90%;
-        height: 90%;
-        float: right;
-        padding-top: 0.7%;
-        padding-bottom: 6.5%;
-    }
-    .menu{ 
-        width: 38%;
-    }
-    .menu>ul{
-        list-style: none;
-        color: rgb(255, 255, 255);
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 1.5vw;
-        font-size: 1.2vw;
-        font-weight: 500;
-        cursor:pointer;
-       
-    }
-    
-    .menu>ul>li:nth-child(1){
-        color: rgb(241, 25, 25);
-    }
-    .menu>ul>li:hover{
-        list-style: none;
-        color: rgb(134, 30, 30);
-        display: flex;
-        gap: 1.4vw;
-        cursor:pointer;  
-    }
-    
-    .logo{
-        width: 10%;
-        height: auto;
-    }
-    
-    .logoImage{
-        width: 100%;
-        height: 100%;
-    }
-    .navLogoContainer{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        padding-right: 1%;
-    }
-    .onlineOrder{
-        width: 13%;
-        padding-top: 1vw; 
-    }
-    .onlineOrder__btn{
-        font-size: 1.2vw;
-        font-weight: bold;
+    @media screen and (max-width: 920px) {
+      .nav_bar{
+        height: 5.2vh;
+        }
+      .nav_bar__logo{
         width: auto;
-        padding: 1.5% 2.5% 3% 2.6%;
-        border-radius: 50em;
-        border: 0;
-        margin-left: auto;
-        background-color: rgb(241, 32, 32);
-        color: rgb(253, 247, 247);
-    }
-    .onlineOrder__btn:hover{
-        font-size: 0.7vw;
-        font-weight: bold;
-        width: 11%;
-        height: 3vw;
-        border-radius: 50em;
-        border: 0;
-        margin-top: 1.8vw;
-        margin-left: auto;
-        background-color: rgb(241, 25, 25);
-        color: rgb(226, 101, 101);
-    }
-    .shopingIcon{
-        color: rgb(248, 242, 242);
-        font-size: 3vw;
+        height:70%;
         position: relative;
-    }
-    .shopingIconContainer{
-        width: 7%;
-        text-align: center;
-        position: relative;
-        margin-top: 1%;
-    }
-    .shopingBadge{
-        top: -10%;
-        right: 10%;
-        width: 31%;
-        height: 1.3vh;
-        font-size: 1.3vw;
-        border-radius: 50%;
-        font-weight: 500;
-        background-color: rgb(241, 32, 32);
-        color: rgb(253, 247, 247);
-        position: absolute;
-        align-items: center;
-    }
-    .secondMenu{
-        font-size: 2.3vw;
-        font-weight: bold;
-        height: 2.5vw;
-        border-radius: 50em 0em 0em 50em;
-        border: 0;
-        background-color: rgb(241, 32, 32);
-        color: rgb(253, 247, 247);
-        text-align: left;
-        padding: 0.8% 2.5% 3.5% 2.6%;
-    }
-    .bannerContents{
-        width: 100%;
-        height: auto;
-        display: flex;
-        align-items: center;
-    }
-    .bannerContents_L{
-        flex: 0.53;
-        display: flex;
-        flex-direction: column;
-        padding-top: 2.5%;
-        gap: 2vw;
-      
-    }
-    .bannerContents_LL{
-        display: flex;
-    }
-    .bannerContents_R{
-        flex: 0.4;
-        padding-top: 1%;
-    }
-    .bannerContents_L_A{
-       color: rgb(247, 25, 25);
-       font-weight: 800;
-       font-size: 1.3vw;
-    }
-    .bannerContents_L_B{
-        color: rgb(250, 245, 245);
-        font-size: 7vw;
-        font-weight: bold;
-        line-height: 90%;
-    }
-    .bannerContents_L_C{
-        display: flex;
-        align-items: center; 
-        padding: 0% 0% 0% 3%;
-        background-color: rgb(241, 32, 32);
-        color: rgb(250, 245, 245);
-        width: 111%;
-        z-index: 2;
-        border-radius: 0.2em;
-        position: relative;
-        z-index: 8;
-    }
-    .bannerContents_L_C_li{
-        display: flex;
-        flex-direction: column;
-        flex: 0.7;
-        gap: 10%;
-        font-size: 1.2vw;
-        font-weight: 500;
-    }
-    .bannerContents_L_C_li>ul{
-        display: flex;
-        gap: 10%;
-        font-size: 1.8vw;
-        font-weight: 500;
-        padding: 0% 0% 0% 10%;
-        margin: 0%;
-    }
-    .bannerContents_L_C_price{
-        flex: 0.3;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        margin-left: auto;
-        padding: 3% 0% 0% 0%;
-    }
-    .bannerContents_L_C_price_A{
-        font-size: 1vw;
-        padding-left: 5%;
-       
-    }
-    .bannerContents_L_C_price_B{
-        display: flex;
-        align-items: center;
-        font-size: 2.5vw;
-    }
-    .bannerContents_L_C_price_B__dollar{
-        font-size: 2.5vw;
-        
-    }
-    .bannerContents_L_C_price_B__price{
-        font-size: 2.4vw;
-        margin-left: -3%;
-        padding-top: 2%;
-        font-weight: 700;
-    }
-    .bannerContents_L_C_only{
-        font-size: 1.7vw;
-        padding-left: 5%;
-    }
-    .bannerContents_L_C_price_B_span{
-        padding-top: -1vw;
-        padding-left: 3%;
-        font-weight: 650;
-        font-size: 3vw;
-    }
-    .bannerContents_R_imgContainer{
-        display: flex;
-        align-items: left;
-        justify-content: left;
-    }
-    .bannerContents_L_C_price_plus{
-        font-size: 3vw;
-        position: absolute;
-        right: -4%;
-        color: rgb(248, 244, 244);
-        width: auto;
-        height: 50%;
-        border-radius: 50vw;
-        border: 0;
-        z-index: 2;
-        margin-top: auto;
-        margin-bottom: auto;
-        
-    }
-    .bannerContents_L_C_price_plusB{
-        font-size: 2.5vw;
-        position: absolute;
-        right: -4%;
-        color: rgb(241, 32, 32);
-        width: auto;
+        }
+        .nav_bar__compName{
+        width:auto;
+        font-size: 2.8vw;
+        font-weight:500;
+        margin-left:0.7rem;
+        color:rgb(248, 245, 245);
+        padding-bottom: 0.3%;
+        }
+        .nav_bar__mobile_btn{
+        margin-top: 0.7%;
         height: 30%;
-        border-radius: 50vw;
-        border: 0; 
-        z-index: 1; 
-        margin-top: auto;
-        margin-bottom: auto;
-    }
-    .bannerContents_R_img{
-        width: 100%;
-        height: auto;
-    }
-    .bannerContents_R_imgContaineMain{
-        width: 80%;
-        height: 100%;
-    }
-    
-    .onlineOrder__btn_small{
         display: none;
-    }
-    
-    }
-
-    @media screen and (max-width: 825px) {
-        .container{
-            background-color: rgb(252, 179, 21);
-            width: 100%;
-            height: auto;
-            position: relative;
-            overflow: hidden;
-            z-index: -1; 
         }
-        .bd1,.bd2{
-            position: absolute;
-        }
-        .bd1{
-            right: 13%;
-            bottom: 20%;
-            width: 32%;
-            height: auto;
-            transform: rotate(25deg);
-            filter: saturate(3.1);   
-        }
-        
-        .bd1 img{
-            width: 100%;
-            height: 100%;
-        }
-        
-        .bd2{
-            right: 13%;
-            bottom: 3%;
-            width: 37%;
-            height: auto;
-            transform: rotate(24deg);
-            filter: saturate(3.1);
-        }
-        
-        .bd2 img{
-            width: 100%;
-            height: 100%;
-        }
-        
-        .FaCircleNotch{
-            position: absolute;
-            font-size: 55vw;
-            right: -22%;
-            top: -33%;
-            color: rgb(253, 189, 52) ;
-            display: inline-block;
-            z-index: -1;
-          
-        }
-        .FaCircleNotch2{
-            position: absolute;
-            font-size: 32vw;
-            right: -13%;
-            top: -13%;
-            color: rgb(252, 179, 21);
-            display: inline-block;
-            z-index: -1;
-        }
-        .burger{
-            border: 1px solid red;
-            height: auto;
-            z-index: 3;
-            width: 30%;
-            animation:  burgerAnim infinite 4s linear;
-        }
-        .contents{
-            width: 90%;
-            height: 90%;
-            float: right;
-            padding-top: 0.7%;
-            padding-bottom: 6.5%;
-        }
-        .menu{ 
-            width: 38%;
-        }
-        .menu>ul{
-            list-style: none;
-            color: rgb(255, 255, 255);
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 1.5vw;
-            font-size: 1.2vw;
-            font-weight: 500;
-            cursor:pointer;
-           
-        }
-        
-        .menu>ul>li:nth-child(1){
-            color: rgb(241, 25, 25);
-        }
-        .menu>ul>li:hover{
-            list-style: none;
-            color: rgb(134, 30, 30);
-            display: flex;
-            gap: 1.4vw;
-            cursor:pointer;  
-        }
-        
-        .logo{
-            width: 10%;
-            height: auto;
-        }
-        
-        .logoImage{
-            width: 100%;
-            height: 100%;
-        }
-        .navLogoContainer{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            padding-right: 1%;
-        }
-        .onlineOrder{
-            width: 13%;
-            padding-top: 1vw; 
-        }
-        .onlineOrder__btn{
-            font-size: 1.2vw;
-            font-weight: bold;
-            width: auto;
-            padding: 1.5% 2.5% 3% 2.6%;
-            border-radius: 50em;
-            border: 0;
-            margin-left: auto;
-            background-color: rgb(241, 32, 32);
-            color: rgb(253, 247, 247);
-        }
-        .onlineOrder__btn:hover{
-            font-size: 0.7vw;
-            font-weight: bold;
-            width: 11%;
-            height: 3vw;
-            border-radius: 50em;
-            border: 0;
-            margin-top: 1.8vw;
-            margin-left: auto;
-            background-color: rgb(241, 25, 25);
-            color: rgb(226, 101, 101);
-        }
-        .shopingIcon{
-            color: rgb(248, 242, 242);
-            font-size: 3vw;
-            position: relative;
-        }
-        .shopingIconContainer{
-            width: 7%;
-            text-align: center;
-            position: relative;
-            margin-top: 1%;
-        }
-        .shopingBadge{
-            top: -10%;
-            right: 10%;
-            width: 31%;
-            height: 1.3vh;
-            font-size: 1.3vw;
-            border-radius: 50%;
-            font-weight: 500;
-            background-color: rgb(241, 32, 32);
-            color: rgb(253, 247, 247);
-            position: absolute;
-            align-items: center;
-        }
-        .secondMenu{
-            font-size: 2.3vw;
-            font-weight: bold;
-            height: 2.5vw;
-            border-radius: 50em 0em 0em 50em;
-            border: 0;
-            background-color: rgb(241, 32, 32);
-            color: rgb(253, 247, 247);
-            text-align: left;
-            padding: 0.8% 2.5% 3.5% 2.6%;
-        }
-        .bannerContents{
-            width: 100%;
-            height: auto;
-            display: flex;
-            align-items: center;
-        }
-        .bannerContents_L{
-            flex: 0.53;
-            display: flex;
-            flex-direction: column;
-            padding-top: 2.5%;
-            gap: 2vw;
-          
-        }
-        .bannerContents_LL{
-            display: flex;
-        }
-        .bannerContents_R{
-            flex: 0.4;
-            padding-top: 1%;
-        }
-        .bannerContents_L_A{
-           color: rgb(247, 25, 25);
-           font-weight: 800;
-           font-size: 1.3vw;
-        }
-        .bannerContents_L_B{
-            color: rgb(250, 245, 245);
-            font-size: 7vw;
-            font-weight: bold;
-            line-height: 90%;
-        }
-        .bannerContents_L_C{
-            display: flex;
-            align-items: center; 
-            padding: 0% 0% 0% 3%;
-            background-color: rgb(241, 32, 32);
-            color: rgb(250, 245, 245);
-            width: 111%;
-            z-index: 2;
-            border-radius: 0.2em;
-            position: relative;
-            z-index: 8;
-        }
-        .bannerContents_L_C_li{
-            display: flex;
-            flex-direction: column;
-            flex: 0.7;
-            gap: 10%;
-            font-size: 1.2vw;
-            font-weight: 500;
-        }
-        .bannerContents_L_C_li>ul{
-            display: flex;
-            gap: 10%;
-            font-size: 1.8vw;
-            font-weight: 500;
-            padding: 0% 0% 0% 10%;
-            margin: 0%;
-        }
-        .bannerContents_L_C_price{
-            flex: 0.3;
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            margin-left: auto;
-            padding: 3% 0% 0% 0%;
-        }
-        .bannerContents_L_C_price_A{
-            font-size: 1vw;
-            padding-left: 5%;
-           
-        }
-        .bannerContents_L_C_price_B{
-            display: flex;
-            align-items: center;
-            font-size: 2.5vw;
-        }
-        .bannerContents_L_C_price_B__dollar{
-            font-size: 2.5vw;
-            
-        }
-        .bannerContents_L_C_price_B__price{
-            font-size: 2.4vw;
-            margin-left: -3%;
-            padding-top: 2%;
-            font-weight: 700;
-        }
-        .bannerContents_L_C_only{
-            font-size: 1.7vw;
-            padding-left: 5%;
-        }
-        .bannerContents_L_C_price_B_span{
-            padding-top: -1vw;
-            padding-left: 3%;
-            font-weight: 650;
-            font-size: 3vw;
-        }
-        .bannerContents_R_imgContainer{
-            display: flex;
-            align-items: left;
-            justify-content: left;
-        }
-        .bannerContents_L_C_price_plus{
-            font-size: 3vw;
-            position: absolute;
-            right: -4%;
-            color: rgb(248, 244, 244);
-            width: auto;
-            height: 50%;
-            border-radius: 50vw;
-            border: 0;
-            z-index: 2;
-            margin-top: auto;
-            margin-bottom: auto;
-            
-        }
-        .bannerContents_L_C_price_plusB{
-            font-size: 2.5vw;
-            position: absolute;
-            right: -4%;
-            color: rgb(241, 32, 32);
-            width: auto;
-            height: 30%;
-            border-radius: 50vw;
-            border: 0; 
-            z-index: 1; 
-            margin-top: auto;
-            margin-bottom: auto;
-        }
-        .bannerContents_R_img{
-            width: 100%;
-            height: auto;
-        }
-        .bannerContents_R_imgContaineMain{
-            width: 80%;
-            height: 100%;
-        }
-        
-        .onlineOrder__btn_small{
-            display: none;
-        }
-        
-        }
-
-
-    @media screen and (max-width: 550px) {
-        .contents{
-            width: 95%;
-            height: 90%;
-            float: right;
-            padding-top: 1.9%;
-            padding-bottom: 6.5%;
-        }
-        .bannerContents_L_C_price{
-            flex: 0.3;
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            margin-left: auto;
-            line-height: 150%;
-            padding: 0% 0% 2% 0%;
-            max-height: 6vw;
-        }
-        .menu{
-            width: 40%;
-        }
-        .menu>ul>li{
-            display: none;
-        }
-        .bannerContents_L_C_price_A{
-            display: block; 
-        }
-        .bannerContents_L_C{
-            display: flex;
-            align-items: center;
-            border: 1px solid rgb(252, 9, 9);  
-            padding: 0% 0% 0% 1%;
-            background-color: rgb(241, 32, 32);
-            color: rgb(250, 245, 245);
-            width: 120%;
-            height: 8vh;
-            z-index: 2;
-            border-radius: 0.2em;
-            position: relative;
-            z-index: 8;
-        }
-        .bannerContents_L_C_li{
-            display: flex;
-            flex-direction: column;
-            flex: 0.7;
-            gap: 10%;
-            font-size: 1.2vw;
-            font-weight: 500;
-        }
-       
-        .bannerContents_L_C_li>ul{
-            display: flex;
-            gap: 3%;
-            font-size:3.2vw;
-            font-weight: 500;
-            padding: 0% 0% 0% 1%;
-            margin: 0%;
-            list-style: none;
-        }
-        .bannerContents_L_C_price_B{
-            padding-top: 1%;
-            font-weight: 700;
-            line-height: 100%;
-            margin-top: 0%;
-            padding-right: 5%; 
-        }
-        .bannerContents_L_C_only{
-            font-size: 2.9vw;
-            padding-left: 5%;
-            height: 5vw;
-            margin-top: -1.5vw;
-        }
-        .bannerContents_L_C_price_B_span{
-            padding-top: 0vw;
-            padding-left: 3%;
-            font-weight: 700;
-            font-size: 4.5vw;
-        }
-        .bannerContents_L_C{
-            padding: 0% 0% 0% 1%; 
-        }
-        .onlineOrder__btn{
-            font-size: 2.3vw;
-            font-weight: bold;
-            width: 27%;
-            height: 6vw;
-            margin-right: 2.5vw; 
-            display: none;
-        }
-        .onlineOrder__btn_small{
-            font-size: 2.7vw;
-            font-weight: bold;
-            width: 80%;
-            height: 8vw;
-            float: left;
-            border-radius: 80em;
-            border: 0;
-            background-color: rgb(241, 32, 32);
-            color: rgb(253, 247, 247);
-            display: block;
-        }
-        .secondMenu{
-            font-size: 6vw;
-            font-weight: bold;
-            width: 12%;
-            height: 8vw;
-            border-radius: 50em 0em 0em 50em;
-            border: 0;
-            background-color: rgb(241, 32, 32);
-            color: rgb(253, 247, 247);
-            text-align: left;
-            padding-left: 3%;
-            padding-top: 1.1%;
-        }
-        .navLogoContainer{
-            padding-right: 0;
-        }
-        .logo{
-            width: 15.5%;
-            height: auto;
-        }
-        .bannerContents_L_A{ 
-            color: rgb(247, 25, 25);
-            font-weight: 800;
-            font-size: 2.5vw;
-         }
-         .shopingIcon{
-            color: rgb(248, 242, 242);
-            font-size: 8vw;
-            position: relative;
-        }
-        .shopingIconContainer{
-            width: 22%;
-            height: 100%;
-            text-align: center;
-            position: relative;
-            margin-top: 1%;
-            margin-left: auto;
-            
-           
-        }
-        .shopingBadge{
-            top: -7%;
-            right: 16%;
-            width: 25%;
-            height: 55%;
-            font-size: 3.2vw;
-            border-radius: 50%;
-            font-weight: bold;
-            background-color: rgb(241, 32, 32);
-            color: rgb(253, 247, 247);
-            position: absolute;
-            text-align: center;
-        }
-        .bannerContents_L_B{
-            color: rgb(250, 245, 245);
-            font-size: 8vw;
-            font-weight: bold;
-            line-height: 90%;
-        }
-        .bannerContents_L_C_price_plus{
-            font-size: 6vw;
-            position: absolute;
-            right: -5%;
-            top: 21%;
-            color: rgb(248, 244, 244);
-            width: auto;
-            height: auto;
-            border-radius: 50vw;
-            border: 0;
-            z-index: 2;
-            
-        }
-        .bannerContents_L_C_price_plusB{
-            font-size: 4vw;
-            position: absolute;
-            right: -3%;
-            color: rgb(241, 32, 32);
-            width: auto;
-            height: auto;
-            border-radius: 50vw;
-            border: 0; 
-            z-index: 1; 
-        }
-        .bannerContents_R{
-            flex: 0.4;
-            padding-top: 1%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .bannerContents_R_img{
-            width: 100%;
-            height: auto;
-        }
-        .bannerContents_R_imgContaineMain{
-            width: 37vw;
-            height: 100%;   
-        }
-        .bannerContents_R{
-            flex: 0.4;
-            padding-top: 0%;
-            width: 100%;
-            height: 150%;
-        }
-        .FaCircleNotch{
-            position: absolute;
-            font-size: 80vw;
-            right: -40%;
-            top: -33%;
-            color: rgb(253, 189, 52) ;
-            display: inline-block;
-            z-index: -1;
-           
-        }
-        .FaCircleNotch2{
-            position: absolute;
-            font-size: 50vw;
-            right: -28%;
-            top: -13%;
-            color: rgb(252, 179, 21);
-            display: inline-block;
-            z-index: -1;
-        }
-        .bd1,.bd2{
-            position: absolute;
-        }
-        .bd1{
-            right: 3%;
-            bottom: 20%;
-            width: 40%;
-            height: auto;
-            transform: rotate(25deg);
-            filter: saturate(3.1);   
-        }
-        
-        .bd1 img{
-            width: 100%;
-            height: 100%;
-        }
-        
-        .bd2{
-            right: 3%;
-            bottom: 1.7%;
-            width: 45%;
-            height: auto;
-            transform: rotate(24deg);
-            filter: saturate(3.1);
-        }
-        
-        .bd2 img{
-            width: 100%;
-            height: 100%;
-        }
-        .listMenu{
-            display:block;
-        }
-        .dice{
-            display: none;
-        }
+        .nav_bar__login{
+        width: 9vw;
+        height: 100%;
+        }
+        .nav_bar__login_btn{
+        font-size: 1.6vw ;
+        width: 100%;
+        height: 100%;
+        color: rgb(197, 196, 197);
+        background-color: transparent;
+        }
+        .nav_bar__login_btn:hover{
+          color: rgb(248, 247, 248);
+          transition: 0.4s
+          }
+        .nav_bar__wraper{
+          margin-left: auto;
       
         }
-
-
-        @media screen and (max-width: 420px) {
-            .contents{
-                width: 95%;
-                height: 90%;
-                float: right;
-                padding-top: 2%;
-                padding-bottom: 6.5%;
-            }
-            .bannerContents_L_C_price{
-                flex: 0.3;
-                display: flex;
-                flex-direction: column;
-                text-align: left;
-                margin-left: auto;
-                line-height: 150%;
-                padding: 0% 0% 2% 0%;
-                max-height: 6vw;
-            }
-            .menu{
-                width: 40%;
-            }
-            .menu>ul>li{
-                display: none;
-            }
-            .bannerContents_L_C_price_A{
-                display: block; 
-            }
-            .bannerContents_L_C{
-                display: flex;
-                align-items: center;
-                border: 1px solid rgb(252, 9, 9);  
-                padding: 0% 0% 10% 1%;
-                background-color: rgb(241, 32, 32);
-                color: rgb(250, 245, 245);
-                width: 120%;
-                height: 5.1vh;
-                z-index: 2;
-                border-radius: 0.2em;
-                position: relative;
-                z-index: 8;
-            }
-            .bannerContents_L_C_li{
-                display: flex;
-                flex-direction: column;
-                flex: 0.7;
-                gap: 10%;
-                font-size: 1.2vw;
-                font-weight: 500;
-            }
-           
-            .bannerContents_L_C_li>ul{
-                display: flex;
-                gap: 3%;
-                font-size:3.2vw;
-                font-weight: 500;
-                padding: 0% 0% 0% 1%;
-                margin: 0%;
-                list-style: none;
-            }
-            .bannerContents_L_C_price_B{
-                padding-top: 1%;
-                font-weight: 700;
-                line-height: 100%;
-                margin-top: 0%;
-                padding-right: 5%; 
-            }
-            .bannerContents_L_C_only{
-                font-size: 2.9vw;
-                padding-left: 5%;
-                height: 5vw;
-                margin-top: -2.7vw;
-            }
-            .bannerContents_L_C_price_B_span{
-                padding-top: 1vw;
-                padding-left: 3%;
-                font-weight: 700;
-                font-size: 4.5vw;
-            }
-            .bannerContents_L_C{
-                padding: 0% 0% 0% 1%; 
-            }
-            .onlineOrder__btn{
-                font-size: 2.3vw;
-                font-weight: bold;
-                width: 27%;
-                height: 6vw;
-                margin-right: 2.5vw; 
-                display: none;
-            }
-            .onlineOrder__btn_small{
-                font-size: 2.7vw;
-                font-weight: bold;
-                width: 80%;
-                height: 8vw;
-                float: left;
-                border-radius: 80em;
-                border: 0;
-                background-color: rgb(241, 32, 32);
-                color: rgb(253, 247, 247);
-                display: block;
-            }
-            .secondMenu{
-                font-size: 6vw;
-                font-weight: bold;
-                width: 12%;
-                height: 8vw;
-                border-radius: 50em 0em 0em 50em;
-                border: 0;
-                background-color: rgb(241, 32, 32);
-                color: rgb(253, 247, 247);
-                text-align: left;
-                padding-left: 3%;
-                padding-top: 1.05%;
-            }
-            .navLogoContainer{
-                padding-right: 0;
-            }
-            .logo{
-                width: 15.5%;
-                height: auto;
-            }
-            .bannerContents_L_A{ 
-                color: rgb(247, 25, 25);
-                font-weight: 800;
-                font-size: 2.5vw;
-             }
-             .shopingIcon{
-                color: rgb(248, 242, 242);
-                font-size: 7vw;
-                position: relative;
-            }
-            .shopingIconContainer{
-                width: 17%;
-                height: 100%;
-                text-align: center;
-                position: relative;
-                margin-top: 1%;
-                margin-left: auto;
-            }
-            .shopingBadge{
-                top: -5%;
-                right: 20%;
-                width: 29%;
-                height: 55%;
-                font-size: 2.9vw;
-                border-radius: 50%;
-                font-weight: 500;
-                background-color: rgb(241, 32, 32);
-                color: rgb(253, 247, 247);
-                position: absolute;
-                text-align: center;
-            }
-            .bannerContents_L_B{
-                color: rgb(250, 245, 245);
-                font-size: 8vw;
-                font-weight: bold;
-                line-height: 90%;
-            }
-            .bannerContents_L_C_price_plus{
-                font-size: 6vw;
-                position: absolute;
-                right: -5%;
-                color: rgb(248, 244, 244);
-                width: auto;
-                height: auto;
-                border-radius: 50vw;
-                border: 0;
-                z-index: 2;
-                
-            }
-            .bannerContents_L_C_price_plusB{
-                font-size: 4vw;
-                position: absolute;
-                right: -3%;
-                color: rgb(241, 32, 32);
-                width: auto;
-                height: auto;
-                border-radius: 50vw;
-                border: 0; 
-                z-index: 1; 
-            }
-            .bannerContents_R{
-                flex: 0.4;
-                padding-top: 1%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .bannerContents_R_img{
-                width: 100%;
-                height: auto;
-            }
-            .bannerContents_R_imgContaineMain{
-                width: 37vw;
-                height: 100%;
-                
-            }
-            .bannerContents_R{
-                flex: 0.4;
-                padding-top: 0%;
-                width: 100%;
-                height: 150%;
-            }
-            .FaCircleNotch{
-                position: absolute;
-                font-size: 80vw;
-                right: -40%;
-                top: -33%;
-                color: rgb(253, 189, 52) ;
-                display: inline-block;
-                z-index: -1;
-               
-            }
-            .FaCircleNotch2{
-                position: absolute;
-                font-size: 50vw;
-                right: -28%;
-                top: -13%;
-                color: rgb(252, 179, 21);
-                display: inline-block;
-                z-index: -1;
-            }
-            .bd1,.bd2{
-                position: absolute;
-            }
-            .bd1{
-                right: 3%;
-                bottom: 20%;
-                width: 40%;
-                height: auto;
-                transform: rotate(25deg);
-                filter: saturate(3.1);   
+        .nav_bar__menu{
+        list-style-type: none;
+        margin: 0;
+        padding-bottom: 0.5vw;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        text-decoration: none;
+        gap: 15px;	
+        font-size: 2vw;
+        }
+        .nav_bar__menu_a {
+        color: rgb(197, 196, 197);
+        text-align: center;
+        text-decoration: none;
+        }
+        .nav_bar__menu_a:hover {
+        color: rgb(250, 245, 250);
+        }
+        .nav_Mobilemenu{
+          display: none;
+        }
+    }
+    
+    
+    @media screen and (max-width: 830px) {
+      .nav_bar{
+        height: 5.2vh;
+        }
+      .nav_bar__logo{
+        width: auto;
+        height:70%;
+        position: relative;
+        }
+        .nav_bar__logo_icon{
+        width:100%; 
+        height: 100%;
+        }
+        .nav_bar__login{
+          width: 10vw;
+          height: 100%;
+          }
+          .nav_bar__login_btn{
+          font-size: 1.6vw ;
+          width: 100%;
+          height: 100%;
+          color: rgb(197, 196, 197);
+          border: 1px solid rgb(197, 196, 197);
+          background-color: transparent;
+          }
+          .nav_Mobilemenu{
+            display: none;
+          }
+    }
+    
+    @media screen and (max-width: 550px) {
+      .nav_bar{
+        width:100%;
+        height: 5em;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        display:flex;
+        justify-content: flex-start;
+        padding-right: 1vw;
+        padding-left: 1.5vw;
+        
+      
+        }
+        .nav_bar__logo{
+        width: auto;
+        height:60%;
+        position: relative;
+        }
+        .nav_bar__logo_icon{
+        width:100%; 
+        height: 100%;
+        vertical-align: bottom;
+        }
+        .nav_bar__compName{
+        width: auto;
+        font-size: 4vw;
+        font-weight:500;
+        margin-left:0.7rem;
+        color:rgb(248, 245, 245);
+        padding-bottom: 1%;
+        }
+        .nav_bar__mobile_btn{
+        color:rgb(77, 121, 146);
+        font-size: 5em;
+        width: auto;
+        display: block;
+        
+        }
+        .nav_bar__login{
+        width: 25%;
+        height: 100%;
+        margin-left: auto;
+        padding-right: 3rem;
+        
+        
+        }
+        .nav_bar__login_btn{
+        font-size: 3.5vw ;
+        width: 100%;
+        height: 100%;
+        color: rgb(197, 196, 197);
+        background-color: transparent;
+        
+        }
+        .nav_bar__login_btn:hover{
+          color: rgb(248, 247, 248);
+          transition: 0.4s
+          }
+        .nav_bar__wraper{
+          margin-left: auto;
+          padding-right: 2em;
+          display: none;
+        }
+        .nav_bar__menu{
+        list-style-type: none;
+        margin: 0;
+        padding-top: 0%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        text-decoration: none;
+        gap: 25px;	
+        font-size: 1vw;
+        }
+        .nav_bar__menu_a {
+        color: rgb(197, 196, 197);
+        text-align: center;
+        text-decoration: none;
+        }
+        .nav_bar__menu_a:hover {
+        color: rgb(250, 245, 250);
+        }
+        .nav_bar__mobileBtn{
+          font-size: 2.3em;
+          display: block;
+          align-items: center;
+          color: rgb(185, 184, 185);
+          padding-top: 1%;
+          margin-left: auto;
+        }
+        .nav_bar__mobileBtn :hover{
+          color: rgb(247, 243, 247);
+        }
+        .nav_Mobilemenu{
+          color: rgb(31, 29, 31);
+          width: 70%;
+          height: 90vh;
+          right: -1.8%;
+          top: 130%;
+          background-color:  rgb(248, 242, 248);
+          overflow: hidden;
+          background-image: -webkit-linear-gradient(rgb(255, 255, 255),rgb(219, 219, 219));
+          position: absolute;
+          z-index: 2;
+          border-radius: 2vw 0vw 0vw 2vw;
+          display: block;
+          animation:  mobileMenu  linear;
+          display: none;
+        }  
+        .nav_Mobilemenu ul{
+          list-style: none;
+          margin: 0;
+          padding: 1vw;
+          z-index: 2;
+          font-size: 4vw;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5em;
+        } 
+        .nav_Mobilemenu ul li:hover{
+          color:  rgb(245, 190, 245);
+        }   
+      
+        .nav_bar__menu_aMobile{
+          text-decoration: none;
+          color: inherit;
+        }
+    /*
+        @keyframes imageroto {
+          from{
+              transform:rotate(0deg);
             }
             
-            .bd1 img{
-                width: 100%;
-                height: 100%;
+            to{
+              transform:rotate(360deg);
             }
-            
-            .bd2{
-                right: 3%;
-                bottom: 2%;
-                width: 45%;
-                height: auto;
-                transform: rotate(24deg);
-                filter: saturate(3.1);
-            }
-            
-            .bd2 img{
-                width: 100%;
-                height: 100%;
-            }
-            .listMenu{
-                display:block;
-            }
-            .dice{
-                display: none;
-            }
-            }
+        }
+        */
+    }
+    
+    @media screen and (max-width: 420px) {
+      .nav_bar{
+        width:100%;
+        height: 4em;
+        padding-left: 1.5vw;
+        padding-right: 1vw;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        display:flex;
+        justify-content: flex-start;
+        }
+        .nav_bar__logo{
+        width: auto;
+        height:60%;
+        position: relative;
+        }
+        .nav_bar__logo_icon{
+        width:100%; 
+        height: 100%;
+        vertical-align: bottom;
+        }
+        .nav_bar__compName{
+        width: auto;
+        font-size: 5vw;
+        font-weight:500;
+        margin-left:0.7rem;
+        color:rgb(248, 245, 245);
+        }
+    
+        .nav_bar__login{
+        width: 30%;
+        height: 100%;
+        margin-left: auto;
+        padding-right: 3rem;
+        
+        
+        }
+        .nav_bar__login_btn{
+        font-size: 3.5vw ;
+        width: 100%;
+        height: 100%;
+        color: rgb(197, 196, 197);
+        background-color: transparent;
+        
+        }
+        .nav_bar__login_btn:hover{
+          color: rgb(248, 247, 248);
+          transition: 0.4s
+          }
+        .nav_bar__wraper{
+          margin-left: auto;
+          padding-right: 2em;
+          display: none;
+        }
+        .nav_bar__menu{
+        list-style-type: none;
+        margin: 0;
+        padding-top: 0%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        text-decoration: none;
+        gap: 25px;	
+        font-size: 1vw;
+        }
+        .nav_bar__menu_a {
+        color: rgb(197, 196, 197);
+        text-align: center;
+        text-decoration: none;
+        }
+        .nav_bar__menu_a:hover {
+        color: rgb(250, 245, 250);
+        }
+        .nav_bar__mobileBtn{
+          font-size: 1.8em;
+          display: block;
+          align-items: center;
+          color: rgb(191, 215, 224);
+          padding-top: 1.4%;
+        }
+        .nav_bar__mobileBtn :hover{
+          color: rgb(96, 187, 223);;
+        }
+      
+        .nav_Mobilemenu{
+          color: rgb(196, 248, 244);
+          width: 85%;
+          height: 94vh;
+          right: -1.8%;
+          top: 101%;
+          padding: 1em;
+          background-color:  rgb(56, 124, 151);
+          overflow: hidden;
+          background-image: -webkit-linear-gradient(rgb(56, 124, 151),rgba(40, 156, 150, 0.651));
+          position: absolute;
+          z-index: 2;
+          border-radius: 2vw 0vw 0vw 2vw;
+          animation:  mobileMenu  linear;
+          display: none;
+          transition: 1s;
+          
+        }  
+        .nav_Mobilemenu ul{
+          list-style: none;
+          margin: 0;
+          padding: 1vw;
+          z-index: 2;
+          font-size: 5vw;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5em;
+        } 
+        .nav_Mobilemenu ul li:hover{
+          color:  rgb(245, 190, 245);
+        }   
+        .nav_Mobilemenu_battleNet{
+          display: none;
+        }
+        .nav_bar__menu_aMobile{
+          text-decoration: none;
+          color: inherit;
+        }
+    
+    }
+    
+    

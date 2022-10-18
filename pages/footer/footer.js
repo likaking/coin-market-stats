@@ -2,7 +2,7 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import Image from 'next/image'
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from '/styles/Footer.module.css'
 import {FaFacebook, FaTwitter, FaTiktok, FaYoutube, FaCopyright, FaArrowUp} from 'react-icons/fa'
 
@@ -34,16 +34,31 @@ export default function Footer() {
         scrolled > 300 ? setVisible(true) : setVisible(false)
         }
   
-       typeof window !== 'undefined' ? window.addEventListener('scroll', toggleVisible) : ' '
+     // const addScroll = ()=> {typeof window !== 'undefined' ? window.addEventListener('scroll',toggleVisible ) : ''}
 
       const scrollToTop = () =>{
         window.scrollTo({
           top: 0, 
-          behavior: 'smooth'
-          /* you can also use 'auto' behaviour
-             in place of 'smooth' */
+          left: 0,
+          behavior: 'smooth',
+        
+         
         });
+
       };
+      
+
+      useEffect(()=>{
+        //addScroll()
+        window.scrollTo({
+          top: 0, 
+          left: 0,
+          behavior: 'smooth',
+        })
+        window.addEventListener('scroll',toggleVisible ) 
+        toggleVisible();
+       // return ()=> window.removeEventListener('scroll',toggleVisible)
+      },[])
    
 
   return (
@@ -51,28 +66,15 @@ export default function Footer() {
       <div className={styles.footer}>
 
         <div className={styles.footer_logo}>
-          <div className={styles.footer_logo1}><hr className={styles.footer_hrM} /></div>
-          <div className={styles.footer_logo2}><img src = {'/cheflogo.png'} alt = 'logo' className={styles.footer_logoImg}/><span className={styles.footer_CompName}>Burger Den</span></div>
-          <div className={styles.footer_logo3}><hr  className={styles.footer_hrM}/></div>
+          <div className={styles.footer_logo1}></div>
+          <div className={styles.footer_logo2}><img src = {'/logo.png'} alt = 'Coin Market Voice logo' className={styles.footer_logoImg}/>
+          <span className={styles.footer_CompName}>Coin Market Voice</span></div>
+          <div className={styles.footer_logo3}></div>
         </div>
         <div className={styles.footer_addressContacts}>
-          <div className={styles.footer_addressContacts1}>
-            <div className={styles.footer_addressContacts2_hdr}>Address</div>
-            <div className={styles.footer_addressContacts2_2}>570 8th Ave, <br /> New York, NY 10018 <br /> United States</div>
-            <div></div>
-          </div>
-          <div className={styles.footer_addressContacts2}>
-          <div className={styles.footer_addressContacts2_hdr}>Book a table</div>
-            <div className={styles.footer_addressContacts2_2}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-            <div className={styles.footer_addressContacts2_tel}>+880 786 4532 990</div>
-          </div>
-          <div className={styles.footer_addressContacts3}>
-          <div className={styles.footer_addressContacts2_hdr}>Opening hours</div>
-            <div className={styles.footer_addressContacts2_2}>Monday-Friday</div>
-            <div  className={styles.footer_addressContacts2_2}>10.00 AM - 11.00 PM</div>
-          </div>
+          
         </div>
-       <div className={styles.footer_hr}><hr className={styles.footer_hrM} /></div>
+       <div className={styles.footer_hr}></div>
        <div className={styles.footer_links}>
         <div className={styles.footer_links_contianer}>
           <ul>
@@ -86,22 +88,20 @@ export default function Footer() {
         </div>
         <div className={styles.footer_Social}>
         <ul className={styles.footer_ul}>
-            <li><Link href = '/#' scroll = {false}><a><FaFacebook /></a></Link></li>
-            <li><Link href = '/#' scroll = {false}><a><FaTwitter /></a></Link></li>
-            <li><Link href = '/#' scroll = {false}><a><FaTiktok /></a></Link></li>
-            <li><Link href = '/#' scroll = {false}><a><FaYoutube /></a></Link></li>
+            <li><a href = '/#'  target={'_blank'} scroll = {false}><FaFacebook /></a></li>
+            <li><a href = '/#' target={'_blank'} scroll = {false}><FaTwitter /></a></li>
+            <li><a href = '/#'  target={'_blank'} scroll = {false}><FaTiktok /></a></li>
+            <li><a href = '/#' target={'_blank'} scroll = {false}><FaYoutube /></a></li>
           </ul>
         </div>
        <button className={styles.upButton} onClick = {scrollToTop} style={{display: visible ? 'inline' : 'none'}}><FaArrowUp /></button>
-
+       
        </div>
-       <div className={styles.copyRight}><FaCopyright /> {dateBuilder(new Date())}  Burger Den All rights reserved</div>
+       <div className={styles.copyRight}><FaCopyright /> {dateBuilder(new Date())}  Coin Market Voice</div>
       </div>
       
 
-      <section>
-        
-      </section>
+     
     </main>
   )
 }

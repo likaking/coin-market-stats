@@ -2,9 +2,9 @@
 
 .footer{
     width: 100%;
-    background-color: rgb(19, 18, 18);
     padding-top: 5vw;
-    margin-top: 5vw;
+    margin-top: 0vw;
+    background-color: rgb(32, 70, 85);
     position: relative;
 }
 .footer_logo{
@@ -15,30 +15,32 @@
     margin: auto;
     gap: 2vw;
     padding-bottom: 5em;
+    
 }
 .footer_logo1{
     flex: 4.2;
     align-items: right;
 }
 .footer_logo2{
-    width: 14%;
+    width: 30%;
     height: 15vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .footer_logo3{
     flex: 4.2;
     align-items: left;
 }
 .footer_logoImg{
-    width: 100%;
-    height: 100%;
+    width: 40%;
+    height: auto;
 }
 .footer_CompName{
     text-align: center;
     font-weight: 500;
-    font-size: 1vw;
-    color: rgb(252, 179, 21);
+    font-size: 1.2vw;
+    color: rgb(229, 237, 245);
 }
 .footer_hr{
     width: 50%;
@@ -105,18 +107,21 @@ padding-bottom: 0rem;
     display: flex;
     font-size: 0.6em;
     gap: 1.5vw;
-    margin: 0;
+    margin-top: 0.75vw;
     padding: 0;
     cursor: pointer;
+   
 }
 
 .footer_Social{
     color: rgb(216, 216, 216); 
     font-size: 0.6em;
-    align-items: right;
+    align-items: center;
     gap: 1.5vw;
     cursor: pointer;
     flex: 1;  
+    z-index: 3;
+   
 }
 .footer_Social >ul{
    list-style: none;
@@ -124,8 +129,8 @@ padding-bottom: 0rem;
    margin: 0;
    padding: 0;
    gap: 1.5vw;
-   padding-left: 13em;
-   
+   padding-left: 6.2em;
+
 }
 .footer_ul{
    margin-left: auto; 
@@ -133,12 +138,12 @@ padding-bottom: 0rem;
 .footer_Social >ul>li{
    font-size: 2vw;
    transition: 0.4s;
-     
+  
+  
  }
  .footer_Social >ul>li :hover{
-    color: rgb(235, 117, 21);
-    transition: 0.4s;
-    
+color: rgb(184, 214, 228);
+transition: 0.4s;    
 }
  .copyRight{
     color: rgb(216, 216, 216); 
@@ -146,16 +151,21 @@ padding-bottom: 0rem;
     width: 50%;
     margin: auto;
     padding-bottom: 1rem;
+    
+ 
  }
  .upButton{
  position: fixed;
  right: 2vw;
  bottom: 2%;
- background-color: rgb(219, 44, 44);
+ background-color: rgba(19, 41, 51, 0);
  border: 0;
  color: rgb(243, 236, 236) ;
  padding: 1.2% 1.2% 1% 1.2%;
  border-radius: 50%;
+ border: 2px solid rgb(14, 48, 65);
+ border-style: dashed;
+ color: rgb(14, 48, 65);
  font-size: 1em;
  cursor: pointer;
  }
@@ -182,18 +192,19 @@ padding-bottom: 0rem;
     align-items: right;
 }
 .footer_logo2{
-    width: 23%;
+    width: 50%;
     height: 10vh;
     display: flex;
     flex-direction: column;
+  
 }
 .footer_logo3{
     flex: 3;
     align-items: left;
 }
 .footer_logoImg{
-    width: 100%;
-    height: 100%;
+    width: 40%;
+    height: auto;
 }
 .footer_CompName{
     text-align: center;
@@ -250,6 +261,8 @@ padding-bottom: 0rem;
     margin: auto;
     gap: 2rem;
     padding-bottom: 0rem;
+    flex-direction: column;
+    align-items: center;
     }
     
     .footer_links_contianer{
@@ -259,17 +272,16 @@ padding-bottom: 0rem;
         color: rgb(216, 216, 216); 
         list-style: none;
         display: flex;
-        font-size: 0.9em;
+        font-size: 1.3em;
         gap: 1.5vw;
         margin: 0;
         padding: 0;
+        margin-top: 0.65vw;
         cursor: pointer;
     }
-    
-    
     .footer_Social{
         color: rgb(216, 216, 216); 
-        font-size: 0.8em;
+        font-size: 1.2em;
         align-items: right;
         gap: 1.5vw;
         cursor: pointer;
@@ -281,7 +293,7 @@ padding-bottom: 0rem;
        margin: 0;
        padding: 0;
        gap: 1.5vw;
-       margin-left: 12.5rem;
+       margin-left: 6.2vw;
        
     }
     .footer_ul{
@@ -299,18 +311,22 @@ padding-bottom: 0rem;
     }
      .copyRight{
         color: rgb(216, 216, 216); 
-        font-size: 0.6em;
+        font-size: 1em;
         width: 80%;
         margin: auto;
         padding-bottom: 1rem;
+        text-align: center;
+        
      }
      .upButton{
      position: fixed;
      right: 2vw;
-     background-color: rgb(219, 44, 44);
      border: 0;
      color: rgb(243, 236, 236) ;
-     padding: 1.5% 1.5% 1% 1.5%;
+     border: 2px solid rgb(14, 48, 65);
+     border-style: dashed;
+     color: rgb(14, 48, 65);
+     padding: 1.5% 1.7% 0.7% 1.5%;
      border-radius: 50%;
      font-size: 1.5em;
      cursor: pointer;
@@ -338,7 +354,7 @@ padding-bottom: 0rem;
         align-items: right;
     }
     .footer_logo2{
-        width: 20%;
+        width: 60%;
         height: 17vh;
         display: flex;
         flex-direction: column;
@@ -348,8 +364,8 @@ padding-bottom: 0rem;
         align-items: left;
     }
     .footer_logoImg{
-        width: 100%;
-        height: 100%;
+        width: 32%;
+        height: auto;
     }
     .footer_CompName{
         text-align: center;
@@ -471,9 +487,11 @@ padding-bottom: 0rem;
          position: fixed;
          right: 2vw;
          top: 85%;
-         background-color: rgb(219, 44, 44);
-         border: 0;
          color: rgb(243, 236, 236) ;
+
+        border: 2px solid rgb(14, 48, 65);
+         border-style: dashed;
+         color: rgb(14, 48, 65);
          padding: 1% 0% 0% 0%;
          width:9vw;
          height: 9vw;
@@ -485,13 +503,32 @@ padding-bottom: 0rem;
 
     @media screen and (max-width: 420px) {  
         .footer_logo2{
-            width: 35%;
+            width: 60%;
             height: 17vh;
             display: flex;
             flex-direction: column;
+         
+        }
+        .footer_logo3{
+            flex: 3;
+            align-items: left;
+        }
+        .footer_logoImg{
+            width: 40%;
+            height: auto;
+        }
+        .footer_CompName{
+            text-align: center;
+            font-weight: 500;
+            font-size: 4vw;
         }
        
     }
+    @media screen and (max-width: 770px) {  
+       
+       
+    }
+
 
 
 
