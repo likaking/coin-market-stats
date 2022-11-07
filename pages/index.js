@@ -362,38 +362,10 @@ const welcome = ()=>{
 
 useEffect(()=>{
   welcome ()
-  },[]);
+  },[buy]);
 
 
 
-let currencryMap = {
-  USD:'dollar',
-  EUR:'euro',
-  JPY:'yen',
-  NGN:'naira'
-
-}
-
-const detectStop = ()=>{
-if(!runOrStop){
-  setFinalComp([]);
-  setCoinArr([])
-}
-else{
-}
-}
-
-useEffect(()=>{
-  detectStop() 
-},[runOrStop])
-
-const detectQuickData = ()=>{
-  if(!quickData){
-
-  }
-  else{
-  }
-  }
   
 
 
@@ -403,20 +375,7 @@ const detectQuickData = ()=>{
 const precompArr = []
 
 
-if(typeof window !== 'undefined'){
-  const speech = new Speech() // will throw an exception if not browser supported
- 
-  if(speech.hasBrowserSupport()) { // returns a boolean
-      //console.log("speech synthesis supported")
-  }
-}
 
-const detectSpeech = ()=>{
-()=>console.log(speech.speaking() === true)
-
-
-
-}
 
 
  return(

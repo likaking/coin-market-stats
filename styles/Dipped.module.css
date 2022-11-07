@@ -34,11 +34,11 @@
     .dipedCrypto_L_id{
     font-weight: 500;
     flex:0.75;
-    color: rgb(56, 88, 84);
+    color: rgb(47, 73, 70);
     overflow: hidden;
     }
     .dipedCrypto_L_symbol{
-    color: rgb(90, 100, 99);
+    color: rgb(118, 136, 134);
 
     }
     .dipedCrypto_L_Star_container{
@@ -135,7 +135,7 @@
         width: 100%;
         z-index: 999;
         box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
-        background-color: rgb(247, 255, 255) !important;
+        background-color: rgb(250, 255, 255) !important;
         animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
         padding-top: 0px;
         padding-bottom: 0px;

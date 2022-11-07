@@ -88,10 +88,10 @@ export default function Footer() {
         </div>
         <div className={styles.footer_Social}>
         <ul className={styles.footer_ul}>
-            <li><a href = '/#'  target={'_blank'} scroll = {false}><FaFacebook /></a></li>
-            <li><a href = '/#' target={'_blank'} scroll = {false}><FaTwitter /></a></li>
-            <li><a href = '/#'  target={'_blank'} scroll = {false}><FaTiktok /></a></li>
-            <li><a href = '/#' target={'_blank'} scroll = {false}><FaYoutube /></a></li>
+            <li><Link href = '/#'  target={'_blank'} scroll = {false}><FaFacebook /></Link></li>
+            <li><Link href = '/#' target={'_blank'} scroll = {false}><FaTwitter /></Link></li>
+            <li><Link href = '/#'  target={'_blank'} scroll = {false}><FaTiktok /></Link></li>
+            <li><Link href = '/#' target={'_blank'} scroll = {false}><FaYoutube /></Link></li>
           </ul>
         </div>
        <button className={styles.upButton} onClick = {scrollToTop} style={{display: visible ? 'inline' : 'none'}}><FaArrowUp /></button>
