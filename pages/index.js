@@ -7,10 +7,7 @@ import styles from '../styles/Home.module.css'
 import {FaBars} from 'react-icons/fa'
 import {FaFacebook, FaTwitter, FaTiktok, FaYoutube, FaCopyright, FaArrowUp, FaArrowRight, FaUserFriends,FaShoppingBasket,FaHamburger} from 'react-icons/fa'
 import { useState,useEffect,useRef } from 'react';
-import Speech from 'speak-tts'
 import axios from 'axios'
-import converter from 'number-to-words'
-import { ToWords } from 'to-words';
 import Header from './header/header.js';
 import { useReducer } from "react";
 import {addCoin,buy,activeCoins,AddCrypto,coinIsexistinErr} from '../src/addcoin.js'
@@ -32,7 +29,6 @@ const Footer = React.lazy(()=> import('./footer/footer.js'))
 
 
 export default function Home(setCmvErrorsx={setCmvErrorsx}) {
-  const toWords = new ToWords();
   const [currency, setCurrency] = useState('USD')
   const [currencyPlural,setCurrencyPlural] = useState('US dollars')
   const [currencySingular,setCurrencySingular] = useState('US dollar')
@@ -317,6 +313,211 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "roi": null,
         "last_updated": "2022-11-05T22:31:21.823Z",
         "vip":true
+      },
+      {
+        "id": "victoria-vr",
+        "symbol": "vr",
+        "name": "Victoria VR",
+        "image": "https://assets.coingecko.com/coins/images/21178/large/vr.png?1638496975",
+        "current_price": 0.01114365,
+        "market_cap": 21288464,
+        "market_cap_rank": 670,
+        "fully_diluted_valuation": null,
+        "total_volume": 542485,
+        "high_24h": 0.01145637,
+        "low_24h": 0.01112355,
+        "price_change_24h": -0.000240111523408793,
+        "price_change_percentage_24h": -2.10925,
+        "market_cap_change_24h": -444894.1330911331,
+        "market_cap_change_percentage_24h": -2.04706,
+        "circulating_supply": 1909055968,
+        "total_supply": 16800000000,
+        "max_supply": null,
+        "ath": 0.615957,
+        "ath_change_percentage": -98.19421,
+        "ath_date": "2021-12-10T18:45:35.946Z",
+        "atl": 0.01061155,
+        "atl_change_percentage": 4.81894,
+        "atl_date": "2022-10-25T10:18:45.731Z",
+        "roi": null,
+        "last_updated": "2022-11-07T15:43:45.791Z"
+      },
+      {
+        "id": "sylo",
+        "symbol": "sylo",
+        "name": "Sylo",
+        "image": "https://assets.coingecko.com/coins/images/6430/large/SYLO.svg?1589527756",
+        "current_price": 0.00379656,
+        "market_cap": 15835671,
+        "market_cap_rank": 763,
+        "fully_diluted_valuation": null,
+        "total_volume": 5648941,
+        "high_24h": 0.00380778,
+        "low_24h": 0.00214887,
+        "price_change_24h": 0.00164173,
+        "price_change_percentage_24h": 76.18798,
+        "market_cap_change_24h": 6875007,
+        "market_cap_change_percentage_24h": 76.72431,
+        "circulating_supply": 4158769592.391,
+        "total_supply": 10000000000,
+        "max_supply": null,
+        "ath": 0.01482212,
+        "ath_change_percentage": -74.31044,
+        "ath_date": "2021-05-06T09:46:08.483Z",
+        "atl": 0.00076816,
+        "atl_change_percentage": 395.69698,
+        "atl_date": "2021-01-05T00:42:25.527Z",
+        "roi": {
+          "times": -0.5636132370250097,
+          "currency": "usd",
+          "percentage": -56.36132370250097
+        },
+        "last_updated": "2022-11-07T15:44:02.438Z"
+      },
+      {
+        "id": "maps",
+        "symbol": "maps",
+        "name": "MAPS",
+        "image": "https://assets.coingecko.com/coins/images/13556/large/Copy_of_image_%28139%29.png?1609768934",
+        "current_price": 0.147049,
+        "market_cap": 11032345,
+        "market_cap_rank": 872,
+        "fully_diluted_valuation": null,
+        "total_volume": 412137,
+        "high_24h": 0.156414,
+        "low_24h": 0.146724,
+        "price_change_24h": -0.009024417567141093,
+        "price_change_percentage_24h": -5.78216,
+        "market_cap_change_24h": -674586.078710556,
+        "market_cap_change_percentage_24h": -5.76228,
+        "circulating_supply": 75000000,
+        "total_supply": 10000000000,
+        "max_supply": null,
+        "ath": 2,
+        "ath_change_percentage": -92.65332,
+        "ath_date": "2021-05-03T07:34:26.347Z",
+        "atl": 0.089177,
+        "atl_change_percentage": 64.85351,
+        "atl_date": "2022-01-24T14:06:38.770Z",
+        "roi": null,
+        "last_updated": "2022-11-07T15:43:37.771Z"
+      },
+      {
+        "id": "pallapay",
+        "symbol": "palla",
+        "name": "Pallapay",
+        "image": "https://assets.coingecko.com/coins/images/16200/large/palla.png?1647095947",
+        "current_price": 0.01094608,
+        "market_cap": 8311011,
+        "market_cap_rank": 971,
+        "fully_diluted_valuation": null,
+        "total_volume": 55554,
+        "high_24h": 0.0110879,
+        "low_24h": 0.01084355,
+        "price_change_24h": -0.000090623081725022,
+        "price_change_percentage_24h": -0.82111,
+        "market_cap_change_24h": 1178.48,
+        "market_cap_change_percentage_24h": 0.01418,
+        "circulating_supply": 759017491,
+        "total_supply": 1999999999,
+        "max_supply": null,
+        "ath": 0.094144,
+        "ath_change_percentage": -88.37299,
+        "ath_date": "2021-09-05T09:43:30.527Z",
+        "atl": 0.00957886,
+        "atl_change_percentage": 14.2733,
+        "atl_date": "2022-07-19T23:42:16.943Z",
+        "roi": null,
+        "last_updated": "2022-11-07T15:43:13.877Z"
+      },
+      {
+        "id": "genopets",
+        "symbol": "gene",
+        "name": "Genopets",
+        "image": "https://assets.coingecko.com/coins/images/20360/large/gene-token.png?1636945172",
+        "current_price": 2,
+        "market_cap": 8056312,
+        "market_cap_rank": 984,
+        "fully_diluted_valuation": 199689560,
+        "total_volume": 977646,
+        "high_24h": 2.14,
+        "low_24h": 2,
+        "price_change_24h": -0.13125668553051928,
+        "price_change_percentage_24h": -6.16678,
+        "market_cap_change_24h": -532263.7170117944,
+        "market_cap_change_percentage_24h": -6.19735,
+        "circulating_supply": 4034418.41899365,
+        "total_supply": 100000000,
+        "max_supply": 100000000,
+        "ath": 37.83,
+        "ath_change_percentage": -94.72036,
+        "ath_date": "2021-11-30T08:53:29.047Z",
+        "atl": 1.95,
+        "atl_change_percentage": 2.16977,
+        "atl_date": "2022-10-14T17:34:16.184Z",
+        "roi": null,
+        "last_updated": "2022-11-07T15:43:57.896Z"
+      },
+      {
+        "id": "jupiter",
+        "symbol": "jup",
+        "name": "Jupiter",
+        "image": "https://assets.coingecko.com/coins/images/10351/large/logo512.png?1632480932",
+        "current_price": 0.00644681,
+        "market_cap": 6502834,
+        "market_cap_rank": 1070,
+        "fully_diluted_valuation": null,
+        "total_volume": 237132,
+        "high_24h": 0.00663757,
+        "low_24h": 0.00635101,
+        "price_change_24h": -0.000166033069673289,
+        "price_change_percentage_24h": -2.51077,
+        "market_cap_change_24h": -119774.88469554018,
+        "market_cap_change_percentage_24h": -1.80858,
+        "circulating_supply": 1000000000,
+        "total_supply": 1000000000,
+        "max_supply": null,
+        "ath": 0.128999,
+        "ath_change_percentage": -94.95905,
+        "ath_date": "2021-03-22T08:37:18.982Z",
+        "atl": 0.00000435,
+        "atl_change_percentage": 149276.71305,
+        "atl_date": "2020-10-16T10:27:38.449Z",
+        "roi": null,
+        "last_updated": "2022-11-07T15:43:54.074Z",
+        "vip": true
+      },
+      {
+        "id": "temco",
+        "symbol": "temco",
+        "name": "TEMCO",
+        "image": "https://assets.coingecko.com/coins/images/6210/large/bSZ7HUuS_400x400.jpg?1549002381",
+        "current_price": 0.00212911,
+        "market_cap": 0,
+        "market_cap_rank": null,
+        "fully_diluted_valuation": null,
+        "total_volume": 71377,
+        "high_24h": 0.00217222,
+        "low_24h": 0.00204999,
+        "price_change_24h": 0.00001949,
+        "price_change_percentage_24h": 0.92375,
+        "market_cap_change_24h": 0,
+        "market_cap_change_percentage_24h": 0,
+        "circulating_supply": 0,
+        "total_supply": 6000000000,
+        "max_supply": null,
+        "ath": 0.03467044,
+        "ath_change_percentage": -93.95465,
+        "ath_date": "2021-04-02T02:07:25.523Z",
+        "atl": 0.0000922,
+        "atl_change_percentage": 2173.31693,
+        "atl_date": "2020-05-06T20:19:15.657Z",
+        "roi": {
+          "times": -0.6638073755895869,
+          "currency": "usd",
+          "percentage": -66.3807375589587
+        },
+        "last_updated": "2022-11-07T15:43:38.072Z"
       }
     ]
   )
@@ -395,11 +596,11 @@ const precompArr = []
   <div className={styles.cmvBody}>
   
 
-  <AddCrypto activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} currency={currency} speech={Speech} quickData={quickData} setQuickData={setQuickData} setCoinArr={setCoinArr} setRunOrStop={setRunOrStop} searchGems={searchGems} setSearchGems={setSearchGems}  />
+  <AddCrypto activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} currency={currency} quickData={quickData} setQuickData={setQuickData} setCoinArr={setCoinArr} setRunOrStop={setRunOrStop} searchGems={searchGems} setSearchGems={setSearchGems}  />
 
-  <DisplayCoin activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} Speech={Speech} setQuickData={setQuickData} setCoinArr={setCoinArr} currency={currency} searchGems={searchGems} />
+  <DisplayCoin activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} setQuickData={setQuickData} setCoinArr={setCoinArr} currency={currency} searchGems={searchGems} />
    
-  <UpdateCoinInfo activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} currency={currency} speech={Speech} quickData={quickData} setQuickData={setQuickData} setCoinArr={setCoinArr} setRunOrStop={setRunOrStop} searchGems={searchGems} setSearchGems={setSearchGems} updateArr={updateArr} setUpdateArr={setUpdateArr} />
+  <UpdateCoinInfo activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} currency={currency} quickData={quickData} setQuickData={setQuickData} setCoinArr={setCoinArr} setRunOrStop={setRunOrStop} searchGems={searchGems} setSearchGems={setSearchGems} updateArr={updateArr} setUpdateArr={setUpdateArr} />
  
  
 
