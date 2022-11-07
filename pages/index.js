@@ -12,7 +12,6 @@ import Header from './header/header.js';
 import { useReducer } from "react";
 import {addCoin,buy,activeCoins,AddCrypto,coinIsexistinErr} from '../src/addcoin.js'
 import {DisplayCoin} from '../src/removecoin.js'
-import {CMVControls} from '../src/cmvcontrolbuttons.js'
 import {Currencies} from '../src/currencies.js'
 import {UseCases} from '../src/useCases.js'
 import UpdateCoinInfo from '../src/updateCoinInfo.js'
@@ -561,7 +560,7 @@ const welcome = ()=>{
 }
 
   welcome ()
-  },[buy]);
+  },[buy,setCmvErrorsx,currency]);
 
 
 
