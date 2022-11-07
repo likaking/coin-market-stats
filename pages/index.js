@@ -15,7 +15,6 @@ import {DisplayCoin} from '../src/removecoin.js'
 import {CMVControls} from '../src/cmvcontrolbuttons.js'
 import {Currencies} from '../src/currencies.js'
 import {UseCases} from '../src/useCases.js'
-import { ImageList } from '@mui/material';
 import UpdateCoinInfo from '../src/updateCoinInfo.js'
 
 
@@ -553,15 +552,14 @@ const updateCurrenccy = useEffect(()=>{
   setCurrency(currency)
  }},[currency])
 
- 
+
+useEffect(()=>{
 const welcome = ()=>{
   const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.toLocaleLowerCase()}&ids=${buy.toString()}&order=market_cap_desc&per_page=100&page=1&sparkline=false`
   axios.get(url).then((res)=>{setUpdateArr(res.data)}).then(()=>{}).catch((err)=> {()=>setCmvErrorsx('No internet connection')})
   
 }
 
-
-useEffect(()=>{
   welcome ()
   },[buy]);
 
