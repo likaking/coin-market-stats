@@ -1,60 +1,141 @@
-import React, {Suspense, useState,useEffect,useRef} from 'react';
+import React, {Suspense, useState,useEffect,useRef,useLayoutEffect} from 'react';
 import Home from '../pages/index.js'
 import {data1,Speech} from '../pages/index.js'
 import axios from 'axios'
-import styles from '../styles/RemoveCoin.module.css'
-import {FaTrashAlt} from 'react-icons/fa'
+import styles from '../styles/Dipped.module.css'
+import {FaCaretDown,FaCaretUp,FaTrashAlt, FaStar} from 'react-icons/fa'
 import {addCoin,buy,activeCoins,AddCrypto,coinIsexistinErr} from '../src/addcoin.js'
 
 
 
-export function DisplayCoin({activeCoins,buy,setBuy,setActiveCoins,Speech,setQuickData,setCoinArr}){
-const deleteIcon = useRef([])
+export function DisplayCoin({activeCoins,buy,setBuy,setActiveCoins,Speech,setQuickData,setCoinArr,currency,searchGems}){
+const deleteIcon = useRef([]);
+const star = useRef([]);
+const [sticky,setSticky] = useState(false)
+const [shadow,setShadow] = useState(false)
+
+const [currencyx, setCurrencyx] = useState('$')
 
 
 const removeAsset = async(asset)=>{
     if(buy.indexOf(asset) !== -1){
    const findIndexOfAsset = buy.indexOf(asset)
-   const filtered = new Promise((resolve,reject)=> {resolve(activeCoins.filter((removeAsset)=>{
-  return removeAsset.id !== asset 
+   const filtered = new Promise((resolve,reject)=> {resolve(activeCoins.filter((remove)=>{
+  return remove.id !== asset 
    }))});
    
    let result = await filtered
   setActiveCoins(result);
   setBuy(buy.filter(del=>  del !== asset));
-  ()=>{Speech.cancel()};
-  setCoinArr([])
-  setQuickData(true);
-
-
+ 
 }
 else{
     return false
 }
 }
 
-return(
-<>
-<div className={styles.displayCoin}>
-<div className={styles.displayCoin_main}>
-<div className={styles.displayCoin_screen}>
-{
-activeCoins && activeCoins.length > 0 && activeCoins.map((display,i)=>
 
-<div key = {display.symbol+i} className={styles.displayCoin_container} 
-onMouseEnter = {()=>{deleteIcon.current[i].style.display = 'block'}}   
-onMouseLeave = {()=>{deleteIcon.current[i].style.display = 'none'}} >
-    <img src = {display.image} alt ={display.name} className={styles.displayCoin_img}/>
-    <div  className={styles.displayCoin_name}>{display.symbol !== undefined? display.symbol.toUpperCase() : ''}</div>
-    <div className={styles.displayCoin_delete} ref = {(el)=> {deleteIcon.current[i]=el}}>
-    <FaTrashAlt className={styles.displayCoin_deleteIcon} onClick={()=>{removeAsset(display.id)}}/></div></div>
+const container = useRef([])
+const containerL = useRef([])
+const leftTable = useRef(null)
+const rightTable = useRef(null)
+const tableHeader = useRef(null)
+
+//leftTable.current? leftTable.current.style.boxShadow = '4px 0px 3px 1px   #aaaaaa' : ''
 
 
-)   
+    const handleShadow = event => {
+    if(event.currentTarget.scrollLeft > 5){
+        setShadow(true)
+    }
+    else{
+        setShadow(false)
+    }
+
+    };
+
+
+    const hoverIn = (i)=>{
+         container.current[i].style.backgroundColor = 'rgba(209, 231, 231, 0.384)'
+         containerL.current[i].style.backgroundColor = 'rgba(209, 231, 231, 0.384)'
+    }
+
+    const hoverOut = (i)=>{
+        container.current[i].style.backgroundColor = 'rgba(213, 236, 236, 0)'
+        containerL.current[i].style.backgroundColor = 'rgba(213, 236, 236, 0)'
+   }
+
+   const search = activeCoins.filter((item)=>{
+    return item.symbol.includes(searchGems.toLowerCase())});
+
+
+
+const Vip = (gem)=>{
+const getGem = activeCoins.map((coinz)=>{
+
+    if(coinz.id === gem){
+        return {...coinz, vip:coinz.vip === true ? false : true}
+    }
+
+   return coinz
+  
+})
+
+setActiveCoins(getGem)
 }
 
+
+
+useEffect(() => {
+    window.addEventListener('scroll', isSticky);
+    return () => {
+        window.removeEventListener('scroll', isSticky);
+    };
+});
+
+       
+/* Method that will fix header after a specific scrollable */
+       const isSticky = (e) => {
+            const scrollTop = window.scrollY;
+            scrollTop >= 250 ? setSticky(true): setSticky(false);
+            tableHeader.current.style.borderBottom = '0px'
+        };
+
+return(
+<>
+<div className={sticky ? styles.isSticky : ''}><div className={styles.tableHeader} ref={tableHeader}><div >Name</div><div >Price</div> <div >24h P-Ch</div> <div >ATH</div> <div >ATL</div> <div >Volume 24</div><div></div></div></div>
+<div className={styles.dipedCrypto}>
+
+
+<div className={styles.dipedCrypto_L} ref = {leftTable} id={shadow? styles.dipedCrypto_L_cont : ''}>
+
+
+<div className={styles.dipedCrypto_HL_price}  >Name</div>
+{
+    search? search.map((itemz,index)=> <div key={itemz.id+index} ref = {(el)=> containerL.current[index]=el}  onMouseEnter = {()=>hoverIn(index)} onMouseLeave = {()=>hoverOut(index)} 
+     className={styles.dipedCrypto_L_container}><div className={styles.dipedCrypto_L_Star_container}><FaStar className={styles.dipedCrypto_L_Star} ref={(el)=> star.current[index] = el}  style = {{color:itemz.vip === true ? 'rgb(228, 161, 36)' :'rgb(207, 207, 207)'}}   onClick={()=>{Vip(itemz.id)}} /> </div>
+      <div className={styles.dipedCrypto_L_img_container}><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >
+      <img src={itemz.image} alt = {itemz.id}  className={styles.dipedCrypto_L_img}  /></a> </div> 
+      <div className={styles.dipedCrypto_L_id}><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' ><span className={styles.dipedCrypto_L_id_span}>{itemz.id[0].toUpperCase() + itemz.id.slice(1).toLowerCase() }</span></a>{' '}<a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' ><span className={styles.dipedCrypto_L_symbol}>{itemz.symbol.toUpperCase()} </span></a> </div> </div>) : null
+}
 </div>
+
+<div className={styles.dipedCrypto_R} ref={rightTable} onScroll={handleShadow}>
+<div className={styles.dipedCrypto_HR}><div className={styles.dipedCrypto_HR_price}>Price</div> <div className={styles.dipedCrypto_HR_priceCh}>24h P-Ch</div> <div className={styles.dipedCrypto_HR_24H}>ATH</div> <div className={styles.dipedCrypto_HR_7dh}>ATL</div> <div className={styles.dipedCrypto_HR_vol}>Volume 24</div></div>
+{
+    search? search.map((itemz,index)=> 
+    <div key={itemz.id+index} ref = {(el)=> container.current[index]=el} className={styles.dipedCrypto_R_container}  onMouseEnter = {()=>hoverIn(index)} onMouseLeave = {()=>hoverOut(index)}  > 
+    <div className={styles.dipedCrypto_R_container_price}>{currencyx}{itemz.current_price < 1 &&<span>{itemz.current_price}</span>} {itemz.current_price >= 1 &&<span>{itemz.current_price.toLocaleString()}</span>}</div>  
+    <div className={styles.dipedCrypto_R_container_24hPriceChange} style={{color: itemz.price_change_24h.toString().startsWith("-") ?'red' : 'green' }}><FaCaretDown style={{display: itemz.price_change_24h.toString().startsWith("-") ?'block' : 'none' }} /> <FaCaretUp style={{display: itemz.price_change_24h.toString().startsWith("-") ?'none' : 'block' }} />{currencyx}{itemz.price_change_24h < 1 && <span>{parseFloat(itemz.price_change_24h.toString().replace('-','')).toFixed(3)}</span>}  {itemz.price_change_24h > 1 &&<span>{parseFloat(itemz.price_change_24h.toString().replace('-',''))}</span>}</div>
+    <div className={styles.dipedCrypto_R_container_24hChange}> {itemz.ath >= 1 ? Number(itemz.ath): Number(itemz.ath).toFixed(3)} </div>
+    <div className={styles.dipedCrypto_R_container_7d}>{itemz.atl >= 1 ? Number(itemz.atl): Number(itemz.atl).toFixed(3) }</div> 
+    <div className={styles.dipedCrypto_R_container_volume}>{currencyx}{itemz.total_volume.toLocaleString()}</div> <div className={styles.deleteIcon}><FaTrashAlt onClick={()=>{removeAsset(itemz.id)}}/></div> </div>) : null
+}
 </div>
+
+
+
+
 </div>
 
 </>

@@ -11,8 +11,6 @@
     background-color: rgb(56, 124, 151);
     background-image: -webkit-linear-gradient(rgb(56, 124, 151),rgba(40, 156, 150, 0.651));
     align-items: center;
-    position: fixed;
-    top:0%;
     z-index: 7;
     box-shadow: 0 1px 2px 0 rgba(102, 102, 102, 0.2), 0 2px 2px 0 rgba(105, 105, 105, 0.19);
     }
@@ -162,6 +160,8 @@
     @media screen and (max-width: 830px) {
       .nav_bar{
         height: 5.2vh;
+        position: fixed;
+        top: 0;
         }
       .nav_bar__logo{
         width: auto;

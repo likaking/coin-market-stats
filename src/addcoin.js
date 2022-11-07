@@ -17,11 +17,11 @@ export const  activeCoins = [
   */
   
 
-export function AddCrypto({activeCoins,buy,setBuy,setActiveCoins,currency,speech,quickData,setQuickData,setCoinArr,setRunOrStop}){
+export function AddCrypto({activeCoins,buy,setBuy,setActiveCoins,currency,speech,quickData,setQuickData,setCoinArr,setRunOrStop,searchGems,setSearchGems}){
 const [coinAlreadyExistError,setCoinAlreadyExistError] = useState('')
 const coinIsExitingErr = useRef(null)
 const [addNewCoin, setAddNewCoin] = useState('')
-const [addNewCoinData, setAddNewCoinData] = useState('')
+const [addNewCoinData, setAddNewCoinData] = useState([])
 const [currencyxe, setCurrencyxe] = useState('usd')
 const addCoinError = useRef(null)
 const addCoinInput = useRef(null)
@@ -35,10 +35,8 @@ const addCoin = (coin)=>{
     if(ansa === undefined && buy.indexOf(coin.id) === -1){
     setActiveCoins([...activeCoins,coin]);
     setBuy([...buy,coin.id]);
-    ()=>{Speech.cancel()}
-    setCoinArr([])
-    setQuickData(true);
-    setRunOrStop(false)
+   
+   
     }
     else{
     coinIsExitingErr.current.style.display = 'block'
@@ -67,11 +65,11 @@ const addCoin = (coin)=>{
         
         else{
         const grabUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&symbols=${addNewCoin}&order=market_cap_desc&per_page=1&page=1&sparkline=false`
-      
+     
         axios.get(grabUrl).then((res)=>{setAddNewCoinData([...res.data])}).catch((err)=>{showNetWorkErr()})
         }
        
-       }
+       };
 
        const hideShowAddCoinErr = ()=>{
         if(addNewCoin){
@@ -79,29 +77,39 @@ const addCoin = (coin)=>{
           addCoinError.current.style.display = 'none'
         }
         }
-        }
+        };
 
        const hideAddCoinErr = ()=>{
           addCoinError.current.style.display = 'none'
-        }
+        };
     
-  
+        
 
 return(
 <>
 <div className={styles.main_cmv_contianer}>
+ 
   <div className={styles.cmv_device_contianer}>
   <div className={styles.cmv_device_inputnBtn_container}>
+  <div className={styles.main_cmv_totalGems}>Total:{' '}{activeCoins.length}{activeCoins.length > 1? ' gems' : ' gem'}</div>
+  <form>
+  <div className={styles.cmv_device_search_cont}>
+  <input placeholder = 'Search gems' type= 'text' name = 'search' className={styles.cmv_device_search}  onChange={(e)=>{setSearchGems(e.target.value)}} />
+  </div>
+  </form>
+  
   <form onSubmit={grab}>
-  <input placeholder = 'Add a new coin eg: doge' type= 'text' name = 'addCoin' className={styles.cmv_device_input} value = {addNewCoin} ref = {addCoinInput} onChange = {(e)=>{setAddNewCoin(e.target.value.toLocaleLowerCase())}}  onFocus = {()=> {coinIsExitingErr.current.style.display = 'block'? coinIsExitingErr.current.style.display = 'none' : ''; addCoinError.current.style.display = 'block'? addCoinError.current.style.display = 'none' : '';hideNetWorkErr()}}/>
-  <input className={styles.cmv_device_grabBtn} type='submit' value={'Grab'} onClick = {hideNetWorkErr}  />
+  <input placeholder = 'Add gems' type= 'text' name = 'addCoin' className={styles.cmv_device_input} value = {addNewCoin} ref = {addCoinInput} onChange = {(e)=>{setAddNewCoin(e.target.value.toLocaleLowerCase())}}  onFocus = {()=> {coinIsExitingErr.current.style.display = 'block'? coinIsExitingErr.current.style.display = 'none' : ''; addCoinError.current.style.display = 'block'? addCoinError.current.style.display = 'none' : '';hideNetWorkErr()}}/>
+  <input className={styles.cmv_device_grabBtn} type='submit' value={'Add gem'} onClick = {hideNetWorkErr}  />
   </form>
   </div>
+ 
   <div style={{cursor:'pointer'}}>
+  
  {
   addNewCoinData.length > 0 && addCoinInput.current.value !== '' && addNewCoinData.map((coin,i) =>
    i < 1 &&
-    <div key = {coin.id+i} className={styles.cmv_device_addCoinResult} onClick = {()=>{addCoin({id:coin.id,symbol:coin.symbol,name:coin.name,image:coin.image});setAddNewCoinData([])}}><img src = {coin.image} key = {coin.image+i}  className={styles.cmv_device_result_img}/><div key = {coin.name+i}>{coin.name}</div><div className={styles.cmv_device_addCoinResult_click} >click 2 add</div></div>
+    <div key = {coin.id+i} className={styles.cmv_device_addCoinResult} onClick = {()=>{addCoin({id:coin.id,current_price:coin.current_price,symbol:coin.symbol,name:coin.name,image:coin.image,price_change_24h:coin.price_change_24h,ath:coin.ath,atl:coin.atl,total_volume:coin.total_volume,vip:false}); setAddNewCoinData([])}}><img src = {coin.image} key = {coin.image+i}  className={styles.cmv_device_result_img}/><div key = {coin.name+i}>{coin.name}</div><div className={styles.cmv_device_addCoinResult_click} >click 2 add</div></div>
     )
  }
 

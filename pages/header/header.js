@@ -24,7 +24,7 @@ return(
 </div>
 
 <div className={styles.nav_bar__compName}>
-Coin Market Voice
+Gem Keeper
 </div>
 <div className={styles.nav_bar__wraper}>
 <ul className={styles.nav_bar__menu}>

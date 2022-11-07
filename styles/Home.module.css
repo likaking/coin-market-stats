@@ -85,6 +85,8 @@ font-size: 1vw;
 .main_cmv_contianer{
 width: 80%;
 margin: auto;
+padding-top: 0vw;
+padding-bottom: 5vw;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -112,6 +114,21 @@ box-shadow: 0 1px 1px 0 rgba(180, 180, 180, 0.2), 0 1px 1px 0 rgba(177, 177, 177
 outline: none;
 background-color: transparent;
 }
+
+
+.cmv_device_search{
+    width: 100%;
+    margin: auto;
+    height: 2.3rem;
+    font-size: 1rem;
+    margin-bottom: 3vw;
+    border: 0px solid rgb(94, 129, 139);
+    border-bottom:1px solid rgba(94, 129, 139, 0.24); ;
+    color: rgb(53, 91, 102);
+    outline: none;
+    background-color: transparent;
+    
+    }
 
 
 
@@ -191,6 +208,7 @@ overflow: hidden;
 position: absolute;
 top: 100%;
 background-color: white;
+box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2), 0 2px 2px 0 rgba(177, 177, 177, 0.19);
 z-index: 1;
 }
 .cmv_device_result_img{
@@ -210,8 +228,16 @@ display: none;
 }
 .banner_div_ImgM{
 display: none;
-    }
-   
+}
+.main_cmv_totalGems{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0.5em;
+    font-size: 1.2em;
+    color: rgb(56, 88, 84);
+    font-weight: 500;
+    margin-top: 0vw;
+}
 
 
 
@@ -311,6 +337,9 @@ font-size: 1rem;
 }
 .responsive920_txt_brk{
     display: block;
+    }
+    .main_cmv_totalGems{
+        padding-top: 8vw;
     }
 }
 

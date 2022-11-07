@@ -62,13 +62,13 @@ export default function Footer() {
    
 
   return (
-    <main >
+    
       <div className={styles.footer}>
 
         <div className={styles.footer_logo}>
           <div className={styles.footer_logo1}></div>
-          <div className={styles.footer_logo2}><img src = {'/logo.png'} alt = 'Coin Market Voice logo' className={styles.footer_logoImg}/>
-          <span className={styles.footer_CompName}>Coin Market Voice</span></div>
+          <div className={styles.footer_logo2}>
+          <span className={styles.footer_CompName}>Gem Keeper</span></div>
           <div className={styles.footer_logo3}></div>
         </div>
         <div className={styles.footer_addressContacts}>
@@ -97,11 +97,11 @@ export default function Footer() {
        <button className={styles.upButton} onClick = {scrollToTop} style={{display: visible ? 'inline' : 'none'}}><FaArrowUp /></button>
        
        </div>
-       <div className={styles.copyRight}><FaCopyright /> {dateBuilder(new Date())}  Coin Market Voice</div>
+       <div className={styles.copyRight}><FaCopyright /> {dateBuilder(new Date())} Gem Keeper</div>
       </div>
       
 
      
-    </main>
+   
   )
 }
