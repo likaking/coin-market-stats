@@ -102,6 +102,7 @@
     "fill-range": "^7.0.1",
     "find-root": "^1.1.0",
     "find-up": "^2.1.0",
+    "firebase": "^9.13.0",
     "flat-cache": "^3.0.4",
     "flatted": "^3.2.5",
     "fraction.js": "^4.2.0",

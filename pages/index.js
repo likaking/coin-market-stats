@@ -13,7 +13,6 @@ import { useReducer } from "react";
 import {addCoin,buy,activeCoins,AddCrypto,coinIsexistinErr} from '../src/addcoin.js'
 import {DisplayCoin} from '../src/removecoin.js'
 import {Currencies} from '../src/currencies.js'
-import {UseCases} from '../src/useCases.js'
 import UpdateCoinInfo from '../src/updateCoinInfo.js'
 
 
