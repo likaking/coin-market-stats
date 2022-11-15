@@ -1,6 +1,6 @@
 .dipedCrypto{
     display: flex;
-    width: 75%;
+    width: 80%;
     margin: auto;
     position: relative;
     }
@@ -18,7 +18,8 @@
     gap: 5%;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 1px solid  rgba(72, 102, 99, 0.171);
+    border-bottom: 1px solid  rgba(154, 194, 189, 0.514);
+    color: rgb(24, 102, 94);
     transition: 0.4s;
    
     }
@@ -75,10 +76,9 @@
     gap:0%;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 1px solid  rgba(72, 102, 99, 0.171);
-    color: rgb(56, 88, 84);
+    border-bottom: 1px solid  rgba(154, 194, 189, 0.514);
+    color: rgb(24, 102, 94);
     transition: 0.4s;
-
     }
     .dipedCrypto_R_container:hover{
     
@@ -90,7 +90,7 @@
     .dipedCrypto_R_container_24hPriceChange{
     font-weight: 500; 
     flex: 0.165; 
-    display: flex;    
+    display: flex;  
     }
     .dipedCrypto_R_container_24hChange{
     display:flex;
@@ -114,8 +114,23 @@
         text-align: right;
         color: rgba(56, 88, 84, 0.384);
         transition: .4s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .deleteIcon:hover{
+        color: rgb(56, 88, 84);
+        transition: .4s;
+    }
+    .infoIcon{
+        flex: 0.06;
+        color: rgba(56, 88, 84, 0.384);
+        transition: .4s;
+        display: flex;
+        align-items: right;
+        justify-content: right;
+    }
+    .infoIcon:hover{
         color: rgb(56, 88, 84);
         transition: .4s;
     }
@@ -123,8 +138,8 @@
     .dipedCrypto_HL_price{
     padding: 0.5em;
     font-weight: 700;
-    color: rgb(56, 88, 84);
-    border-bottom: 1px solid rgb(206, 206, 206);
+    border-bottom: 1px solid  rgba(154, 194, 189, 0.514);
+    color: rgb(24, 102, 94);
     display: none;
     }
 
@@ -143,16 +158,17 @@
     }
 
     .tableHeader{
-     width: 75%;
+     width: 80%;
      margin: auto;
      display: flex;
      padding: 0.5em;
-     border-bottom: 1px solid rgb(206, 206, 206);
+     border-bottom: 1px solid  rgba(154, 194, 189, 0.514);
+     color: rgb(24, 102, 94);
     }
   
 
     .tableHeader :nth-child(1){
-    flex: 0.39;
+    flex: 0.41;
     padding-left: 0.35rem;
     font-weight: 700;
     color: rgb(56, 88, 84);
@@ -189,7 +205,7 @@
                         text-align: right;
                         }
                         .tableHeader :nth-child(7){
-                            flex: 0.06;
+                            flex: 0.10;
                             padding-left: 0.35rem;
                             font-weight: 700;
                             color: rgb(56, 88, 84);
@@ -201,8 +217,8 @@
     display: flex;
     padding: 0.5em;
     font-weight: 700;
-    color: rgb(56, 88, 84);
-    border-bottom: 1px solid rgb(206, 206, 206);
+    border-bottom: 1px solid  rgba(154, 194, 189, 0.514);
+    color: rgb(24, 102, 94);
     display: none;
     }
     
@@ -324,22 +340,22 @@
             }
             
             .dipedCrypto_HR_price{
-            flex: 0.218;
+            flex: 0.205;
             }
             .dipedCrypto_HR_priceCh{
-                flex: 0.152;
+                flex: 0.14;
                 text-align: left;
             }
             .dipedCrypto_HR_24H{
-            flex: 0.165;
+            flex: 0.16;
             text-align: right; 
             }
             .dipedCrypto_HR_7dh{
-            flex: 0.15;  
+            flex: 0.145;  
             text-align: right; 
             }
             .dipedCrypto_HR_vol{
-            flex: 0.27;
+            flex: 0.245;
             text-align: right;
             }
             .dipedCrypto_L_img_container{

@@ -11,9 +11,12 @@ import axios from 'axios'
 import Header from './header/header.js';
 import { useReducer } from "react";
 import {addCoin,buy,activeCoins,AddCrypto,coinIsexistinErr} from '../src/addcoin.js'
-import {DisplayCoin} from '../src/removecoin.js'
+import {DisplayCoin} from '../src/displayCoin.js'
 import {Currencies} from '../src/currencies.js'
 import UpdateCoinInfo from '../src/updateCoinInfo.js'
+import InfoModal from '../src/InfoModal.js'
+import AddPriceAlertz from '../src/priceAlertz.js'
+import DisplayPriceAlertz from '../src/showPriceAlerts.js'
 
 
 
@@ -26,7 +29,8 @@ const Footer = React.lazy(()=> import('./footer/footer.js'))
 
 
 export default function Home(setCmvErrorsx={setCmvErrorsx}) {
-  const [currency, setCurrency] = useState('USD')
+  const [currency,setCurrency] = useState('USD')
+  const [currencySymbol,setCurrencySymbol] = useState('$')
   const [currencyPlural,setCurrencyPlural] = useState('US dollars')
   const [currencySingular,setCurrencySingular] = useState('US dollar')
   const [finalComp, setFinalComp] = useState([])   
@@ -35,6 +39,12 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
   const [quickData, setQuickData] = useState(false);
   const [runOrStop,setRunOrStop] = useState(true);
   const [searchGems,setSearchGems] = useState('')
+  const [openModal,setOpenModal] = useState(false)
+  const [modalSearch,setModalSearch] = useState('')
+  const [startModal,setStartModal] = useState(false)
+  const [index,setIndex] = useState()
+  const [priceAlertzPing,setPriceAlertzPing] = useState([])
+  const [openPriceALertsModal,setOpenPriceALertsModal] = useState(false)
 
   
 
@@ -47,7 +57,7 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "symbol": "bch",
         "name": "Bitcoin Cash",
         "image": "https://assets.coingecko.com/coins/images/780/large/bitcoin-cash-circle.png?1594689492",
-        "current_price": 124.28,
+        "current_price":'',
         "market_cap": 2388022842,
         "market_cap_rank": 33,
         "fully_diluted_valuation": 2609054837,
@@ -69,14 +79,17 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "atl_date": "2018-12-16T00:00:00.000Z",
         "roi": null,
         "last_updated": "2022-11-05T22:30:30.181Z",
-        "vip":true
+        "vip":true,
+        'note':'This coin Bch will hit',
+		'priceAlertz_active':true,
+        'priceAlertz':80.28
       },
       {
         "id": "tezos",
         "symbol": "xtz",
         "name": "Tezos",
         "image": "https://assets.coingecko.com/coins/images/976/large/Tezos-logo.png?1547034862",
-        "current_price": 1.45,
+        "current_price":'',
         "market_cap": 1316354683,
         "market_cap_rank": 47,
         "fully_diluted_valuation": null,
@@ -102,14 +115,17 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
           "percentage": 208.0193560537181
         },
         "last_updated": "2022-11-05T22:31:17.993Z",
-        "vip":true
+        "vip":true,
+        'note':'This coin Tezos will hit',
+		'priceAlertz_active':true,
+        'priceAlertz':0.50
       },
       {
         "id": "eos",
         "symbol": "eos",
         "name": "EOS",
         "image": "https://assets.coingecko.com/coins/images/738/large/eos-eos-logo.png?1547034481",
-        "current_price": 1.18,
+        "current_price":'',
         "market_cap": 1193683615,
         "market_cap_rank": 52,
         "fully_diluted_valuation": null,
@@ -135,14 +151,18 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
           "percentage": 19.072813928015453
         },
         "last_updated": "2022-11-05T22:31:34.385Z",
-        "vip":false
+        "vip":false,
+        'note':'This coin EOS will hit',
+		'priceAlertz_active':true,
+        'priceAlertz':0.60
       },
+  
       {
         "id": "aptos",
         "symbol": "apt",
         "name": "Aptos",
         "image": "https://assets.coingecko.com/coins/images/26455/large/aptos_round.png?1666839629",
-        "current_price": 7.81,
+        "current_price":'',
         "market_cap": 1014615123,
         "market_cap_rank": 56,
         "fully_diluted_valuation": 7812035168,
@@ -164,14 +184,17 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "atl_date": "2022-10-19T03:53:04.558Z",
         "roi": null,
         "last_updated": "2022-11-05T22:31:32.315Z",
-        "vip":false
+        "vip":false,
+        'note':'This coin Aptos will hit',
+		'priceAlertz_active':false,
+        'priceAlertz':0.20
       },
       {
         "id": "gods-unchained",
         "symbol": "gods",
         "name": "Gods Unchained",
         "image": "https://assets.coingecko.com/coins/images/17139/large/10631.png?1635718182",
-        "current_price": 0.346495,
+        "current_price":'',
         "market_cap": 49235050,
         "market_cap_rank": 438,
         "fully_diluted_valuation": 173692173,
@@ -193,14 +216,17 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "atl_date": "2022-05-12T08:39:30.181Z",
         "roi": null,
         "last_updated": "2022-11-05T22:31:31.556Z",
-        "vip":false
+        "vip":false,
+        'note':'This coin Gods will hit',
+		'priceAlertz_active':false,
+        'priceAlertz':0.5
       },
       {
         "id": "jasmycoin",
         "symbol": "jasmy",
         "name": "JasmyCoin",
         "image": "https://assets.coingecko.com/coins/images/13876/large/JASMY200x200.jpg?1612473259",
-        "current_price": 0.00604293,
+        "current_price":'',
         "market_cap": 28690999,
         "market_cap_rank": 594,
         "fully_diluted_valuation": null,
@@ -222,14 +248,17 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "atl_date": "2022-10-23T01:09:15.249Z",
         "roi": null,
         "last_updated": "2022-11-05T22:31:32.891Z",
-        "vip":false
+        "vip":false,
+        'note':'This coin Jasmy will hit',
+        'priceAlertz':0.00110,
+		'priceAlertz_active':false
       },
       {
         "id": "derace",
         "symbol": "derc",
         "name": "DeRace",
         "image": "https://assets.coingecko.com/coins/images/17438/large/DERC_logo_coingecko.png?1665714278",
-        "current_price": 0.202438,
+        "current_price":'',
         "market_cap": 15747284,
         "market_cap_rank": 768,
         "fully_diluted_valuation": 24273270,
@@ -251,14 +280,17 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "atl_date": "2022-11-01T14:29:30.602Z",
         "roi": null,
         "last_updated": "2022-11-05T22:31:26.319Z",
-        "vip":false
+        "vip":false,
+        'note':'This coin Derace will hit',
+        'priceAlertz':0.1,
+		'priceAlertz_active':false
       },
       {
         "id": "cryptoblades",
         "symbol": "skill",
         "name": "CryptoBlades",
         "image": "https://assets.coingecko.com/coins/images/15334/large/cryptoblade.PNG?1620596874",
-        "current_price": 1.58,
+        "current_price":'',
         "market_cap": 1578657,
         "market_cap_rank": 1757,
         "fully_diluted_valuation": null,
@@ -280,14 +312,18 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "atl_date": "2021-07-04T05:35:51.192Z",
         "roi": null,
         "last_updated": "2022-11-05T22:30:50.341Z",
-        "vip":false
+        "vip":false,
+        'note':'This coin Skills will hit',
+		'priceAlertz_active':false,
+        'priceAlertz':0.10,
+
       },
       {
         "id": "burger-swap",
         "symbol": "burger",
         "name": "BurgerCities",
         "image": "https://assets.coingecko.com/coins/images/12563/large/burger.png?1600786553",
-        "current_price": 0.869836,
+        "current_price":'',
         "market_cap": 0,
         "market_cap_rank": null,
         "fully_diluted_valuation": 24332892,
@@ -309,14 +345,17 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "atl_date": "2022-05-12T07:20:44.524Z",
         "roi": null,
         "last_updated": "2022-11-05T22:31:21.823Z",
-        "vip":true
+        "vip":true,
+        'note':'This coin Burger Swap will hit',
+		'priceAlertz_active':false,
+        'priceAlertz':0.20
       },
       {
         "id": "victoria-vr",
         "symbol": "vr",
         "name": "Victoria VR",
         "image": "https://assets.coingecko.com/coins/images/21178/large/vr.png?1638496975",
-        "current_price": 0.01114365,
+        "current_price":'',
         "market_cap": 21288464,
         "market_cap_rank": 670,
         "fully_diluted_valuation": null,
@@ -337,14 +376,18 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "atl_change_percentage": 4.81894,
         "atl_date": "2022-10-25T10:18:45.731Z",
         "roi": null,
-        "last_updated": "2022-11-07T15:43:45.791Z"
+        "last_updated": "2022-11-07T15:43:45.791Z",
+        'note':'This coin Victoria will hit',
+        'vip': false,
+		'priceAlertz_active':false,
+        'priceAlertz':0.0011
       },
       {
         "id": "sylo",
         "symbol": "sylo",
         "name": "Sylo",
         "image": "https://assets.coingecko.com/coins/images/6430/large/SYLO.svg?1589527756",
-        "current_price": 0.00379656,
+        "current_price":'',
         "market_cap": 15835671,
         "market_cap_rank": 763,
         "fully_diluted_valuation": null,
@@ -369,14 +412,19 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
           "currency": "usd",
           "percentage": -56.36132370250097
         },
-        "last_updated": "2022-11-07T15:44:02.438Z"
+        "last_updated": "2022-11-07T15:44:02.438Z",
+        'vip': false,
+        'note':'This coin Sylo will hit',
+		'priceAlertz_active':false,
+        'priceAlertz':0.0012
+
       },
       {
         "id": "maps",
         "symbol": "maps",
         "name": "MAPS",
         "image": "https://assets.coingecko.com/coins/images/13556/large/Copy_of_image_%28139%29.png?1609768934",
-        "current_price": 0.147049,
+        "current_price":'',
         "market_cap": 11032345,
         "market_cap_rank": 872,
         "fully_diluted_valuation": null,
@@ -397,14 +445,18 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "atl_change_percentage": 64.85351,
         "atl_date": "2022-01-24T14:06:38.770Z",
         "roi": null,
-        "last_updated": "2022-11-07T15:43:37.771Z"
+        "last_updated": "2022-11-07T15:43:37.771Z",
+        'vip': false,
+        'note':'This coin Maps will hit',
+		'priceAlertz_active':false,
+        'priceAlertz':0.1
       },
       {
         "id": "pallapay",
         "symbol": "palla",
         "name": "Pallapay",
         "image": "https://assets.coingecko.com/coins/images/16200/large/palla.png?1647095947",
-        "current_price": 0.01094608,
+        "current_price":'',
         "market_cap": 8311011,
         "market_cap_rank": 971,
         "fully_diluted_valuation": null,
@@ -425,14 +477,18 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "atl_change_percentage": 14.2733,
         "atl_date": "2022-07-19T23:42:16.943Z",
         "roi": null,
-        "last_updated": "2022-11-07T15:43:13.877Z"
+        "last_updated": "2022-11-07T15:43:13.877Z",
+        'vip':false,
+        'note':'This coin Palla PAY will hit',
+		'priceAlertz_active':false,
+        'priceAlertz':0.010
       },
       {
         "id": "genopets",
         "symbol": "gene",
         "name": "Genopets",
         "image": "https://assets.coingecko.com/coins/images/20360/large/gene-token.png?1636945172",
-        "current_price": 2,
+        "current_price":'',
         "market_cap": 8056312,
         "market_cap_rank": 984,
         "fully_diluted_valuation": 199689560,
@@ -453,14 +509,18 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "atl_change_percentage": 2.16977,
         "atl_date": "2022-10-14T17:34:16.184Z",
         "roi": null,
-        "last_updated": "2022-11-07T15:43:57.896Z"
+        "last_updated": "2022-11-07T15:43:57.896Z",
+        'vip':false,
+        'note':'This coin geno pets will hit',
+		'priceAlertz_active':false,
+        'priceAlertz':0.30
       },
       {
         "id": "jupiter",
         "symbol": "jup",
         "name": "Jupiter",
         "image": "https://assets.coingecko.com/coins/images/10351/large/logo512.png?1632480932",
-        "current_price": 0.00644681,
+        "current_price":'',
         "market_cap": 6502834,
         "market_cap_rank": 1070,
         "fully_diluted_valuation": null,
@@ -482,14 +542,17 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
         "atl_date": "2020-10-16T10:27:38.449Z",
         "roi": null,
         "last_updated": "2022-11-07T15:43:54.074Z",
-        "vip": true
+        "vip": true,
+        'note':'This coin Jupiter will hit',
+		'priceAlertz_active':false,
+        'priceAlertz':0.001000
       },
       {
         "id": "temco",
         "symbol": "temco",
         "name": "TEMCO",
         "image": "https://assets.coingecko.com/coins/images/6210/large/bSZ7HUuS_400x400.jpg?1549002381",
-        "current_price": 0.00212911,
+        "current_price":'',
         "market_cap": 0,
         "market_cap_rank": null,
         "fully_diluted_valuation": null,
@@ -514,13 +577,17 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
           "currency": "usd",
           "percentage": -66.3807375589587
         },
-        "last_updated": "2022-11-07T15:43:38.072Z"
+        "last_updated": "2022-11-07T15:43:38.072Z",
+        'vip':false,
+        'note':'This coin Temco will hit',
+		'priceAlertz_active':false,
+        'priceAlertz':0.00012
       }
     ]
   )
 
  
-  const [buy, setBuy]= useState( ['cryptoblades','burger-swap','jasmycoin','gods-unchained','tezos','eos','derace','aptos','bitcoin-cash']) 
+  const [buy, setBuy]= useState( ['cryptoblades','burger-swap','jasmycoin','gods-unchained','tezos','eos','derace','aptos','bitcoin-cash','victoria-vr','sylo','maps','pallapay','genopets','jupiter','temco']) 
 
   const [updateArr, setUpdateArr] = useState([])
 
@@ -591,23 +658,24 @@ const precompArr = []
   <div className={styles.cmv_top}></div>
   <div className={styles.cmvBody}>
   
+  
 
-  <AddCrypto activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} currency={currency} quickData={quickData} setQuickData={setQuickData} setCoinArr={setCoinArr} setRunOrStop={setRunOrStop} searchGems={searchGems} setSearchGems={setSearchGems}  />
+  <AddCrypto activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} currency={currency} quickData={quickData} setQuickData={setQuickData} setCoinArr={setCoinArr} setRunOrStop={setRunOrStop} searchGems={searchGems} setSearchGems={setSearchGems} priceAlertzPing={priceAlertzPing} setPriceAlertzPing={setPriceAlertzPing} openPriceALertsModal={openPriceALertsModal} setOpenPriceALertsModal={setOpenPriceALertsModal} />
 
-  <DisplayCoin activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} setQuickData={setQuickData} setCoinArr={setCoinArr} currency={currency} searchGems={searchGems} />
+  <DisplayCoin activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} setQuickData={setQuickData} setCoinArr={setCoinArr} currency={currency} searchGems={searchGems} openModal={openModal} setOpenModal={setOpenModal} modalSearch={modalSearch} setModalSearch={setModalSearch} startModal={startModal} setStartModal={setStartModal} index={index} setIndex={setIndex} priceAlertzPing ={priceAlertzPing} setPriceAlertzPing={setPriceAlertzPing} />
    
   <UpdateCoinInfo activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} currency={currency} quickData={quickData} setQuickData={setQuickData} setCoinArr={setCoinArr} setRunOrStop={setRunOrStop} searchGems={searchGems} setSearchGems={setSearchGems} updateArr={updateArr} setUpdateArr={setUpdateArr} />
  
- 
+  <DisplayPriceAlertz priceAlertzPing ={priceAlertzPing} setPriceAlertzPing={setPriceAlertzPing} updateArr={updateArr} setUpdateArr={setUpdateArr} openPriceALertsModal={openPriceALertsModal} setOpenPriceALertsModal={setOpenPriceALertsModal} searchGems={searchGems} setSearchGems={setSearchGems} currencySymbol={currencySymbol} setCurrencySymbol={setCurrencySymbol} activeCoins={activeCoins} setActiveCoins={setActiveCoins} />
+  
+   <AddPriceAlertz activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} setQuickData={setQuickData} setCoinArr={setCoinArr} currency={currency} searchGems={searchGems} openModal={openModal} setOpenModal={setOpenModal} modalSearch={modalSearch} setModalSearch={setModalSearch} startModal={startModal} setStartModal={setStartModal} index={index} setIndex={setIndex} priceAlertzPing ={priceAlertzPing} setPriceAlertzPing={setPriceAlertzPing} updateArr={updateArr} setUpdateArr={setUpdateArr} />
+
+  <InfoModal openModal={openModal} setOpenModal={setOpenModal} activeCoins={activeCoins} setActiveCoins={setActiveCoins} modalSearch={modalSearch} setModalSearch={setModalSearch} currency={currencySymbol} setCurrency={setCurrencySymbol} startModal={startModal} setStartModal={setStartModal} index={index} setIndex={setIndex} />
 
 </div>
 </body>
-
-
-
    <Footer />
-
- 
+  
 </main>
   </>
  )

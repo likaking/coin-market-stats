@@ -216,7 +216,7 @@
         }
         .nav_bar__compName{
         width: auto;
-        font-size: 4vw;
+        font-size: 6vw;
         font-weight:500;
         margin-left:0.7rem;
         color:rgb(248, 245, 245);
@@ -358,7 +358,7 @@
         }
         .nav_bar__compName{
         width: auto;
-        font-size: 5vw;
+        font-size: 6vw;
         font-weight:500;
         margin-left:0.7rem;
         color:rgb(248, 245, 245);

@@ -3,13 +3,14 @@ import Home from '../pages/index.js'
 import {data1,Speech} from '../pages/index.js'
 import axios from 'axios'
 import styles from '../styles/Dipped.module.css'
-import {FaCaretDown,FaCaretUp,FaTrashAlt, FaStar} from 'react-icons/fa'
+import {FaCaretDown,FaCaretUp,FaTrashAlt,FaStar,FaInfoCircle,FaWindowClose} from 'react-icons/fa'
 import {addCoin,buy,activeCoins,AddCrypto,coinIsexistinErr} from '../src/addcoin.js'
 
 
 
-export function DisplayCoin({activeCoins,buy,setBuy,setActiveCoins,Speech,setQuickData,setCoinArr,currency,searchGems}){
+export function DisplayCoin({activeCoins,buy,setBuy,setActiveCoins,Speech,setQuickData,setCoinArr,currency,searchGems,openModal,setOpenModal,modalSearch,setModalSearch,startModal,setStartModal,index,setIndex,priceAlertzPing,setPriceAlertzPing}){
 const deleteIcon = useRef([]);
+const infoIconR = useRef([]);
 const star = useRef([]);
 const [sticky,setSticky] = useState(false)
 const [shadow,setShadow] = useState(false)
@@ -101,6 +102,7 @@ useEffect(() => {
             tableHeader.current.style.borderBottom = '0px'
         };
 
+
 return(
 <>
 <div className={sticky ? styles.isSticky : ''}><div className={styles.tableHeader} ref={tableHeader}><div >Name</div><div >Price</div> <div >24h P-Ch</div> <div >ATH</div> <div >ATL</div> <div >Volume 24</div><div></div></div></div>
@@ -123,19 +125,17 @@ return(
 <div className={styles.dipedCrypto_R} ref={rightTable} onScroll={handleShadow}>
 <div className={styles.dipedCrypto_HR}><div className={styles.dipedCrypto_HR_price}>Price</div> <div className={styles.dipedCrypto_HR_priceCh}>24h P-Ch</div> <div className={styles.dipedCrypto_HR_24H}>ATH</div> <div className={styles.dipedCrypto_HR_7dh}>ATL</div> <div className={styles.dipedCrypto_HR_vol}>Volume 24</div></div>
 {
-    search? search.map((itemz,index)=> 
+    search? search.map((itemz,index)=> {
+    var realInex = index;
+    return (
     <div key={itemz.id+index} ref = {(el)=> container.current[index]=el} className={styles.dipedCrypto_R_container}  onMouseEnter = {()=>hoverIn(index)} onMouseLeave = {()=>hoverOut(index)}  > 
     <div className={styles.dipedCrypto_R_container_price}>{currencyx}{itemz.current_price < 1 &&<span>{itemz.current_price}</span>} {itemz.current_price >= 1 &&<span>{itemz.current_price.toLocaleString()}</span>}</div>  
-    <div className={styles.dipedCrypto_R_container_24hPriceChange} style={{color: itemz.price_change_24h.toString().startsWith("-") ?'red' : 'green' }}><FaCaretDown style={{display: itemz.price_change_24h.toString().startsWith("-") ?'block' : 'none' }} /> <FaCaretUp style={{display: itemz.price_change_24h.toString().startsWith("-") ?'none' : 'block' }} />{currencyx}{itemz.price_change_24h < 1 && <span>{parseFloat(itemz.price_change_24h.toString().replace('-','')).toFixed(3)}</span>}  {itemz.price_change_24h > 1 &&<span>{parseFloat(itemz.price_change_24h.toString().replace('-',''))}</span>}</div>
-    <div className={styles.dipedCrypto_R_container_24hChange}> {itemz.ath >= 1 ? Number(itemz.ath): Number(itemz.ath).toFixed(3)} </div>
-    <div className={styles.dipedCrypto_R_container_7d}>{itemz.atl >= 1 ? Number(itemz.atl): Number(itemz.atl).toFixed(3) }</div> 
-    <div className={styles.dipedCrypto_R_container_volume}>{currencyx}{itemz.total_volume.toLocaleString()}</div> <div className={styles.deleteIcon}><FaTrashAlt onClick={()=>{removeAsset(itemz.id)}}/></div> </div>) : null
+    <div className={styles.dipedCrypto_R_container_24hPriceChange} style={{color: itemz.price_change_24h.toString().startsWith("-") ?'red' : 'green' }}><FaCaretDown style={{display: itemz.price_change_24h.toString().startsWith("-") ?'block' : 'none' }} /> <FaCaretUp style={{display: itemz.price_change_24h.toString().startsWith("-") ?'none' : 'block' }} />{currencyx}{itemz.price_change_24h < 1 && <span>{Number(itemz.price_change_24h.toString().replace('-','').slice(0,9))}</span>}  {itemz.price_change_24h > 1 &&<span>{parseFloat(itemz.price_change_24h.toString().replace('-',''))}</span>}</div>
+    <div className={styles.dipedCrypto_R_container_24hChange}> {currencyx}{itemz.ath >= 1 ? Number(itemz.ath): Number(itemz.ath).toFixed(3)} </div>
+    <div className={styles.dipedCrypto_R_container_7d}>{currencyx}{itemz.atl >= 1 ? Number(itemz.atl): Number(itemz.atl).toFixed(3) }</div>
+    <div className={styles.dipedCrypto_R_container_volume}>{currencyx}{itemz.total_volume.toLocaleString()}</div> <div className={styles.infoIcon}><FaInfoCircle ref = {(info)=>{infoIconR.current[i]=info}}   onClick={()=>{setOpenModal(true);setModalSearch(itemz.symbol);setStartModal(true);setIndex(realInex)}} /></div> <div className={styles.deleteIcon}><FaTrashAlt onClick={()=>{removeAsset(itemz.id)}}/> </div>  </div>)}) : null
 }
 </div>
-
-
-
-
 </div>
 
 </>

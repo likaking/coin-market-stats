@@ -3,21 +3,12 @@ import styles from '../styles/Home.module.css'
 import Home from '../pages/index.js'
 import {data1} from '../pages/index.js'
 import axios from 'axios'
+import {FaBell} from 'react-icons/fa'
 
-
-//"bitcoin","ethereum","binancecoin","ripple"
-//export const buy = []
-/*
-export const  activeCoins = [
-    {"id":"bitcoin","symbol":"btc","name":"Bitcoin","image":"https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579","current_price":193680.32,"market_cap":371074048905,"market_cap_rank":1,"fully_diluted_valuation":406734771812,"total_volume":35265134033,"high_24h":19475.03,"low_24h":18641.21,"price_change_24h":-42.92339586948219,"price_change_percentage_24h":-0.22113,"market_cap_change_24h":-804856389.1931763,"market_cap_change_percentage_24h":-0.21643,"circulating_supply":19158812.0,"total_supply":21000000.0,"max_supply":21000000.0,"ath":69045,"ath_change_percentage":-71.92872,"ath_date":"2021-11-10T14:24:11.849Z","atl":67.81,"atl_change_percentage":28482.85436,"atl_date":"2013-07-06T00:00:00.000Z","roi":null,"last_updated":"2022-09-23T23:41:24.232Z"},
-    {"id":"ethereum","symbol":"eth","name":"Ethereum","image":"https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880","current_price":1333.12,"market_cap":160913745643,"market_cap_rank":2,"fully_diluted_valuation":null,"total_volume":17611631455,"high_24h":1355.04,"low_24h":1272.94,"price_change_24h":2.78,"price_change_percentage_24h":0.20921,"market_cap_change_24h":680084121,"market_cap_change_percentage_24h":0.42443,"circulating_supply":120649326.21125,"total_supply":120648876.21125,"max_supply":null,"ath":4878.26,"ath_change_percentage":-72.65968,"ath_date":"2021-11-10T14:24:19.604Z","atl":0.432979,"atl_change_percentage":307936.23918,"atl_date":"2015-10-20T00:00:00.000Z","roi":{"times":91.04801061018243,"currency":"btc","percentage":9104.801061018243},"last_updated":"2022-09-23T23:40:57.294Z"},
 
   
-  ]
-  */
-  
 
-export function AddCrypto({activeCoins,buy,setBuy,setActiveCoins,currency,speech,quickData,setQuickData,setCoinArr,setRunOrStop,searchGems,setSearchGems}){
+export function AddCrypto({activeCoins,buy,setBuy,setActiveCoins,currency,speech,quickData,setQuickData,setCoinArr,setRunOrStop,searchGems,setSearchGems,priceAlertzPing,setPriceAlertzPing,openPriceALertsModal,setOpenPriceALertsModal}){
 const [coinAlreadyExistError,setCoinAlreadyExistError] = useState('')
 const coinIsExitingErr = useRef(null)
 const [addNewCoin, setAddNewCoin] = useState('')
@@ -26,6 +17,10 @@ const [currencyxe, setCurrencyxe] = useState('usd')
 const addCoinError = useRef(null)
 const addCoinInput = useRef(null)
 const netWorkErr = useRef(null)
+const textArea  = useRef(null)
+const priceAlertz = useRef(null)
+const addCoinContainer = useRef(null)
+const addCoinForm = useRef(null)
 
 
 
@@ -35,15 +30,14 @@ const addCoin = (coin)=>{
     if(ansa === undefined && buy.indexOf(coin.id) === -1){
     setActiveCoins([...activeCoins,coin]);
     setBuy([...buy,coin.id]);
-   
-   
     }
     else{
     coinIsExitingErr.current.style.display = 'block'
     return false
     }
-    }
 
+    }
+  
     const showNetWorkErr = ()=>{
       netWorkErr.current.style.display = 'block'
     }
@@ -83,7 +77,33 @@ const addCoin = (coin)=>{
           addCoinError.current.style.display = 'none'
         };
     
-        
+useEffect(()=>{      
+const hideShowNotes = ()=>{
+
+  if(addNewCoinData.length > 0 && addCoinInput.current.value !== ''){
+    textArea.current.style.display = 'block'
+    priceAlertz.current.style.display = 'block'
+    addCoinContainer.current.style.display = 'block'
+	addCoinForm.current.style.display = 'block'
+
+	
+  }
+  else{
+    textArea.current.style.display = 'none'
+    priceAlertz.current.style.display = 'none'
+    addCoinContainer.current.style.display = 'none'
+    textArea.current.value = ' '
+    priceAlertz.current.value = ' '
+	addCoinForm.current.style.display = 'none'
+
+    
+  }
+}
+hideShowNotes()
+},[addNewCoinData])
+
+
+
 
 return(
 <>
@@ -91,7 +111,7 @@ return(
  
   <div className={styles.cmv_device_contianer}>
   <div className={styles.cmv_device_inputnBtn_container}>
-  <div className={styles.main_cmv_totalGems}>Total:{' '}{activeCoins.length}{activeCoins.length > 1? ' gems' : ' gem'}</div>
+  <div className={styles.main_cmv_totalGems}>Total:{' '}{activeCoins? activeCoins.length : null}{activeCoins.length > 1? ' gems' : ' gem'} {' '} | <span onClick = {()=>{setOpenPriceALertsModal(true)}} style={{cursor:'pointer'}} >Price Alertz {priceAlertzPing.length} </span> </div>
   <form>
   <div className={styles.cmv_device_search_cont}>
   <input placeholder = 'Search gems' type= 'text' name = 'search' className={styles.cmv_device_search}  onChange={(e)=>{setSearchGems(e.target.value)}} />
@@ -100,19 +120,24 @@ return(
   
   <form onSubmit={grab}>
   <input placeholder = 'Add gems' type= 'text' name = 'addCoin' className={styles.cmv_device_input} value = {addNewCoin} ref = {addCoinInput} onChange = {(e)=>{setAddNewCoin(e.target.value.toLocaleLowerCase())}}  onFocus = {()=> {coinIsExitingErr.current.style.display = 'block'? coinIsExitingErr.current.style.display = 'none' : ''; addCoinError.current.style.display = 'block'? addCoinError.current.style.display = 'none' : '';hideNetWorkErr()}}/>
-  <input className={styles.cmv_device_grabBtn} type='submit' value={'Add gem'} onClick = {hideNetWorkErr}  />
+  <input className={styles.cmv_device_grabBtn} type='submit' value={'grab'} onClick = {hideNetWorkErr}  />
   </form>
   </div>
- 
-  <div style={{cursor:'pointer'}}>
-  
+ <div className={styles.addCoin_contianerM} ref={addCoinContainer} >
+  <div style={{cursor:'pointer'}} >
  {
   addNewCoinData.length > 0 && addCoinInput.current.value !== '' && addNewCoinData.map((coin,i) =>
    i < 1 &&
-    <div key = {coin.id+i} className={styles.cmv_device_addCoinResult} onClick = {()=>{addCoin({id:coin.id,current_price:coin.current_price,symbol:coin.symbol,name:coin.name,image:coin.image,price_change_24h:coin.price_change_24h,ath:coin.ath,atl:coin.atl,total_volume:coin.total_volume,vip:false}); setAddNewCoinData([])}}><img src = {coin.image} key = {coin.image+i}  className={styles.cmv_device_result_img}/><div key = {coin.name+i}>{coin.name}</div><div className={styles.cmv_device_addCoinResult_click} >click 2 add</div></div>
+    <div key = {coin.id+i} className={styles.cmv_device_addCoinResult} onClick = {()=>{addCoin({id:coin.id,current_price:'',symbol:coin.symbol,name:coin.name,image:coin.image,price_change_24h:coin.price_change_24h,ath:coin.ath,atl:coin.atl,total_volume:coin.total_volume,vip:false,note:textArea.current.value,priceAlertz_active:priceAlertz.current.value.length === 0 ? false : true,priceAlertz:Number(priceAlertz.current.value)}); setAddNewCoinData([])}}><img src = {coin.image} key = {coin.image+i}  className={styles.cmv_device_result_img}/><div key = {coin.name+i}>{coin.name}</div><div className={styles.cmv_device_addCoinResult_click} >click 2 add</div></div>
     )
  }
-
+ </div>
+ <div ref={addCoinForm} >
+ <form >
+ <textarea placeholder='Add Note' className={styles.cmv_device_addNote} ref= {textArea}></textarea >
+ <input type = 'number'  placeholder='Price alert! - Remind me if price get to'  className={styles.cmv_device_priceAlertz} ref= {priceAlertz}  />
+ </form>
+ </div>
  </div>
   <div className={styles.cmv_device_grabBtn_errorContainer} ref = {addCoinError}>
   <p className={styles.cmv_device_grabBtn_error} >Please add a text to the input field</p>

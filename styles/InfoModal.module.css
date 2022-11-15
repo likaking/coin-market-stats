@@ -1,0 +1,299 @@
+.modalContainer{
+width: 45%;
+height: 46vh;
+position: fixed;
+top:30%;
+left:0;
+right:0;
+margin-left: auto;
+margin-right: auto;
+z-index: 5;
+padding: 1rem;
+background-color: rgb(248, 255, 255);
+box-shadow: -3px 3px 3px 3px rgba(202, 202, 202, 0.637);
+transition: 0.4s;
+display: none;
+
+}
+.modalClose{
+color:rgb(170, 170, 170) ;
+width: fit-content;
+height: fit-content;
+display: flex;
+justify-content: center;
+align-content: center;
+padding: 0.3rem;
+border-radius: 20em;
+position: absolute;
+right: 1%;
+top:2%;
+border: 1px solid rgb(170, 170, 170);
+border-style: dashed;
+transition: 0.4s;
+}
+.modalClose:hover{
+color:rgb(145, 145, 145) ;
+border: 1px solid rgb(145, 145, 145);
+border-style: dashed;
+transition: 0.4s;
+}
+.modal_inner{
+margin: auto;
+width: 80%;
+}
+.modal_inner_serach{
+width: 100%;
+height: 2.5em;
+background-color: transparent;
+border: 1px solid rgba(56, 88, 84, 0.671);
+border-style: dashed;
+}
+.modal_inner_coinzInfo{
+height: 2.8em;
+display:flex;
+gap:3%;
+align-items: center;
+justify-content: center;
+font-size: 1.5vw;
+font-weight: 500;
+margin-top: 0.5rem;
+padding: 0.4rem;
+border-top: 1px solid rgba(56, 88, 84, 0.671);
+border-bottom: 0px;
+border-left: 1px solid rgba(56, 88, 84, 0.671);
+border-right: 1px solid rgba(56, 88, 84, 0.671);
+border-style: dashed;
+}
+.modal_inner_imgCont{
+    flex:0.1
+}
+.modal_inner_img{
+    vertical-align: bottom;
+    width: auto;
+    height: 1.7em;
+}
+.modal_inner_gemName{
+    flex:0.6;
+    color:rgb(56, 88, 84);
+}
+.modal_inner_gemSymbol{
+color: rgba(56, 88, 84, 0.562);
+}
+.modal_inner_gemPrice{
+    flex:0.3;
+    text-align: right;
+    color:rgb(56, 88, 84);
+}
+.modal_inner_textArea{
+color:rgb(56, 88, 84);
+width:100%;
+height: 6.5rem;
+border: 1px solid rgba(56, 88, 84, 0.671);
+overflow-y: scroll;
+border-style: dashed;
+}
+.modal_inner_priceAlertz{
+color:rgb(56, 88, 84);
+width:100%;
+height: 2rem;
+font-size: 1.3vw;
+padding-left: 3%;
+padding-top: 0.5%;
+border-top: 0;
+border-bottom: 1px solid rgba(56, 88, 84, 0.671);
+border-left: 1px solid rgba(56, 88, 84, 0.671);
+border-right: 1px solid rgba(56, 88, 84, 0.671);
+border-style: dashed;
+display:flex;
+align-items:center
+}
+.modal_inner_price{
+position: relative;
+}
+.modal_inner_MoneySymbol{
+position: absolute;
+width: 3%;
+height: 100%;
+text-align: center;
+padding-left: 0.2rem;
+color:rgb(56, 88, 84);
+display: flex;
+align-items: center
+
+}
+.modal_inner_buttonCont{
+text-align: center;
+margin-top: 1rem;
+}
+.modal_inner_button{
+background-color: transparent;
+border:1px solid rgba(56, 88, 84, 0.486);
+color: rgba(56, 88, 84, 0.486);
+border-style: dashed;
+width: 30%;
+height: 2.5rem;
+font-size: 1em;
+transition: 0.4s;
+}
+.modal_inner_button:hover{
+color:rgb(56, 88, 84) ;
+border: 1px solid rgb(56, 88, 84);
+border-style: dashed;
+transition: 0.4s;
+}
+
+/* width */
+.modal_inner_textArea::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .modal_inner_textArea::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .modal_inner_textArea::-webkit-scrollbar-thumb {
+    background: rgba(185, 206, 212, 0.836); 
+  }
+  
+  /* Handle on hover */
+  .modal_inner_textArea::-webkit-scrollbar-thumb:hover {
+    background: rgb(171, 222, 236); 
+  }
+  .modal_inner_textArea_constianer{
+  position: relative;
+
+  }
+  .modal_inner_LRcontrolBtns{
+  position: absolute;
+  font-size: 2em;
+  color:rgba(56, 88, 84, 0.315);
+  height: 50%;
+  top:27%;
+  bottom: 27%;
+  z-index: -1;
+  left: -10%;
+  width: 120%;
+  display: flex;
+  align-items: center;
+  }
+  .modal_inner_LRcontrolBtns_L{
+   text-align: left;
+   width: 50%;
+   transition: 0.4s;
+  }
+  .modal_inner_LRcontrolBtns_R{
+    text-align: right;
+    width: 50%;
+    transition: 0.4s;
+   }
+
+   .modal_inner_LRcontrolBtns_L:hover,.modal_inner_LRcontrolBtns_R:hover{
+    color:rgba(56, 88, 84, 0.637);
+    transition: 0.4s;
+   }
+
+   @media screen and (max-width: 920px) {
+    .modalContainer{
+      width: 80%;
+      }
+      .modal_inner{
+        margin: auto;
+        width: 85%;
+     }
+     .modal_inner_coinzInfo{
+      font-size: 3vw;
+      }
+      .modal_inner_serach{
+        height: 3em;
+        font-size: 2.5vw;
+  
+        }
+      .modal_inner_textArea{
+        height: 10rem;
+    
+        }
+        .modal_inner_priceAlertz{
+        font-size: 3vw;
+        padding-left: 3.1%;
+        height: 1.8em;
+        }
+        .modal_inner_MoneySymbol{
+          position: absolute;
+          font-size: 3vw;
+          width: 3%;
+          height: 100%;
+          text-align: center;
+          padding-left: 0.2rem;
+          
+          }
+        .modal_inner_LRcontrolBtns{
+          position: absolute;
+          font-size: 2em;
+          color:rgba(56, 88, 84, 0.315);
+          height: 50%;
+          top:27%;
+          bottom: 27%;
+          z-index: -1;
+          left: -7.5%;
+          width: 115%;
+          display: flex;
+          align-items: center;
+          }
+   }
+
+   @media screen and (max-width: 550px) {
+    .modalContainer{
+      width: 100%;
+	  margin-left: 0;
+      margin-right: 0;
+	  padding-top: 1rem;
+      }
+      .modal_inner{
+        margin: auto;
+        width: 100%;
+     }
+	  .modal_inner_serach{
+        height: 2.5em;
+        font-size: 5vw;
+		padding: 0
+  
+        }
+     .modal_inner_coinzInfo{
+      font-size: 4vw;
+      }
+      .modal_inner_textArea{
+        height: 10rem;
+		font-size: 5vw;
+    
+        }
+        .modal_inner_priceAlertz{
+        font-size: 5vw;
+        padding-left: 4%;
+		height: 2.2em;
+   
+        }
+		 .modal_inner_MoneySymbol{
+          position: absolute;
+          font-size: 5vw;
+          width: 4.5%;
+          height: 100%;
+          text-align: center;
+          padding-top: 0.11rem;
+          padding-left: 0.2rem; 
+          }
+        .modal_inner_LRcontrolBtns{
+          position: absolute;
+          font-size: 2.5em;
+          color:rgba(56, 88, 84, 0.315);
+          height: 50%;
+          top:27%;
+          bottom: 27%;
+          z-index: 4;
+          left: -3%;
+          width: 106%;
+          display: flex;
+          align-items: center;
+          }
+   }
