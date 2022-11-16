@@ -20,7 +20,7 @@ if(myGems.id === gemId){
 return myGems	
 })	
 setActiveCoins(getGems)	
-console.log(activeCoins)
+
 }
 
 const deletePriceAlert = async(deleteGem)=>{
@@ -41,7 +41,7 @@ openPriceALertsModal && priceAlertzPing.map((priceAlert,i)=>
 <div className={styles.showPriceAlertz_ListCont_PriceAlertz} onClick={()=>setSearchGems(priceAlert.symbol)} key={priceAlert.name+i} >
 <div className={styles.showPriceAlertz_ListCont_PriceAlertz_img}><img src={priceAlert.image} alt={priceAlert.name} /> </div>
 <div className={styles.showPriceAlertz_ListCont_PriceAlertz_des}>{priceAlert.name}{' '} has hit your target price of {currencySymbol}{priceAlert.priceAlertz} </div>
-<div  className={styles.showPriceAlertz_ListCont_delIcon} ><FaTrashAlt ref={(deleteIcon)=> deletePriceAlertIcon.current = deleteIcon[i]}onClick={()=>deletePriceAlert(priceAlert.id)} /></div>
+<div  className={styles.showPriceAlertz_ListCont_delIcon} ><span ref={(deleteIcon)=> deletePriceAlertIcon.current[i] = deleteIcon} ><FaTrashAlt  onClick={()=>deletePriceAlert(priceAlert.id)} /></span></div>
 </div>
 )}
 </div>

@@ -78,20 +78,20 @@ export default function Footer() {
        <div className={styles.footer_links}>
         <div className={styles.footer_links_contianer}>
           <ul>
-            <li><Link href = '/#' scroll = {false}><a>About</a></Link></li>
-            <li><Link href = '/#' scroll = {false}><a>Menu</a></Link></li>
-            <li><Link href = '/#' scroll = {false}><a>Blog</a></Link></li>
-            <li><Link href = '/#' scroll = {false}><a>Gallery</a></Link></li>
-            <li><Link href = '/#' scroll = {false}><a>Faq</a></Link></li>
-            <li><Link href = '/#' scroll = {false}><a>Contact</a></Link></li>
+            <Link href = '' scroll = {false}><li> About </li></Link>
+            <Link href = '' scroll = {false}><li>Menu </li></Link>
+            <Link href = '' scroll = {false}><li>Blog </li></Link>
+            <Link href = '' scroll = {false}><li>Gallery </li></Link>
+            <Link href = '' scroll = {false}><li>Faq </li></Link>
+            <Link href = '' scroll = {false}><li>Contact </li></Link>
           </ul>
         </div>
         <div className={styles.footer_Social}>
         <ul className={styles.footer_ul}>
-            <li><Link href = '/#'  target={'_blank'} scroll = {false}><FaFacebook /></Link></li>
-            <li><Link href = '/#' target={'_blank'} scroll = {false}><FaTwitter /></Link></li>
-            <li><Link href = '/#'  target={'_blank'} scroll = {false}><FaTiktok /></Link></li>
-            <li><Link href = '/#' target={'_blank'} scroll = {false}><FaYoutube /></Link></li>
+            <li> <FaFacebook /> </li>
+            <li> <FaTwitter /> </li>
+           <li> <FaTiktok /> </li>
+            <li> <FaYoutube /> </li>  
           </ul>
         </div>
        <button className={styles.upButton} onClick = {scrollToTop} style={{display: visible ? 'inline' : 'none'}}><FaArrowUp /></button>

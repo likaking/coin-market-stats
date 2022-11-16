@@ -80,7 +80,7 @@ const addCoin = (coin)=>{
 useEffect(()=>{      
 const hideShowNotes = ()=>{
 
-  if(addNewCoinData.length > 0 && addCoinInput.current.value !== ''){
+  if(addNewCoinData.length > 0 && addNewCoin.length > 0 && addCoinInput.current.value !== ''){
     textArea.current.style.display = 'block'
     priceAlertz.current.style.display = 'block'
     addCoinContainer.current.style.display = 'block'
@@ -100,10 +100,11 @@ const hideShowNotes = ()=>{
   }
 }
 hideShowNotes()
-},[addNewCoinData])
+},[addNewCoinData,addNewCoin])
 
 
 
+console.log(activeCoins)
 
 return(
 <>
@@ -128,11 +129,11 @@ return(
  {
   addNewCoinData.length > 0 && addCoinInput.current.value !== '' && addNewCoinData.map((coin,i) =>
    i < 1 &&
-    <div key = {coin.id+i} className={styles.cmv_device_addCoinResult} onClick = {()=>{addCoin({id:coin.id,current_price:'',symbol:coin.symbol,name:coin.name,image:coin.image,price_change_24h:coin.price_change_24h,ath:coin.ath,atl:coin.atl,total_volume:coin.total_volume,vip:false,note:textArea.current.value,priceAlertz_active:priceAlertz.current.value.length === 0 ? false : true,priceAlertz:Number(priceAlertz.current.value)}); setAddNewCoinData([])}}><img src = {coin.image} key = {coin.image+i}  className={styles.cmv_device_result_img}/><div key = {coin.name+i}>{coin.name}</div><div className={styles.cmv_device_addCoinResult_click} >click 2 add</div></div>
+    <div key = {coin.id+i} className={styles.cmv_device_addCoinResult} onClick = {()=>{addCoin({id:coin.id,current_price:'',symbol:coin.symbol,name:coin.name,image:coin.image,price_change_24h:'',ath:coin.ath,atl:coin.atl,total_volume:'',vip:false,note:textArea.current.value,priceAlertz_active:priceAlertz.current.value.length === 0 ? false : true,priceAlertz:Number(priceAlertz.current.value),market_cap:coin.market_cap}); setAddNewCoinData([])}}><img src = {coin.image} key = {coin.image+i}  className={styles.cmv_device_result_img}/><div key = {coin.name+i}>{coin.name}</div><div className={styles.cmv_device_addCoinResult_click} >click 2 add</div></div>
     )
  }
  </div>
- <div ref={addCoinForm} >
+ <div ref={addCoinForm} style={{display:'none'}} >
  <form >
  <textarea placeholder='Add Note' className={styles.cmv_device_addNote} ref= {textArea}></textarea >
  <input type = 'number'  placeholder='Price alert! - Remind me if price get to'  className={styles.cmv_device_priceAlertz} ref= {priceAlertz}  />

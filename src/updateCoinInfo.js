@@ -11,13 +11,13 @@ import {addCoin,buy,activeCoins,AddCrypto,coinIsexistinErr} from '../src/addcoin
 export default function UpdateCoinInfo({activeCoins,buy,setBuy,setActiveCoins,Speech,setQuickData,setCoinArr,currency,searchGems,updateArr,setUpdateArr}){
 
 
-const updatePriceETC = (coinid,price,pch24,vol24)=>{
+const updatePriceETC = (coinid,price,pch24,vol24,ath,atl,marketcap)=>{
     
 setActiveCoins(myGemz=>
 myGemz.map(gem=>{
 if(gem.id === coinid){
 
-    return {...gem,current_price:price,price_change_24h:pch24,total_volume:vol24}
+    return {...gem,current_price:price,price_change_24h:pch24,total_volume:vol24,ath:ath,atl:atl,market_cap:marketcap}
 }
 return gem
 })
@@ -28,7 +28,7 @@ return gem
 const dispatchProps = ()=>{
 updateArr.map((newInfo)=>{
     
- updatePriceETC(newInfo.id,newInfo.current_price,newInfo.price_change_24h,newInfo.total_volume)
+ updatePriceETC(newInfo.id,newInfo.current_price,newInfo.price_change_24h,newInfo.total_volume,newInfo.ath,newInfo.atl,newInfo.market_cap)
 
   
 })

@@ -1,6 +1,6 @@
 .cmvBody{
 padding-top: 1.8rem;
-height: 190vh;
+height: auto;
 }
 .cmv_top{ 
 width: 100%;
@@ -508,7 +508,6 @@ display: none;
 @media screen and (max-width: 430px) {
     .cmvBody{
         padding-top: 1rem;
-        height: 190vh;
         }
 .banner{
 flex-direction: column;

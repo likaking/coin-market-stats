@@ -3,7 +3,7 @@
 .footer{
     width: 100%;
     padding-top: 5vw;
-    margin-top: 0vw;
+    margin-top: 40vw;
     background-color: rgb(32, 70, 85);
     background-image: -webkit-linear-gradient(rgb(68, 111, 128),rgba(11, 107, 102, 0.658));
     position: relative;
@@ -179,7 +179,6 @@ transition: 0.4s;
 .footer{
     width: 100%;
     padding-top: 5vw;
-    margin-top: 5vw;
 }
 .footer_logo{
     display: flex;
@@ -341,7 +340,7 @@ transition: 0.4s;
     .footer{
         width: 100%;
         padding-top: 10vw;
-        margin-top: 15rem;
+
     }
     .footer_logo{
         display: flex;
