@@ -621,7 +621,7 @@ const updateCurrenccy = useEffect(()=>{
 useEffect(()=>{
 const welcome = ()=>{
   const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.toLocaleLowerCase()}&ids=${buy.toString()}&order=market_cap_desc&per_page=100&page=1&sparkline=false`
-  axios.get(url).then((res)=>{console.log(res.data);setUpdateArr(res.data)}).then(()=>{}).catch((err)=> {()=>setCmvErrorsx('No internet connection')})
+  axios.get(url).then((res)=>{setUpdateArr(res.data)}).then(()=>{}).catch((err)=> {()=>setCmvErrorsx('No internet connection')})
   
 }
 
