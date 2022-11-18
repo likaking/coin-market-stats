@@ -1,6 +1,6 @@
 .dipedCrypto{
     display: flex;
-    width: 100%;
+    width: 98%;
     margin: auto;
     position: relative;
     }
@@ -163,7 +163,7 @@
     }
 
     .tableHeader{
-     width: 100%;
+     width: 99%;
      margin: auto;
      display: flex;
      padding: 0.5em;
@@ -274,7 +274,7 @@
     @media screen and (max-width: 920px) {
     .dipedCrypto{
     display: flex;
-    width: 100%;
+    width: 98%;
     margin-top: 4vw;
     position: relative;
 
