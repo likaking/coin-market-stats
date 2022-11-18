@@ -115,9 +115,14 @@ outline: none;
 background-color: transparent;
 }
 
+.cmv_device_search_cont{
+margin-top:1rem;
+}
+
 .cmv_device_input::placeholder { /* Most modern browsers support this now. */
     color:    rgb(24, 102, 94);
  }
+ 
 .cmv_device_search{
     width: 100%;
     margin: auto;
