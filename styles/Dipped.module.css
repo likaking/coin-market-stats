@@ -173,55 +173,64 @@
   
 
     .tableHeader :nth-child(1){
-    flex: 0.43;
+    flex: 0.03;
     font-weight: 700;
     color: rgb(56, 88, 84);
     }
     .tableHeader :nth-child(2){
-        flex: 0.17;
+        flex: 0.29;
         font-weight: 700;
         padding-left: 0.5rem;
         color: rgb(56, 88, 84);
         }
         .tableHeader :nth-child(3){
-            flex: 0.14;
+            flex: 0.13;
             font-weight: 700;
             color: rgb(56, 88, 84);
+			text-align: left;
             }
             .tableHeader :nth-child(4){
-                flex: 0.13;
-                padding-left: 0.35rem;
+              flex: 0.104;
                 font-weight: 700;
                 color: rgb(56, 88, 84);
-                text-align: right;
+                text-align: left;
                 }
                 .tableHeader :nth-child(5){
-                    flex: 0.12;
+                  flex: 0.1;
                     padding-left: 0.35rem;
                     font-weight: 700;
                     color: rgb(56, 88, 84);
                     text-align: right;
                     }
                     .tableHeader :nth-child(6){
-                        flex: 0.19;
+                      flex: 0.09;
                         padding-left: 0.35rem;
                         font-weight: 700;
                         color: rgb(56, 88, 84);
                         text-align: right;
                         }
                         .tableHeader :nth-child(7){
-                            flex: 0.21;
+                         flex: 0.147;
                             padding-left: 0.35rem;
                             font-weight: 700;
                             color: rgb(56, 88, 84);
                             text-align: right;
                             }
                             .tableHeader :nth-child(8){
-                                flex: 0.10;
+                               flex: 0.159;
+                                padding-left: 0.35rem;
+                                font-weight: 700;
+                                color: rgb(56, 88, 84);
+								text-align: right;
+								
+                                }
+								.tableHeader :nth-child(9){
+                                flex: 0.075;
                                 padding-left: 0.35rem;
                                 font-weight: 700;
                                 color: rgb(56, 88, 84);
                                 }
+ 
  
  
     
@@ -423,10 +432,15 @@
                display: none
                }
         .dipedCrypto_HL_name{
+		display:flex;
 		font-size:2vw;
-		padding:0.5rem;
-        display: block;
+		padding-top:0.5rem;
+		padding-bottom:0.5rem;
+		padding-left: 8vw;
+		display: block;
         }
+		
+
         #dipedCrypto_L_cont{
             box-shadow: 10px 0 5px -6px rgba(136, 136, 136, 0.637);
             transition: 0.2s;
@@ -594,7 +608,6 @@
 	    .dipedCrypto_HL_name{
 		font-size:3.5vw;
 		font-weight: 700;
-		padding:0.5rem;
   
         }
        
@@ -602,11 +615,12 @@
     
     
     @media screen and (max-width: 300px) {
+
     .dipedCrypto_HR{
-        width: 450%;
+        width: 500%;
      }
      .dipedCrypto_R_container{
-     width: 450%;
+     width: 500%;
      }
 	  .deleteIcon{
         flex: 0.06;
@@ -617,9 +631,11 @@
         flex: 0.07;
 		font-size:6vw;
     }
+	  /*
 	.dipedCrypto_HL_name{
 	  font-size:4.2vw;
       }
+	
 	 .dipedCrypto_HR{
             display: flex;
             padding: 0.5em;
@@ -657,4 +673,5 @@
 	 .dipedCrypto_L_Star_container{
      font-size: 5vw;
      }
+	 */
     }

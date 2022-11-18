@@ -35,7 +35,6 @@ const addCoin = (coin)=>{
     coinIsExitingErr.current.style.display = 'block'
     return false
     }
-
     }
   
     const showNetWorkErr = ()=>{
@@ -85,8 +84,6 @@ const hideShowNotes = ()=>{
     priceAlertz.current.style.display = 'block'
     addCoinContainer.current.style.display = 'block'
 	addCoinForm.current.style.display = 'block'
-
-	
   }
   else{
     textArea.current.style.display = 'none'
@@ -95,16 +92,11 @@ const hideShowNotes = ()=>{
     textArea.current.value = ' '
     priceAlertz.current.value = ' '
 	addCoinForm.current.style.display = 'none'
-
-    
   }
 }
 hideShowNotes()
 },[addNewCoinData,addNewCoin])
 
-
-
-console.log(activeCoins)
 
 return(
 <>

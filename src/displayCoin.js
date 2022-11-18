@@ -111,14 +111,14 @@ useEffect(()=>{
 
 return(
 <>
-<div className={sticky ? styles.isSticky : ''}><div className={styles.tableHeader} ref={tableHeader}><div >Name</div><div >Price</div> <div >24h P-Ch</div> <div >ATH</div> <div >ATL</div> <div >Volume 24</div><div >Market Cap</div><div></div></div></div>
+<div className={sticky ? styles.isSticky : ''}><div className={styles.tableHeader} ref={tableHeader}><div></div><div >Name</div><div >Price</div> <div >24h P-Ch</div> <div >ATH</div> <div >ATL</div> <div >Volume 24</div><div >Market Cap</div><div></div></div></div>
 <div className={styles.dipedCrypto}>
 
 
 <div className={styles.dipedCrypto_L} ref = {leftTable} id={shadow? styles.dipedCrypto_L_cont : ''}>
 
 
-<div className={styles.dipedCrypto_HL_name}>Name</div>
+<div className={styles.dipedCrypto_HL_name}><div>Name</div></div>
 {
     search? search.map((itemz,index)=> <div key={itemz.id+index} ref = {(el)=> containerL.current[index]=el}  onMouseEnter = {()=>hoverIn(index)} onMouseLeave = {()=>hoverOut(index)} 
      className={styles.dipedCrypto_L_container}><div className={styles.dipedCrypto_L_Star_container}> <span ref={(el)=> star.current[index] = el} ><FaStar className={styles.dipedCrypto_L_Star} style = {{color:itemz.vip === true ? 'rgb(228, 161, 36)' :'rgb(207, 207, 207)'}}   onClick={()=>{Vip(itemz.id)}} /></span> </div>

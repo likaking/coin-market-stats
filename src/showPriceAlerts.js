@@ -35,7 +35,7 @@ return (
 <div className={styles.showPriceAlertz_Header}><span>Target Price Alertz {priceAlertzPing.length}</span>
 <div className={styles.showPriceAlertz_close}><FaTimes onClick = {()=>{setOpenPriceALertsModal(false);setSearchGems('')}}/></div>
 </div>
-<div className={styles.showPriceAlertz_ListContainer}>
+<div  className={styles.showPriceAlertz_ListContainer}  style={{display: priceAlertzPing.length > 0 ? 'block' : 'none'}} >
 {
 openPriceALertsModal && priceAlertzPing.map((priceAlert,i)=>	
 <div className={styles.showPriceAlertz_ListCont_PriceAlertz} onClick={()=>setSearchGems(priceAlert.symbol)} key={priceAlert.name+i} >
