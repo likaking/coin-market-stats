@@ -308,5 +308,6 @@
   "bugs": {
     "url": "https://github.com/likaking/gemKeeper/issues"
   },
-  "homepage": "https://github.com/likaking/gemKeeper#readme"
+  "homepage": "https://github.com/likaking/gemKeeper#readme",
+  "devDependencies": {}
 }
