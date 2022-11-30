@@ -68,7 +68,7 @@ export default function Footer() {
         <div className={styles.footer_logo}>
           <div className={styles.footer_logo1}></div>
           <div className={styles.footer_logo2}>
-          <span className={styles.footer_CompName}>Gem Keeper</span></div>
+          <span className={styles.footer_CompName}>Coin Market Stats</span></div>
           <div className={styles.footer_logo3}></div>
         </div>
         <div className={styles.footer_addressContacts}>
@@ -97,7 +97,7 @@ export default function Footer() {
        <button className={styles.upButton} onClick = {scrollToTop} style={{display: visible ? 'inline' : 'none'}}><FaArrowUp /></button>
        
        </div>
-       <div className={styles.copyRight}><FaCopyright /> {dateBuilder(new Date())} Gem Keeper</div>
+       <div className={styles.copyRight}><FaCopyright /> {dateBuilder(new Date())} Coin Market Stats</div>
       </div>
       
 

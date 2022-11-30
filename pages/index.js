@@ -646,8 +646,7 @@ const precompArr = []
   <>
   <Head>
         <title>Gem Keeper</title>
-        <meta name="Gem Keeper" content="Store crypto gems | Monitor crypto gems" />
-        <meta name="Crypto Gem Keeper" content="Store crypto gems | Monitor crypto gems" />
+        <meta name="Coin Market Stats" content="Real time crpto stats  for free" />
         <link rel="icon" href="/favicon.png" />
       </Head>
       
