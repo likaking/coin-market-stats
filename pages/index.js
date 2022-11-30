@@ -645,9 +645,9 @@ const precompArr = []
  return(
   <>
   <Head>
-        <title>Gem Keeper</title>
+        <title>Coin Market Stats</title>
         <meta name="Coin Market Stats" content="Real time crpto stats  for free" />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.PNG" />
       </Head>
       
   {<Header />}
