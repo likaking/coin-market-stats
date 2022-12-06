@@ -1,0 +1,1049 @@
+.dipedCrypto{
+    display: flex;
+    width: 99%;
+    margin: auto;
+    position: relative;
+    }
+    .dipedCrypto_L{
+    display: flex;
+    flex-direction: column;
+    flex:0.22;
+    overflow: hidden;
+    }
+    .dipedCrypto_L_container{
+    display: flex;
+    height: 5.5em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    gap: 3%;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid  rgba(186, 202, 200, 0.308);
+    color: rgb(24, 102, 94);
+	position:relative;
+    transition: 0.4s;
+    }
+	 .dipedCrypto_L_Star_container{
+    flex:0.1;
+    }
+    .dipedCrypto_L_Star{       
+    }
+    .dipedCrypto_L_img_container{
+    flex:0.15;
+   
+    }
+    .dipedCrypto_L_img{
+    width: 75%;
+    height: 75%;
+    vertical-align: bottom;
+    }
+    .dipedCrypto_L_id{
+    font-weight: 500;
+    flex:0.75;
+	display:flex;
+	gap: 3%;
+    color: rgb(47, 73, 70);
+    overflow: hidden;
+    }
+	.dipedCrypto_L_id_direction{
+    font-weight: 500;
+    flex:0.75;
+	display:flex;
+	flex-direction:column;
+	gap: 3%;
+    color: rgb(47, 73, 70);
+    overflow: hidden;
+    }
+    .dipedCrypto_L_symbol{
+    color: rgb(118, 136, 134);
+    }
+    .dipedCrypto_R{
+    display: flex;  
+    flex-direction: column; 
+    flex:0.78;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    }
+    .dipedCrypto_R::-webkit-scrollbar{
+    display:none   
+    }
+    .dipedCrypto_R{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    } 
+    .dipedCrypto_R_container{
+    display: flex;
+    height: 5.5em;
+    padding: 0em;
+    gap:0%;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid  rgba(186, 202, 200, 0.308);
+    color: rgb(48, 49, 53);
+    transition: 0.4s;
+    }
+    .dipedCrypto_R_container > div{
+    padding-left: 0.2em
+    }
+    .dipedCrypto_R_container_price{
+    font-weight: 500;
+    flex: 0.138;
+	word-break:break-all
+    }
+    .dipedCrypto_R_container_hourlyChange{
+    font-weight: 500; 
+    flex: 0.081; 
+    display: flex; 
+	word-break:break-all;
+	position:relative
+    }
+    .dipedCrypto_R_container_24hChange{        
+    display:flex;
+    justify-content: flex-end;
+    font-weight: 500;
+    flex: 0.081;
+	word-break:break-all;
+	position:relative
+    }
+    
+    .dipedCrypto_R_container_7d{
+    font-weight: 500;
+    flex: 0.081;
+	display:flex;
+    justify-content:right;
+	word-break:break-all;
+	position:relative
+    }
+   
+    .dipedCrypto_R_container_mktCap{
+    font-weight: 500;   
+    flex: 0.17;
+    text-align: right;
+	word-break:break-all
+    }
+	 .dipedCrypto_R_container_volume{
+    font-weight: 500;   
+    flex: 0.152;
+    text-align: right;
+	word-break:break-all
+    }
+  
+    .circulatingSupply{
+    flex: 0.17;
+	font-weight: 500; 
+    transition: .4s;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    vertical-align: baseline; 
+	word-break:break-all
+    }
+	.sparkline{
+    flex: 0.18;
+    text-align: right;
+    transition: .4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	height:100%;
+	width:100%;
+	word-break:break-all
+    }
+	.sparkline_content{
+	width:95%;
+	height:100%;
+	margin-left:auto;
+	overflow:hidden;
+	word-break:break-all
+   }
+   
+    .dipedCrypto_HL_name{
+    padding: 0.6em;
+    font-weight: 700;
+	border-top: 1px solid  rgba(186, 202, 200, 0.308);
+    border-bottom: 1px solid  rgba(186, 202, 200, 0.308);
+    color: rgb(39, 39, 41);
+	font-size:0.9rem;
+	display:none
+	
+    }
+	.dipedCrypto_HR{
+    display: flex;
+	justify-content:center;
+	align-items:center;
+    padding: 0em;
+    font-weight: 700;
+	font-size:0.9rem;
+	padding: 0.6em 0em 0.6em 0em;
+	border-top: 1px solid  rgba(186, 202, 200, 0.308);
+    border-bottom: 1px solid  rgba(186, 202, 200, 0.308);
+    color: rgb(39, 39, 41);
+	display:none
+    }
+	.dipedCrypto_HR > div{
+    padding-left: 0.2em;
+    }
+    .dipedCrypto_HR_price{             
+    flex: 0.138;
+    }
+    .dipedCrypto_HR_hourly{
+    flex:0.081;
+    }
+    .dipedCrypto_HR_24H{
+    flex:0.081;
+    text-align: right; 
+    }
+    .dipedCrypto_HR_7dh{
+    flex: 0.081;
+    text-align: right; 
+    }
+	.dipedCrypto_HR_mktCap{
+	flex: 0.17;
+	text-align: right
+	}
+    .dipedCrypto_HR_vol{
+    flex: 0.152;
+    text-align: right;
+    }
+	.dipedCrypto_HR_circulatingSup{
+	flex: 0.17;
+	text-align: right
+	}
+	.dipedCrypto_HR_sparkLine{
+	flex: 0.18; 
+	text-align: right;
+	padding-right:0.5em;
+	}
+
+    .isSticky {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     z-index: 999;
+     box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
+     background-color: rgb(254, 255, 255) !important;
+     animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+     padding-top: 0px;
+     padding-bottom: 0px;
+     display: flex;
+    }
+
+    .tableHeader{
+     width: 99%;
+     margin: auto;
+     display: flex;
+	 align-items:center;
+	 justify-content:center;
+     padding: 0.3em 0em 0.5em 0em;
+	 border-top: 1px solid  rgba(186, 202, 200, 0.308);
+     border-bottom: 1px solid  rgba(186, 202, 200, 0.308);
+     color: rgb(24, 102, 94);
+    }
+	.tableHeader :nth-child(1){
+    flex: 0.22;
+	display:flex;
+    font-weight: 700;
+	font-size:0.9rem;
+    color: rgb(39, 39, 41);
+    }
+    .tableHeader :nth-child(2){
+     flex: 0.78;
+     font-weight: 700;
+	 display:flex;
+     padding-left: 0rem;
+	 font-size:0.9rem;
+     color: rgb(39, 39, 41);
+     }
+	 .tableHeader_L :nth-child(1){ 
+	  flex:0.13;
+     }
+	 .tableHeader_L :nth-child(2){
+	 flex:0.87;  
+     }
+	 
+	 .tableHeader_R > div {
+	  padding-left: 0.2em 
+	 }
+	 .tableHeader_R :nth-child(1){  
+	 flex: 0.138;  
+	 }
+	 .tableHeader_R :nth-child(2){
+	 flex: 0.081;		
+     justify-content:right;		 
+	 }
+	 .tableHeader_R :nth-child(3){
+	 flex: 0.081;
+	 text-align: right;	 
+	 }
+	 .tableHeader_R :nth-child(4){
+	 flex: 0.081;
+	 text-align: right;
+	 }
+	 .tableHeader_R :nth-child(5){
+	 flex: 0.17; 
+	 text-align: right;
+	 }
+	 .tableHeader_R :nth-child(6){
+	 flex: 0.152;
+	 text-align: right;
+	 }
+	 .tableHeader_R :nth-child(7){
+	 flex: 0.17; 
+	 text-align: right;
+	 }
+	 .tableHeader_R :nth-child(8){
+	 flex: 0.18; 
+	 text-align: right;
+	 padding-right:0.5em;
+	 }
+    /*
+    .tableHeader :nth-child(1){
+    flex: 0.03;
+    font-weight: 700;
+    color: rgb(56, 88, 84);
+	border:1px solid red
+    }
+    .tableHeader :nth-child(2){
+     flex: 0.243;
+     font-weight: 700;
+     padding-left: 0.3rem;
+     color: rgb(56, 88, 84);
+	 border:1px solid red
+     }
+     .tableHeader :nth-child(3){
+     flex: 0.106;
+     font-weight: 700;
+     color: rgb(56, 88, 84);
+     text-align: left;
+	 border:1px solid red
+     }
+     .tableHeader :nth-child(4){
+      flex: 0.06;
+      font-weight: 700;
+      color: rgb(56, 88, 84);
+      text-align: left;
+	  border:1px solid red
+      }
+      .tableHeader :nth-child(5){
+      flex: 0.062;
+      padding-left: 0.35rem;
+      font-weight: 700;
+      color: rgb(56, 88, 84);
+      text-align: right;
+	  border:1px solid red
+      }
+      .tableHeader :nth-child(6){
+      flex: 0.06;
+      padding-left: 0.35rem;
+      font-weight: 700;
+      color: rgb(56, 88, 84);
+      text-align: right;
+	  border:1px solid red
+      }
+      .tableHeader :nth-child(7){
+      flex: 0.121;
+      padding-left: 0.35rem;
+      font-weight: 700;
+      color: rgb(56, 88, 84);
+      text-align: right;
+	  border:1px solid red
+      }
+      .tableHeader :nth-child(8){
+      flex: 0.121;
+      padding-left: 0.35rem;
+      font-weight: 700;
+      color: rgb(56, 88, 84);
+	  text-align: right;
+	  border:1px solid red
+   	  }
+	  .tableHeader :nth-child(9){
+      flex: 0.15;
+      padding-left: 0.35rem;
+      font-weight: 700;
+	  text-align:right;
+      color: rgb(56, 88, 84);
+	  border:1px solid red
+      }
+	   .tableHeader :nth-child(10){
+      flex: 0.11;
+      padding-left: 0.35rem;
+      font-weight: 700;
+      color: rgb(56, 88, 84);
+	  border:1px solid red
+      }
+	  */
+
+   
+    .swipL{
+    display: flex;
+    width: fit-content;
+    padding: 0.5em;
+    float: right;
+    color: rgb(182, 182, 182);
+    }
+	.dipedCrypto_L_rank{
+    display:flex;
+    position:absolute;
+    font-size:0.7em;
+    color: rgb(164, 167, 168);
+    top:5%;
+    width:100%;
+   }
+   .dipedCrypto_L_rank :nth-child(1){
+   flex:0.1;
+   }
+   .dipedCrypto_L_rank :nth-child(2){
+   flex:0.17;
+   }
+    .dipedCrypto_L_rank :nth-child(3){
+   flex:0.73;
+   }
+   .dipedCrypto_R_faCaretUp{
+    margin-top:0.3rem;
+	border:0px solid red;
+   }
+ 
+   
+    
+    @media screen and (max-width: 920px) {
+    .dipedCrypto{
+    display: flex;
+    width: 98%;
+    margin-top: 4vw;
+    position: relative;
+    }
+    .dipedCrypto_L_container{
+    display: flex;
+    height: 6em;
+    padding: 0.5em 0.5em 0.5em 1em;
+    gap: 10%;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid rgba(186, 202, 200, 0.308);
+	color: rgb(48, 49, 53);
+    transition: 0.4s; 
+    }
+    .dipedCrypto_R_container{
+    display: flex;
+    height: 6em;
+    padding: 0.5em 0em 0.5em 0em;
+    gap:0%;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid rgba(186, 202, 200, 0.308);
+    color: rgb(48, 49, 53);
+    transition: 0.4s;
+    }
+    .dipedCrypto_L{
+     display: flex;
+    flex-direction: column;
+    flex:0.4     
+    }
+    .dipedCrypto_L_id_span{
+    display: block;
+    }
+    .dipedCrypto_L_symbol{
+    color: rgb(31, 30, 30);
+    }
+    .dipedCrypto_R{
+    padding-left: 0em;
+    flex:0.6;
+    }
+    .dipedCrypto_HR{
+    width: 240%;
+    }
+    .dipedCrypto_R_container{
+    width: 240%;
+    }
+              
+   .dipedCrypto_R_container_price{
+    font-weight: 500;
+    flex: 0.138;
+    }
+    .dipedCrypto_R_container_hourlyChange{
+    font-weight: 500; 
+    flex: 0.081; 
+    display: flex; 
+	justify-content:right
+    }
+    .dipedCrypto_R_container_24hChange{        
+    display:flex;
+    justify-content: flex-end;
+    font-weight: 500;
+    flex: 0.081;
+    }
+    .dipedCrypto_R_container_7d{
+    font-weight: 500;
+    flex: 0.081;
+    text-align: right;
+    }
+    .dipedCrypto_R_container_mktCap{
+    font-weight: 500;   
+    flex: 0.19;
+    text-align: right;
+    }
+	 .dipedCrypto_R_container_volume{
+    font-weight: 500;   
+    flex: 0.152;
+    text-align: right;
+    }
+    .circulatingSupply{
+    flex: 0.19;
+    transition: .4s;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    vertical-align: baseline;   
+    }
+	.sparkline{
+    flex: 0.14;
+    text-align: right;
+    color: rgba(96, 141, 136, 0.445);
+    transition: .4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+   .dipedCrypto_HR{
+    display: flex;
+	justify-content:center;
+	align-items:center;
+    padding: 0em;
+	font-size:2vw;
+    color: rgb(39, 39, 41);
+    font-weight: 700;
+	padding-top:0.5rem;
+    padding-bottom:0.5rem;
+	border-top: 1px solid  rgba(186, 202, 200, 0.308);
+    border-bottom: 1px solid  rgba(186, 202, 200, 0.308);
+    }
+	.dipedCrypto_HR > div{
+    padding-left: 0.2em;
+    }
+    .dipedCrypto_HR_price{             
+    flex: 0.138;
+    }
+    .dipedCrypto_HR_hourly{
+    flex:0.081;
+	text-align:right;
+    }
+    .dipedCrypto_HR_24H{
+    flex:0.081;
+    text-align: right; 
+    }
+    .dipedCrypto_HR_7dh{
+    flex: 0.081;
+    text-align: right; 
+    }
+	.dipedCrypto_HR_mktCap{
+	flex: 0.19;
+	text-align: right;
+	}
+    .dipedCrypto_HR_vol{
+    flex: 0.152;
+    text-align: right;
+    }
+	.dipedCrypto_HR_circulatingSup{
+	flex: 0.19;
+	text-align: right;
+	}
+	.dipedCrypto_HR_sparkLine{
+	flex: 0.14; 
+	}		
+    .dipedCrypto_L_img_container{
+    flex:0.2;
+    }
+    .dipedCrypto_L_img{
+    width: 100%;
+    height: 100%;
+    }
+    .dipedCrypto_L_id{
+    font-weight: 500;
+    flex:0.8;
+	display:flex;
+	gap:4%;
+    color: rgb(29, 27, 27);
+    }
+    .dipedCrypto_L_symbol{
+    color: rgb(119, 119, 119);
+    }
+    .dipedCrypto_L_Star{
+    flex:0.1;
+    }
+    .dipedCrypto_L_Star_container{
+    font-size: 3vw;
+    }
+    .tableHeader{
+     display: none
+    }
+    .dipedCrypto_HL_name{
+    display:flex;
+    font-size:2vw;
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    padding-left: 8vw;
+    display: block;
+	border-top: 1px solid  rgba(186, 202, 200, 0.308);
+	border-bottom: 1px solid  rgba(186, 202, 200, 0.308);
+    }
+    #dipedCrypto_L_cont{
+    box-shadow: 10px 0 5px -6px rgba(184, 184, 184, 0.473);
+    transition: 0.2s;
+    }
+	.dipedCrypto_L_rank{
+    display:flex;
+    position:absolute;
+    font-size:0.8em;
+    color: rgb(164, 167, 168);
+    top:5%;
+    width:100%;
+   }
+   .dipedCrypto_L_rank :nth-child(1){
+   flex:0.1;
+   }
+   .dipedCrypto_L_rank :nth-child(2){
+   flex:0.3;
+   }
+    .dipedCrypto_L_rank :nth-child(3){
+   flex:0.6;
+   }
+   }
+    
+    @media screen and (max-width: 550px) {
+    .dipedCrypto_L_container{
+    display: flex;
+    height: 6em;
+    padding: 0.5em 0.5em 0.5em 0.3em;
+    gap: 10%;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 0.4s;      
+    }
+    .dipedCrypto_R_container{
+    display: flex;
+    height: 6em;
+    padding-top: 0.5em;
+	padding-bottom: 0.5em;
+    gap:0%;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgb(29, 27, 27);
+    transition: 0.4s;
+    }
+    .dipedCrypto_L{
+    display: flex;
+    flex-direction: column;
+    flex:0.4     
+    }
+    .dipedCrypto_L_id_span{
+    display: none;
+    }
+    .dipedCrypto_L_symbol{
+    color: rgb(31, 30, 30);
+    }
+    .dipedCrypto_R{
+    padding-left: 0em;
+    flex:0.6;
+    }
+    .dipedCrypto_HR{
+    width: 380%;
+    }
+    .dipedCrypto_R_container{
+    width: 380%;
+    }    
+    .dipedCrypto_R_container_price{
+    font-weight: 500;
+    flex: 0.138;
+    }
+    .dipedCrypto_R_container_hourlyChange{
+    font-weight: 500; 
+    flex: 0.081; 
+    display: flex; 
+    }
+    .dipedCrypto_R_container_24hChange{        
+    display:flex;
+    justify-content: flex-end;
+    font-weight: 500;
+    flex: 0.081;
+    }
+    .dipedCrypto_R_container_7d{
+    font-weight: 500;
+    flex: 0.081;
+    text-align: right;
+    }
+    .dipedCrypto_R_container_mktCap{
+    font-weight: 500;   
+    flex: 0.19;
+    text-align: right;
+    }
+	 .dipedCrypto_R_container_volume{
+    font-weight: 500;   
+    flex: 0.152;
+    text-align: right;
+    }
+    .circulatingSupply{
+    flex: 0.19;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    vertical-align: baseline;   
+    }
+
+	.sparkline{
+    flex: 0.14;
+    text-align: right;
+    color: rgba(96, 141, 136, 0.445);
+    transition: .4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+   .dipedCrypto_HR{
+    display: flex;
+	justify-content:center;
+	align-items:center;
+	font-weight: 700;
+	color: rgb(39, 39, 41);
+	font-size:3vw;
+	padding: 1em 0em 1em 0em;
+    }
+	.dipedCrypto_HR > div{
+    padding-left: 0.2em;
+    }
+    .dipedCrypto_HR_price{             
+    flex: 0.138;
+    }
+    .dipedCrypto_HR_hourly{
+    flex:0.081;
+    }
+    .dipedCrypto_HR_24H{
+    flex:0.081;
+    text-align: right; 
+    }
+    .dipedCrypto_HR_7dh{
+    flex: 0.081;
+    text-align: right; 
+    }
+	.dipedCrypto_HR_mktCap{
+	flex: 0.19;
+	text-align: right
+	}
+    .dipedCrypto_HR_vol{
+    flex: 0.152;
+    text-align: right;
+    }
+	.dipedCrypto_HR_circulatingSup{
+	flex: 0.19;
+	text-align: right
+	}
+	.dipedCrypto_HR_sparkLine{
+	flex: 0.14; 
+	}
+
+    .dipedCrypto_L_img_container{
+    flex:0.3;  
+    }
+    .dipedCrypto_L_img{
+    width: 80%;
+    height: 80%;
+    }
+    .dipedCrypto_L_id{
+    font-weight: 500;
+    flex:0.6;
+    color: rgb(29, 27, 27);
+    }
+    .dipedCrypto_L_symbol{
+    color: rgb(119, 119, 119);
+    }
+    .dipedCrypto_L_Star{
+    flex:0.1;
+    }
+    .dipedCrypto_L_Star_container{
+    font-size: 4vw;
+    }
+	.dipedCrypto_HL_name{
+    font-size:3vw;
+	padding: 1em 0em 1em 0em;
+    font-weight: 700;
+    } 
+	 .dipedCrypto_L_rank{
+    display:flex;
+    position:absolute;
+    font-size:0.8em;
+    color: rgb(164, 167, 168);
+    top:5%;
+    width:100%;
+   }
+   .dipedCrypto_L_rank :nth-child(1){
+   flex:0.15;
+   }
+   .dipedCrypto_L_rank :nth-child(2){
+   flex:0.35;
+   }
+    .dipedCrypto_L_rank :nth-child(3){
+   flex:0.5;
+
+   }
+    }
+    
+   @media screen and (max-width: 430px) {
+   .dipedCrypto_L_container{
+    display: flex;
+    height: 4.5em;
+    padding: 0.5em 0.5em 0.5em 0.3em;
+    gap: 10%;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 0.4s;      
+    }
+    .dipedCrypto_R_container{
+    display: flex;
+    height: 4.5em;
+    padding-top: 0.5em;
+	padding-bottom: 0.5em;
+    gap:0%;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgb(29, 27, 27);
+    transition: 0.4s;
+    }
+    .dipedCrypto_L{
+    display: flex;
+    flex-direction: column;
+    flex:0.4     
+    }
+    .dipedCrypto_L_id_span{
+    display: none;
+    }
+    .dipedCrypto_L_symbol{
+    color: rgb(31, 30, 30);
+    }
+    .dipedCrypto_R{
+    padding-left: 0em;
+    flex:0.6;
+    }
+    .dipedCrypto_HR{
+    width: 470%;
+    }
+    .dipedCrypto_R_container{
+    width: 470%;
+    }    
+    .dipedCrypto_R_container_price{
+    font-weight: 500;
+    flex: 0.138;
+    }
+    .dipedCrypto_R_container_hourlyChange{
+    font-weight: 500; 
+    flex: 0.081; 
+    display: flex; 
+    }
+    .dipedCrypto_R_container_24hChange{        
+    display:flex;
+    justify-content: flex-end;
+    font-weight: 500;
+    flex: 0.081;
+    }
+    .dipedCrypto_R_container_7d{
+    font-weight: 500;
+    flex: 0.081;
+    text-align: right;
+    }
+    .dipedCrypto_R_container_mktCap{
+    font-weight: 500;   
+    flex: 0.19;
+    text-align: right;
+    }
+	 .dipedCrypto_R_container_volume{
+    font-weight: 500;   
+    flex: 0.152;
+    text-align: right;
+    }
+    .circulatingSupply{
+    flex: 0.19;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    vertical-align: baseline;   
+    }
+
+	.sparkline{
+    flex: 0.14;
+    text-align: right;
+    color: rgba(96, 141, 136, 0.445);
+    transition: .4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+   .dipedCrypto_HR{
+    display: flex;
+	justify-content:center;
+	align-items:center;
+	font-weight: 700;
+	color: rgb(39, 39, 41);
+	font-size:3.5vw;
+	padding: 1em 0em 1em 0em;
+    }
+	.dipedCrypto_HR > div{
+    padding-left: 0.2em;
+    }
+    .dipedCrypto_HR_price{             
+    flex: 0.138;
+    }
+    .dipedCrypto_HR_hourly{
+    flex:0.081;
+    }
+    .dipedCrypto_HR_24H{
+    flex:0.081;
+    text-align: right; 
+    }
+    .dipedCrypto_HR_7dh{
+    flex: 0.081;
+    text-align: right; 
+    }
+	.dipedCrypto_HR_mktCap{
+	flex: 0.19;
+	text-align: right
+	}
+    .dipedCrypto_HR_vol{
+    flex: 0.152;
+    text-align: right;
+    }
+	.dipedCrypto_HR_circulatingSup{
+	flex: 0.19;
+	text-align: right
+	}
+	.dipedCrypto_HR_sparkLine{
+	flex: 0.14; 
+	}
+
+    .dipedCrypto_L_img_container{
+    flex:0.3;  
+    }
+    .dipedCrypto_L_img{
+    width: 80%;
+    height: 80%;
+    }
+    .dipedCrypto_L_id{
+    font-weight: 500;
+    flex:0.6;
+    color: rgb(29, 27, 27);
+    }
+    .dipedCrypto_L_symbol{
+    color: rgb(119, 119, 119);
+    }
+    .dipedCrypto_L_Star{
+    flex:0.1;
+    }
+    .dipedCrypto_L_Star_container{
+    font-size: 4vw;
+    }
+	.dipedCrypto_HL_name{
+    font-size:3.5vw;
+	padding: 1em 0em 1em 0em;
+    font-weight: 700;
+    } 
+	 .dipedCrypto_L_rank{
+    display:flex;
+    position:absolute;
+    font-size:0.8em;
+    color: rgb(164, 167, 168);
+    top:5%;
+    width:100%;
+   }
+   .dipedCrypto_L_rank :nth-child(1){
+   flex:0.15;
+   }
+   .dipedCrypto_L_rank :nth-child(2){
+   flex:0.35;
+   }
+    .dipedCrypto_L_rank :nth-child(3){
+   flex:0.5;
+
+   }
+   }  
+    
+	
+    @media screen and (max-width: 300px) {
+    .dipedCrypto_HR{
+        width: 650%;
+     }
+     .dipedCrypto_R_container{
+     width: 650%;
+     }
+	.dipedCrypto_L_container{
+    display: flex;
+	font-size:4.5vw;
+    height: 6.2em;
+    padding: 0.5em 0.5em 0.5em 0.3em;
+    gap: 10%;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 0.4s;      
+    }
+    .dipedCrypto_R_container{
+    display: flex;
+	font-size:4.5vw;
+    height: 6.2em;
+    padding-top: 0.5em;
+	padding-bottom: 0.5em;
+    gap:0%;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgb(29, 27, 27);
+    transition: 0.4s;
+    }
+	.dipedCrypto_L{
+    display: flex;
+    flex-direction: column;
+    flex:0.5     
+    }
+    .dipedCrypto_R{
+    padding-left: 0em;
+    flex:0.5;
+    }
+	
+	  /*
+	.dipedCrypto_HL_name{
+	  font-size:4.2vw;
+      }
+	
+	 .dipedCrypto_HR{
+            display: flex;
+            padding: 0.5em;
+            gap: 0%;
+            font-weight: 700;
+			font-size:4.2vw;
+            color: rgb(82, 82, 82);
+            border-bottom: 1px solid rgb(206, 206, 206);
+            }
+			          
+    .dipedCrypto_R_container_price{
+     font-size:5vw
+    }
+    .dipedCrypto_R_container_hourlyChange{
+     font-size:5vw
+    }
+    .dipedCrypto_R_container_24hChange{
+     font-size:5vw
+    }
+    
+    .dipedCrypto_R_container_7d{
+     font-size:5vw
+    }
+    .dipedCrypto_R_container_volume{
+     font-size:5vw
+    }
+    .dipedCrypto_R_container_mktCap{
+     font-size:5vw     
+    }
+	 .dipedCrypto_L_container{
+     padding: 0.5em 0.5em  0.5em  0.2em ;
+     gap:4%;
+     font-size:5vw;
+     }
+	 .dipedCrypto_L_Star_container{
+     font-size: 5vw;
+     }
+	 */
+    }

@@ -1,7 +1,7 @@
 .CMVCurrencies{
     width: 80%;
     margin: auto;
-    padding-top: 0.3rem;
+    padding-top: 0rem;
 }
 .CMVCurrencies_main{
     height: auto;
@@ -10,7 +10,7 @@
     margin: auto;
     position: relative;
     box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2), 0 1px 2px 0 rgba(177, 177, 177, 0.19);
-    margin-bottom: 23em;
+    margin-bottom: 2.6em;
    
     }
 .CMVCurrencies_changeCurrency{
@@ -33,9 +33,10 @@
 }
 .CMVCurrencies_input:focus{
     outline: none !important;
-    border-right:1px solid rgba(53, 91, 102, 0.123);
+	background-color: rgb(252, 250, 255);
+    border-right:0px solid rgba(53, 91, 102, 0.123);
     
- }
+}
 .CMVCurrencies_currentCurrency{
     display: flex;
     flex: 0.5;
@@ -50,7 +51,7 @@
 .CMVCurrencies_currentCurrency p{
     margin-left: auto;
     font-weight: 500;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     color: rgb(53, 91, 102);
 }
 .CMVCurrencies_check{
@@ -66,7 +67,12 @@
 }
 .CMVCurrencies_currencylist{
     padding: 0.2em;
-    border: 1px solid rgb(53, 91, 102);  
+	border-top: 0px solid rgb(177, 179, 206); 
+	border-left: 1px solid rgb(177, 179, 206); 
+	border-right: 1px solid rgb(177, 179, 206); 
+    border-bottom: 1px solid rgb(177, 179, 206);  
+	border-bottom-left-radius:1em;
+	border-bottom-right-radius:1em;
     border-style: dashed;
     color: rgb(53, 91, 102);
 }
@@ -74,6 +80,7 @@
     text-align: center;
     margin-top: 2em;
     color: rgb(58, 112, 128);
+	
 }
 
 @media screen and (max-width: 920px) {
@@ -100,7 +107,8 @@
     }
     .CMVCurrencies_input{
        flex: 0.5;
-       height: 2.4em;
+	   font-size:2vw;
+       height: 2.5em;
        padding-left: 0.2rem;
        border: 0em;
     }
@@ -118,29 +126,24 @@
     .CMVCurrencies_currentCurrency p{
         margin-left: auto;
         font-weight: 500;
-        font-size: 1.5vw;
+        font-size: 2vw;
     }
     .CMVCurrencies_check{
         padding: 0%;
+		font-size: 2.5vw;
         margin-top: 0.37rem;
     }
     .CMVCurrencies_currencyInfo{
         position: absolute; 
         width: 50%;
-        padding: 0rem;
-    
-        
+        padding: 0rem;  
     }
     .CMVCurrencies_currencylist{
-        padding: 0.2em;
+        padding: 0.5em;
         border: 1px solid rgb(73, 73, 73);  
         border-style: dashed;
     }
-}
-
-
-
-
+    }
 
 @media screen and (max-width: 550px) {
 .CMVCurrencies{
@@ -168,7 +171,7 @@
    flex: 0.6;
    height: 2.4em;
    padding-left: 0.2rem;
-   font-size: 1.2em;
+   font-size: 5vw;
 }
 .CMVCurrencies_currentCurrency{
     display: flex;
@@ -190,6 +193,7 @@
 .CMVCurrencies_check{
     padding: 0%;
     margin-top: 0.37rem;
+	font-size:4vw
 }
 .CMVCurrencies_currencyInfo{
     position: absolute;

@@ -10,15 +10,12 @@ import Link from "next/link"
 
 
 
-export function Currencies({currency, setCurrency,currencyPlural,setCurrencyPlural,speech,
-    runOrStop,setRunOrStop,setFinalComp,finalComp,coinArr,setCoinArr,setQuickData,quickData,
-    currencySingular,setCurrencySingular}){
-
-    const [changeCurrency,setChangeCurrency] = useState(' ')
-    const [symbolNative,setSymbolNative] = useState('$')
-    const changexy = useRef(null)
+export function Currencies({currency, setCurrency,currencyPlural,setCurrencyPlural,speech,runOrStop,setRunOrStop,setFinalComp,finalComp,coinArr,
+setCoinArr,setQuickData,quickData,currencySingular,setCurrencySingular,currencySymbol,setCurrencySymbol}){
+const [changeCurrency,setChangeCurrency] = useState(' ')
+const [symbolNative,setSymbolNative] = useState('$')
+const changexy = useRef(null)
  
-
 let xyArray =  currencyArray.filter((c)=>{
 return c.code.includes(changeCurrency) 
 })
@@ -31,18 +28,11 @@ setSymbolNative(sym);
 setCurrency(currCode);
 setCurrencySingular(name);
 setCurrencyPlural(plural);
+setCurrencySymbol(sym)
 
 
 }
-const changeInfoState = ()=>{
-    
-}
-const changeMyCurrency = ()=>{
-    ()=>speech.cancel();
-    setRunOrStop(false);
-    setCoinArr([])
-    setQuickData(true);
-   }
+
 
 
 
@@ -60,7 +50,7 @@ return(
  {
 changexy.current? changexy.current.value !== '' && xyArray.map((xy,index)=> 
 index < 1 && <div key = {xy.symbol+index} className = {styles.CMVCurrencies_currencylist} 
- onClick = {()=>{changeMyCurrency();changeCurrCurrency(xy.symbol,xy.name,xy.code,xy.name_plural)}}><span>{xy.symbol}</span>{'  '}<span>{xy.name}</span></div>)
+ onClick = {()=>{changeCurrCurrency(xy.symbol,xy.name,xy.code,xy.name_plural)}}><span>{xy.symbol}</span>{'  '}<span>{xy.name}</span></div>)
 : ''}
 </div>   
 </div>
