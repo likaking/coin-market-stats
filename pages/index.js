@@ -15,6 +15,7 @@ import {DisplayCoin} from '../src/displayCoin.js'
 import {Currencies} from '../src/currencies.js'
 import HeaderActivities from '../src/headerActivity.js'
 import Tools from '../src/tools.js'
+import ToolsOnButton from '../src/toolsOnBtn.js'
 
 const  Footer = React.lazy(()=> import('./footer/footer.js'))
 
@@ -37,6 +38,7 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
   const [index,setIndex] = useState()
   const [priceAlertzPing,setPriceAlertzPing] = useState([])
   const [openPriceALertsModal,setOpenPriceALertsModal] = useState(false)
+  const [openTools,setOpenTools] = useState(true)
 
   
   const  [activeCoins,setActiveCoins]  = useState(
@@ -702,7 +704,8 @@ setCurrency(currency)
  <DisplayCoin activeCoins={activeCoins} buy={buy} setBuy={setBuy} setActiveCoins={setActiveCoins} setQuickData={setQuickData} setCoinArr={setCoinArr} currency={currency} searchGems={searchGems} openModal={openModal} setOpenModal={setOpenModal} modalSearch={modalSearch} setModalSearch={setModalSearch} startModal={startModal} setStartModal={setStartModal} index={index} setIndex={setIndex} priceAlertzPing ={priceAlertzPing} setPriceAlertzPing={setPriceAlertzPing} currencySymbol={currencySymbol} setCurrencySymbol={setCurrencySymbol} />
  
  <Tools currency={currency} setCurrency={setCurrency} currencyPlural={currencyPlural} setCurrencyPlural={setCurrencyPlural} 
-  currencySingular={currencySingular} setCurrencySingular={setCurrencySingular} currencySymbol ={currencySymbol} setCurrencySymbol={setCurrencySymbol} />
+ currencySingular={currencySingular} setCurrencySingular={setCurrencySingular} currencySymbol ={currencySymbol} setCurrencySymbol={setCurrencySymbol} openTools={openTools} setOpenTools={setOpenTools} />
+ <ToolsOnButton openTools={openTools} setOpenTools={setOpenTools}/>
  </div>
  </main>
 

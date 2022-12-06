@@ -7,13 +7,14 @@ import {FaCaretDown,FaCaretUp,FaTrashAlt,FaStar,FaInfoCircle,FaWindowClose,FaTim
 import { MdOutlineSettingsPower,MdOutlinePowerSettingsNew,MdPowerSettingsNew } from "react-icons/md";
 
 
-export default function Tools({activeCoins,buy,setBuy,setActiveCoins,Speech,setQuickData,setCoinArr,currency,searchGems,openModal,setOpenModal,modalSearch,setModalSearch,startModal,setStartModal,index,setIndex,priceAlertzPing,setPriceAlertzPing,currencySymbol,setCurrencySymbol}){
+export default function Tools({activeCoins,buy,setBuy,setActiveCoins,Speech,setQuickData,setCoinArr,currency,searchGems,openModal,setOpenModal,
+modalSearch,setModalSearch,startModal,setStartModal,index,setIndex,priceAlertzPing,setPriceAlertzPing,currencySymbol,setCurrencySymbol,openTools,setOpenTools}){
 
 
 
 return(
 <>
-<div  className={styles.tools_container}>
+<div  className={styles.tools_container} style = {{display: openTools ? 'block' : 'none'}} >
 <div  className={styles.tools_inner_container}>
 <div className={styles.tools_close}><MdPowerSettingsNew className={styles.tools_closeIcon} /></div>
 <div className={styles.form}>
@@ -23,13 +24,13 @@ return(
 <option className={styles.selectOptions}>Current Price</option>
 </select>
 <div className={styles.formDivs}>
-<button className={styles.formAbvBel_Btns}>Above</button> <button className={styles.formAbvBel_Btns}>Below</button>
+<button type='button'  className={styles.formAbvBel_Btns}>Above</button> <button type='button' className={styles.formAbvBel_Btns}>Below</button>
 </div>
 <div className={styles.formDivs}>
-<input type= 'number' placeholder='Type numbder'  className={styles.formInput} />
+<input type= 'number' placeholder='Type numder'  className={styles.formInput} />
 </div>
 <div className={styles.formDivs}>
-<button  className={styles.formProcessBtn}>Process</button>
+<button type='button'  className={styles.formProcessBtn}>Process</button>
 </div>
 </form>
 </div>
@@ -44,12 +45,12 @@ return(
 <input type= 'text' placeholder='Date eg 22/10/2015 '  className={styles.formInput} />
 </div>
 <div className={styles.formDivs}>
-<button  className={styles.formProcessBtnHP}>Process</button>
+<button  type='button' className={styles.formProcessBtnHP}>Process</button>
 </div>
 </form>
 </div>
 
-<div className={styles.formOnOff}><MdPowerSettingsNew  className={styles.formOnOff_Icon}/></div>
+<div className={styles.formOnOff}><span onClick ={()=>{setOpenTools(false)}}  ><MdPowerSettingsNew  className={styles.formOnOff_Icon}   /></span></div>
 </div>
 </div>
 
