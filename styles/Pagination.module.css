@@ -1,0 +1,7 @@
+.page_Contianer{
+display:flex;
+gap:0.5em;
+color:rgb(93, 158, 195);
+cursor:pointer;
+justify-content: center
+}

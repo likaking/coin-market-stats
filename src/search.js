@@ -8,7 +8,8 @@ import {FaBell} from 'react-icons/fa'
 
   
 
-export default function AddCrypto({activeCoins,buy,setBuy,setActiveCoins,currency,speech,quickData,setQuickData,setCoinArr,setRunOrStop,searchGems,setSearchGems,priceAlertzPing,setPriceAlertzPing,openPriceALertsModal,setOpenPriceALertsModal}){
+export default function AddCrypto({activeCoins,buy,setBuy,setActiveCoins,currency,speech,quickData,setQuickData,setCoinArr,setRunOrStop,
+searchGems,setSearchGems,priceAlertzPing,setPriceAlertzPing,openPriceALertsModal,setOpenPriceALertsModal,switchHeader,setSwitchHeader}){
 const [coinAlreadyExistError,setCoinAlreadyExistError] = useState('')
 const coinIsExitingErr = useRef(null)
 const [addNewCoin, setAddNewCoin] = useState('')
@@ -25,7 +26,7 @@ const addCoinForm = useRef(null)
   
    
 return(
-<>
+<> {!switchHeader &&
   <div className={styles.main_cmv_contianer}>
   <div className={styles.cmv_device_contianer}>
   <form>
@@ -35,7 +36,7 @@ return(
   </form>
   </div>
   </div>
-
+}
 </>
 )
 

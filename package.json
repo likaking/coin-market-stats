@@ -254,6 +254,7 @@
     "react-dom": "^18.1.0",
     "react-icons": "^4.4.0",
     "react-is": "^16.13.1",
+    "react-select": "^5.7.0",
     "react-sparklines": "^1.7.0",
     "react-transition-group": "^4.4.2",
     "read-cache": "^1.0.0",
@@ -361,5 +362,8 @@
   "bugs": {
     "url": "https://github.com/likaking/coin-market-stats/issues"
   },
-  "homepage": "https://github.com/likaking/coin-market-stats#readme"
+  "homepage": "https://github.com/likaking/coin-market-stats#readme",
+  "devDependencies": {
+    "@svgr/webpack": "^6.5.1"
+  }
 }

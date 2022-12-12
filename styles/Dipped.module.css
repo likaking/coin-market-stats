@@ -87,6 +87,7 @@
     font-weight: 500; 
     flex: 0.175; 
     display: flex; 
+
     }
     .dipedCrypto_R_container_24hChange{
     display:flex;
@@ -99,6 +100,7 @@
     font-weight: 500;
     flex: 0.16;
     text-align: right;
+	
     }
     .dipedCrypto_R_container_volume{
     font-weight: 500;   
@@ -175,62 +177,60 @@
     color: rgb(56, 88, 84);
     }
     .tableHeader :nth-child(2){
-        flex: 0.28;
-        font-weight: 700;
-        padding-left: 0.5rem;
-        color: rgb(56, 88, 84);
-        }
-        .tableHeader :nth-child(3){
-            flex: 0.13;
-            font-weight: 700;
-            color: rgb(56, 88, 84);
-			text-align: left;
-            }
-            .tableHeader :nth-child(4){
-              flex: 0.104;
-                font-weight: 700;
-                color: rgb(56, 88, 84);
-                text-align: left;
-                }
-                .tableHeader :nth-child(5){
-                  flex: 0.1;
-                    padding-left: 0.35rem;
-                    font-weight: 700;
-                    color: rgb(56, 88, 84);
-                    text-align: right;
-                    }
-                    .tableHeader :nth-child(6){
-                      flex: 0.09;
-                        padding-left: 0.35rem;
-                        font-weight: 700;
-                        color: rgb(56, 88, 84);
-                        text-align: right;
-                        }
-                        .tableHeader :nth-child(7){
-                         flex: 0.147;
-                            padding-left: 0.35rem;
-                            font-weight: 700;
-                            color: rgb(56, 88, 84);
-                            text-align: right;
-                            }
-                            .tableHeader :nth-child(8){
-                               flex: 0.159;
-                                padding-left: 0.35rem;
-                                font-weight: 700;
-                                color: rgb(56, 88, 84);
-								text-align: right;
-								
-                                }
-								.tableHeader :nth-child(9){
-                                flex: 0.075;
-                                padding-left: 0.35rem;
-                                font-weight: 700;
-                                color: rgb(56, 88, 84);
-                                }
+     flex: 0.28;
+     font-weight: 700;
+     padding-left: 0.5rem;
+    color: rgb(56, 88, 84);
+    }
+    .tableHeader :nth-child(3){
+    flex: 0.13;
+    font-weight: 700;
+    color: rgb(56, 88, 84);
+    text-align: left;
+
+    }
+    .tableHeader :nth-child(4){
+    flex: 0.104;
+    font-weight: 700;
+    color: rgb(56, 88, 84);
+    text-align: left;
+	
+    }
+    .tableHeader :nth-child(5){
+    flex: 0.1;
+    padding-left: 0.35rem;
+    font-weight: 700;
+    color: rgb(56, 88, 84);
+    text-align: right;
+    }
+    .tableHeader :nth-child(6){
+    flex: 0.09;
+    padding-left: 0.35rem;
+    font-weight: 700;
+    color: rgb(56, 88, 84);
+    text-align: right;
+    }
+    .tableHeader :nth-child(7){
+    flex: 0.147;
+    padding-left: 0.35rem;
+    font-weight: 700;
+    color: rgb(56, 88, 84);
+    text-align: right;
+    }
+    .tableHeader :nth-child(8){
+    flex: 0.159;
+    padding-left: 0.35rem;
+    font-weight: 700;
+    color: rgb(56, 88, 84);
+	text-align: right;						
+    }
+	.tableHeader :nth-child(9){
+    flex: 0.075;
+    padding-left: 0.35rem;
+    font-weight: 700;
+    color: rgb(56, 88, 84);
+    }
  
- 
- 
-    
     .dipedCrypto_HR{
     display: flex;
     padding: 0.5em;
@@ -328,7 +328,6 @@
     font-weight: 500; 
     flex: 0.175; 
     display: flex; 
-	
     }
     .dipedCrypto_R_container_24hChange{
     display:flex;
@@ -375,8 +374,8 @@
             flex: 0.22;
             }
             .dipedCrypto_HR_priceCh{
-                flex: 0.174; 
-                text-align: left;
+            flex: 0.174; 
+            text-align: left;
             }
             .dipedCrypto_HR_24H{
             flex: 0.169; 

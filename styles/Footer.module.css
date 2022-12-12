@@ -6,9 +6,7 @@
     margin-top: 40vw;
     background-color: rgb(32, 70, 85);
     background-image: -webkit-linear-gradient(rgb(68, 111, 128),rgba(11, 107, 102, 0.658));
-    position: relative;
-
-    
+    position: relative;    
 }
 .footer_logo{
     display: flex;

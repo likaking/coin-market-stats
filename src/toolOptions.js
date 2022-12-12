@@ -1,0 +1,21 @@
+export const toolOptionsList = [
+  { value: 'Market Cap', label: 'Market Cap' },
+  { value: 'Current Price', label: 'Current Price' },
+  { value: 'market cap Rank', label: 'market cap Rank' },
+  { value: 'Total Volume', label: 'Total Volume' },
+  { value: 'All Time High', label: 'All Time High' },
+  { value: 'All Time Low', label: 'All Time Low' },
+  { value: 'High 24h', label: 'High 24h' },
+  { value: 'Low 24h', label: 'Low 24h' },
+  { value: 'Price Change 24h', label: 'Price Change 24h' },
+  { value: 'Price Change Percentage 24h', label: 'Price Change Percentage 24h' },
+  { value: 'Market Cap Change 24h', label: 'Market Cap Change 24h' },
+  { value: 'Market Cap Change Percentage 24h', label: 'Market Cap Change Percentage 24h' },
+  { value: 'Circulating Supply', label: 'Circulating Supply' },
+  { value: 'Total Supply', label: 'Total Supply' },
+  { value: 'Max Supply', label: 'Max Supply' },
+  { value: 'Price Change Percentage 1h In Currency', label: 'Price Change Percentage 1h In Currency' },
+  { value: 'Price Change Percentage 24h In Currency', label: 'Price Change Percentage 24h In Currency' },
+  { value: 'Price Change Percentage 7d In Currency', label: 'Price Change Percentage 7d In Currency' },
+  
+];

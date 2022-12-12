@@ -3,6 +3,7 @@
     width: 99%;
     margin: auto;
     position: relative;
+	margin-bottom: 2rem
     }
     .dipedCrypto_L{
     display: flex;
@@ -87,14 +88,15 @@
     .dipedCrypto_R_container_price{
     font-weight: 500;
     flex: 0.138;
-	word-break:break-all
+	word-break:break-all;
     }
     .dipedCrypto_R_container_hourlyChange{
     font-weight: 500; 
     flex: 0.081; 
     display: flex; 
 	word-break:break-all;
-	position:relative
+	justify-content: flex-end;
+	position:relative;
     }
     .dipedCrypto_R_container_24hChange{        
     display:flex;
@@ -102,7 +104,7 @@
     font-weight: 500;
     flex: 0.081;
 	word-break:break-all;
-	position:relative
+	position:relative;
     }
     
     .dipedCrypto_R_container_7d{
@@ -111,7 +113,7 @@
 	display:flex;
     justify-content:right;
 	word-break:break-all;
-	position:relative
+	position:relative;
     }
    
     .dipedCrypto_R_container_mktCap{
@@ -256,6 +258,7 @@
      }
 	 .tableHeader_L :nth-child(1){ 
 	  flex:0.13;
+	  
      }
 	 .tableHeader_L :nth-child(2){
 	 flex:0.87;  
@@ -265,18 +268,18 @@
 	  padding-left: 0.2em 
 	 }
 	 .tableHeader_R :nth-child(1){  
-	 flex: 0.138;  
+	 flex: 0.139;  
 	 }
 	 .tableHeader_R :nth-child(2){
-	 flex: 0.081;		
-     justify-content:right;		 
+	 flex: 0.087;		
+     justify-content:right;	 
 	 }
 	 .tableHeader_R :nth-child(3){
-	 flex: 0.081;
+	 flex: 0.084;
 	 text-align: right;	 
 	 }
 	 .tableHeader_R :nth-child(4){
-	 flex: 0.081;
+	 flex: 0.084;
 	 text-align: right;
 	 }
 	 .tableHeader_R :nth-child(5){

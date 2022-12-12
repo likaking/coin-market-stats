@@ -1,0 +1,29 @@
+.WM_container{
+display:flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+width:100%;
+height:43%;
+z-index: -5;
+padding-top:4%;
+position:absolute;
+top:0%;
+display:none
+}
+.currencySym{
+font-size:10em;
+text-align: center;
+display:flex;
+justify-content: center;
+align-items: center;
+/*color:rgba(105, 85, 151, 0.026);*/
+color:red;
+font-weight:bold;
+transition:0.4s;
+}
+@media screen and (max-width: 920px) {
+.WM_container{
+display:none;
+}
+}

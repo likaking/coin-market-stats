@@ -1,14 +1,14 @@
 .tools_container{
 width: 25%;
-height: 31em;
+height: 31.4em;
 position: fixed;
-bottom:10%;
+bottom:5%;
 left:0;
 right:0;
 margin-left: auto;
 margin-right: auto;
 z-index: 5;
-background-color: rgb(255, 250, 254);
+background-color: white;
 box-shadow: 0 0 3px 3px rgb(231, 227, 230);
 border-radius:1em 1em 10em 10em ;
 transition: 0.4s;
@@ -57,10 +57,10 @@ padding:1rem 1rem 0.5rem 1rem
 .select{
 width:100%;
 height:3em;	
-background-color:none
 }
 .selectOptions{
 font-size:1.3vw;
+width:100%;
 }
 .formDivs{
 margin: 0.7em 0em 0.7em 0em;
@@ -71,23 +71,33 @@ gap:5%
 .formInput{
 width:100%;
 height:2.5em;
-border-radius: 0em
+border-radius: 0.3em;
+border:1px solid rgb(203, 207, 209)
 }
 .formAbvBel_Btns{
 font-size:1em;
 width:50%;
-height:3rem
+height:3rem;
+border-radius: 0.3em;
+border:1px solid rgb(203, 207, 209);
+background-color: rgb(249, 249, 249)
 }
 .formProcessBtn{
 font-size:1em;
 width:100%;
-height:2.5rem	
+height:2.5rem;
+border-radius: 0.3em;
+border:1px solid rgb(203, 207, 209);
+background-color: rgb(249, 249, 249)
+
 }
 .formProcessBtnHP{
 font-size:1em;
 width:30%;
 height:5.2rem;
-border-radius: 12em 12em 12em 12em		
+border-radius: 12em 12em 12em 12em;
+border:1px solid rgb(203, 207, 209);
+background-color: rgb(249, 249, 249)
 }
 .header{
 margin:0;
@@ -150,9 +160,9 @@ font-size:3vw
 }
 .tools_container{
 width: 50%;
-height: 53%;
+height: 45em;
 position: fixed;
-bottom:23%;
+bottom:20%;
 left:0;
 right:0;
 margin-left: auto;
@@ -288,7 +298,7 @@ font-size:3vw
 width: 70%;
 height: 34em;
 position: fixed;
-bottom:10%;
+bottom:5%;
 left:0;
 right:0;
 margin-left: auto;
@@ -336,6 +346,10 @@ background-color:none
 }
 .selectOptions{
 font-size:1vw;
+}
+.selectOptions{
+font-size:2vw;
+width:100%;
 }
 .formDivs{
 margin: 1.5vw 0em 1.5vw 0em;
@@ -409,7 +423,7 @@ font-size:4.2vw
 width: 90%;
 height: 37em;
 position: fixed;
-bottom:20%;
+bottom:13%;
 left:0;
 right:0;
 margin-left: auto;
@@ -456,7 +470,8 @@ font-size:3.5vw;
 background-color:none
 }
 .selectOptions{
-font-size:1vw;
+font-size:2.8vw;
+width:100%;
 }
 .formDivs{
 margin: 3vw 0em 3vw 0em;
@@ -502,6 +517,10 @@ color:rgb(161, 220, 82);
 color:rgb(220, 82, 92);
 transition: 0.4s	
 }
+.formOnOff_Icon:active{
+color:rgb(220, 82, 92);
+transition: 0.4s	
+}
 .formOn{
 width: auto;
 text-align:center;
@@ -518,6 +537,21 @@ position: fixed;
 color: rgba(71, 22, 22, 0.123);
 font-size:18vw;
 transition: 0.4s
+}
+}
+
+@media screen and (max-width: 390px) {
+.header{
+font-size:4.2vw	
+}
+.tools_container{
+width: 90%;
+height: 35em;
+position: fixed;
+bottom:15%;
+}
+.formOn{
+bottom:1%;
 }
 }
 
@@ -544,7 +578,7 @@ font-size:4.2vw
 width: 90%;
 height: 25em;
 position: fixed;
-bottom:15%;
+bottom:5%;
 }
 .formOn{
 bottom:5%;

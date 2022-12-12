@@ -11,7 +11,7 @@ import Link from "next/link"
 
 
 export function Currencies({currency, setCurrency,currencyPlural,setCurrencyPlural,speech,runOrStop,setRunOrStop,setFinalComp,finalComp,coinArr,
-setCoinArr,setQuickData,quickData,currencySingular,setCurrencySingular,currencySymbol,setCurrencySymbol}){
+setCoinArr,setQuickData,quickData,currencySingular,setCurrencySingular,currencySymbol,setCurrencySymbol,hPerror,setHpError,changingCurrency,setChangingCurrency}){
 const [changeCurrency,setChangeCurrency] = useState(' ')
 const [symbolNative,setSymbolNative] = useState('$')
 const changexy = useRef(null)
@@ -28,9 +28,9 @@ setSymbolNative(sym);
 setCurrency(currCode);
 setCurrencySingular(name);
 setCurrencyPlural(plural);
-setCurrencySymbol(sym)
-
-
+setCurrencySymbol(sym);
+setHpError(' ');
+setChangingCurrency(`Please wait! Switching to  ${name} (${sym}) ......`)
 }
 
 

@@ -8,12 +8,26 @@ import {FaBell} from 'react-icons/fa'
 
   
 
-export default function HeaderActivity({currencySymbol,setCurrencySymbol}){
+export default function HeaderActivity({currencySymbol,setCurrencySymbol,headerText,setHeaderText,funcParams,setFuncParams,number,setNumber,
+switchHeader,setSwitchHeader,coinSym,setCoinSym,historicalDate,setHistoricalDate,activeCoins,setActiveCoins,hPerror,setHpError,changingCurrency,
+setChangingCurrency,arraySelector,setArraySelector}){
 
-console.log(currencySymbol)
+var num = Number(number).toLocaleString()
+var switchCurrencyPercentage = headerText.includes('Percentage') ?  num + '%' : currencySymbol + num 
+var resultStatus = activeCoins.flat().length > 1 ? 'results' : 'result'
+var numberOfResult = activeCoins.flat().length
+
+
+
 return(
 <>
-<h2 style ={{textAlign:'center',color:'rgb(56, 88, 84)'}} >Market Cap Less or equal {currencySymbol}{Number(100000).toLocaleString()}</h2>
+<div style = {{height:'6em',width:'100%'}}>
+{!switchHeader ? <h2 style ={{textAlign:'center',color:'rgb(56, 88, 84)'}} >{headerText} {funcParams} {switchCurrencyPercentage}</h2> : <h2 style ={{textAlign:'center',color:'rgb(56, 88, 84)'}}>Historical Price Of {coinSym.slice(0,1).toUpperCase()+coinSym.slice(1)} on {historicalDate} </h2>}
+{!switchHeader && activeCoins.length > 0  && <div style={{textAlign:'center'}}>{numberOfResult} {resultStatus} | Page {arraySelector + 1} {' of '} {activeCoins.length} </div>}
+{switchHeader && <div  style ={{textAlign:'center',color:'red'}}>{hPerror}</div>}
+{!switchHeader && <div  style ={{textAlign:'center',color:'red'}}>{hPerror}</div>}
+{changingCurrency !== ' ' && <p style ={{textAlign:'center'}} >{changingCurrency}</p>}
+</div>
 </>
 )
 
