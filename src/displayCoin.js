@@ -8,7 +8,7 @@ import {FaCaretDown,FaCaretUp,FaTrashAlt,FaStar,FaInfoCircle,FaWindowClose} from
 
 export function DisplayCoin({activeCoins,buy,setBuy,setActiveCoins,Speech,setQuickData,setCoinArr,currency,searchGems,openModal,setOpenModal,
 modalSearch,setModalSearch,startModal,setStartModal,index,setIndex,priceAlertzPing,setPriceAlertzPing,currencySymbol,setCurrencySymbol,
-switchHeader,setSwitchHeader,arraySelector,setArraySelector}){
+switchHeader,setSwitchHeader,arraySelector,setArraySelector,render, setRender}){
 
 const deleteIcon = useRef([]);
 const infoIconR = useRef([]);
@@ -16,6 +16,7 @@ const star = useRef([]);
 const [sticky,setSticky] = useState(false)
 const [shadow,setShadow] = useState(false)
 const [currencyx, setCurrencyx] = useState('$')
+
 
 const container = useRef([])
 const containerL = useRef([])
@@ -62,22 +63,18 @@ const tableHeader = useRef(null)
 
    setActiveCoins(getGem)
    }
-
-
-
+   
 useEffect(() => {
     window.addEventListener('scroll', isSticky);
     return () => {
         window.removeEventListener('scroll', isSticky);
     };
 });
-
-      
-       const isSticky = (e) => {
-            const scrollTop = window.scrollY;
-            scrollTop >= 250 ? setSticky(true): setSticky(false);
-            
-        };
+ 
+    const isSticky = (e) => {
+    const scrollTop = window.scrollY;
+    scrollTop >= 250 ? setSticky(true): setSticky(false);       
+    };
 		
 useEffect(()=>{
 if(!switchHeader){
@@ -85,7 +82,52 @@ if(!switchHeader){
 }	
 },[sticky])
 
-//{itemz.circulating_supply.toLocaleString().length > 12 && itemz.circulating_supply.toLocaleString().slice(0,16)}{itemz.circulating_supply.toLocaleString().length > 12 && <br />}{itemz.circulating_supply.toLocaleString().length > 12 && Number(itemz.circulating_supply).toLocaleString().slice(16)} {itemz.circulating_supply.toLocaleString().length < 12 && Number(itemz.circulating_supply).toLocaleString()} {itemz.symbol.toUpperCase()}
+
+var oldScroll = 0
+//var scrolling = window !== 'undefined' && window.scrollY
+const renderStats = ()=>{
+//var scrollPosition = window.scrollY
+
+if(window.scrollY < oldScroll && render < 101){
+setRender((render)=> render + 3)	
+}
+else{
+setRender((render)=> render + 0)
+}
+console.log(render)	
+oldScroll = window.scrollY;
+}
+
+useEffect(() => {
+window.addEventListener('scroll', renderStats);
+return () => {
+window.removeEventListener('scroll', renderStats);
+};
+},[oldScroll]);
+
+const resetRender = ()=>{
+setRender(10)
+	
+}
+
+useEffect(() => {
+window.addEventListener('load', resetRender);
+return () => {
+window.removeEventListener('load', resetRender);
+};
+},[]);
+
+const resetRenderNums = ()=>{
+window.scrollY === 0 && setRender(Number(15))	
+}
+
+useEffect(() => {
+window.addEventListener('scroll', resetRenderNums);
+return () => {
+window.removeEventListener('scroll', resetRenderNums);
+};
+},[]);
+
 
 return(
 <>
@@ -96,10 +138,12 @@ return(
 {!switchHeader && <div className={styles.dipedCrypto_L} ref = {leftTable} id={shadow? styles.dipedCrypto_L_cont : ''}>
 <div className={styles.dipedCrypto_HL_name}><div>Name</div></div>
 {
-    !switchHeader && search? search?.map((itemz,index)=> <div key={itemz.id+index} ref = {(el)=> containerL.current[index]=el}  onMouseEnter = {()=>hoverIn(index)} onMouseLeave = {()=>hoverOut(index)} 
-     className={styles.dipedCrypto_L_container}>  <div className={styles.dipedCrypto_L_rank}><div></div> <div></div> <div>{'#'}{itemz.market_cap_rank}</div> </div>  <div className={styles.dipedCrypto_L_Star_container}> <span ref={(el)=> star.current[index] = el} ><FaStar className={styles.dipedCrypto_L_Star} style = {{color:itemz.vip === true ? 'rgb(228, 161, 36)' :'rgb(207, 207, 207)'}}   onClick={()=>{Vip(itemz.id)}} /></span> </div>
+    !switchHeader && search? search?.map((itemz,index)=> 
+	
+	index < render && <div key={itemz.id+index} ref = {(el)=> containerL.current[index]=el}  onMouseEnter = {()=>hoverIn(index)} onMouseLeave = {()=>hoverOut(index)} 
+     className={styles.dipedCrypto_L_container}>  <div className={styles.dipedCrypto_L_rank}><div></div> <div></div> <div>{index + 1} | {'#'}{itemz.market_cap_rank} </div> </div>  <div className={styles.dipedCrypto_L_Star_container}> <span ref={(el)=> star.current[index] = el} ><FaStar className={styles.dipedCrypto_L_Star} style = {{color:itemz.vip === true ? 'rgb(228, 161, 36)' :'rgb(207, 207, 207)'}}   onClick={()=>{Vip(itemz.id)}} /></span> </div>
      <div className={styles.dipedCrypto_L_img_container}><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >
-     <img src={itemz.image} alt = {itemz.id}  className={styles.dipedCrypto_L_img}  /></a> </div> 
+     <img src={itemz.image} alt = {itemz.id}  className={styles.dipedCrypto_L_img} loading='lazy' /></a> </div> 
      <div className={itemz.id.length >= 18 ? styles.dipedCrypto_L_id_direction : styles.dipedCrypto_L_id}><div className={styles.dipedCrypto_L_id_span} ><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >{itemz.id[0].toUpperCase() + itemz.id.slice(1).toLowerCase() }</a></div><div className={styles.dipedCrypto_L_symbol}><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >{itemz.symbol.toUpperCase()}</a></div> </div> </div>) : null
 }
 </div>
@@ -110,8 +154,8 @@ return(
 {
     !switchHeader && search?.map((itemz,index)=> {
     var realInex = index;
-    return (
-    <div key={itemz.id+index} ref = {(el)=> container.current[index]=el} className={styles.dipedCrypto_R_container}  onMouseEnter = {()=>hoverIn(index)} onMouseLeave = {()=>hoverOut(index)}  > 
+  return (
+index < render &&     <div key={itemz.id+index} ref = {(el)=> container.current[index]=el} className={styles.dipedCrypto_R_container}  onMouseEnter = {()=>hoverIn(index)} onMouseLeave = {()=>hoverOut(index)}  > 
     <div className={styles.dipedCrypto_R_container_price}>{itemz.current_price < 1 &&<span>{currencySymbol}{itemz.current_price}</span>} {itemz.current_price >= 1 &&<span>{currencySymbol}{itemz.current_price.toLocaleString()}</span>}</div>  
 	<div className={styles.dipedCrypto_R_container_hourlyChange} style={{color: Number(itemz.price_change_percentage_1h_in_currency) < 0 ?'red' : 'rgb(28, 187, 44)'}}><FaCaretDown style={{display: Number(itemz.price_change_percentage_1h_in_currency) < 0?'block' : 'none' }}  className={styles.dipedCrypto_R_faCaretUp} /> <FaCaretUp style={{display: Number(itemz.price_change_percentage_1h_in_currency) >= 0 ? 'block' : 'none'  }} className={styles.dipedCrypto_R_faCaretUp} />{Number(itemz.price_change_percentage_1h_in_currency) < 0 ? Number(itemz.price_change_percentage_1h_in_currency).toFixed(2).slice(1) : Number(itemz.price_change_percentage_1h_in_currency).toFixed(2)}</div> 
 	<div className={styles.dipedCrypto_R_container_24hChange} style={{color: Number(itemz.price_change_percentage_24h_in_currency) < 0 ?'red' : 'rgb(28, 187, 44)'}}><FaCaretDown style={{display: Number(itemz.price_change_percentage_24h_in_currency) < 0?'block' : 'none' }}  className={styles.dipedCrypto_R_faCaretUp} /> <FaCaretUp style={{display: Number(itemz.price_change_percentage_24h_in_currency) >= 0 ? 'block' : 'none'  }} className={styles.dipedCrypto_R_faCaretUp} />{Number(itemz.price_change_percentage_24h_in_currency) < 0 ? Number(itemz.price_change_percentage_24h_in_currency).toFixed(2).slice(1) : Number(itemz.price_change_percentage_24h_in_currency).toFixed(2)}</div> 
@@ -120,7 +164,7 @@ return(
     <div className={styles.dipedCrypto_R_container_volume}>{currencySymbol}{Number(itemz.total_volume.toFixed()).toLocaleString()}</div>
 	<div className={styles.circulatingSupply}>{Number(itemz.circulating_supply.toFixed()).toLocaleString()} {itemz.symbol.toUpperCase()}</div>
 	<div className={styles.sparkline}><div className={styles.sparkline_content}  >
-	<Sparklines data={itemz.sparkline_in_7d.price}  width={100} height={43} margin={10}  >
+	<Sparklines data={itemz.sparkline_in_7d.price}  width={100} height={50} margin={8}   >
     <SparklinesLine style={{ stroke: itemz.sparkline_in_7d.price[0] > itemz.current_price ? 'rgb(214, 22, 37)' : 'rgb(28, 187, 44)' , strokeWidth: "1.2", fill: "none" }}   />
     </Sparklines>
 	

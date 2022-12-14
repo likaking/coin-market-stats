@@ -7,7 +7,7 @@ import axios from 'axios'
 
 export const FetchHistoricalPrices = ({coinSym,setCoinSym,historicalDate,setHistoricalDate,processHistoricalPrices,setProcessHistoricalPrices,
 
-currency,switchHeader,setSwitchHeader,hPrices,setHPrices,activeCoins,setActiveCoins,hPerror,setHpError})=>{
+currency,switchHeader,setSwitchHeader,hPrices,setHPrices,activeCoins,setActiveCoins,hPerror,setHpError,loadingStats,setLoadingStats})=>{
 
 const showHPerror =  (msg)=>{
 var errrMsg  = msg.map((err)=>{ return err.message})
@@ -20,7 +20,7 @@ console.log
 var url = `https://api.coingecko.com/api/v3/coins/${coinSym}/history?date=${historicalDate}`
 useEffect(()=>{
 
-axios.get(url).then((res)=>{setHPrices([res.data])}).catch((err)=>setHpError('Coin not found | Type coin name & Date'))
+switchHeader && axios.get(url).then((res)=>{setHPrices([res.data])}).then(()=>setLoadingStats('')).catch((err)=>{setHpError('Coin not found | Type coin name & date');setLoadingStats('')})
 
 },[processHistoricalPrices,currency])
 

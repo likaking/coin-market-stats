@@ -120,42 +120,42 @@
     font-weight: 500;   
     flex: 0.17;
     text-align: right;
-	word-break:break-all
+	word-break:break-all;
     }
 	 .dipedCrypto_R_container_volume{
     font-weight: 500;   
     flex: 0.152;
     text-align: right;
-	word-break:break-all
+	word-break:break-all;
     }
   
     .circulatingSupply{
-    flex: 0.17;
+    flex: 0.22;
 	font-weight: 500; 
     transition: .4s;
     display: flex;
     align-items: right;
     justify-content: right;
     vertical-align: baseline; 
-	word-break:break-all
+	word-break:break-all;
     }
 	.sparkline{
-    flex: 0.18;
+    flex: 0.14;
     text-align: right;
     transition: .4s;
     display: flex;
     align-items: center;
     justify-content: center;
-	height:100%;
+	height:90%;
 	width:100%;
-	word-break:break-all
+	word-break:break-all;
     }
 	.sparkline_content{
 	width:95%;
 	height:100%;
 	margin-left:auto;
 	overflow:hidden;
-	word-break:break-all
+	word-break:break-all;
    }
    
     .dipedCrypto_HL_name{
@@ -207,11 +207,11 @@
     text-align: right;
     }
 	.dipedCrypto_HR_circulatingSup{
-	flex: 0.17;
+	flex: 0.22;
 	text-align: right
 	}
 	.dipedCrypto_HR_sparkLine{
-	flex: 0.18; 
+	flex: 0.14; 
 	text-align: right;
 	padding-right:0.5em;
 	}
@@ -291,11 +291,11 @@
 	 text-align: right;
 	 }
 	 .tableHeader_R :nth-child(7){
-	 flex: 0.17; 
+	 flex: 0.22; 
 	 text-align: right;
 	 }
 	 .tableHeader_R :nth-child(8){
-	 flex: 0.18; 
+	 flex: 0.14; 
 	 text-align: right;
 	 padding-right:0.5em;
 	 }

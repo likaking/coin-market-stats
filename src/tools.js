@@ -17,12 +17,13 @@ import {DispalyAllHistoricalPrices} from '../src/displayHistoricalPrices.js'
 export default function Tools({activeCoins,setActiveCoins,buy,setBuy,Speech,setQuickData,setCoinArr,currency,searchGems,setSearchGems,openModal,setOpenModal,
 modalSearch,setModalSearch,startModal,setStartModal,index,setIndex,priceAlertzPing,setPriceAlertzPing,currencySymbol,setCurrencySymbol,openTools,
 setOpenTools,headerText,setHeaderText,funcParams,setFuncParams,number,setNumber,switchHeader,setSwitchHeader,coinSym,setCoinSym,historicalDate,
-setHistoricalDate,hPerror,setHpError,changingCurrency,setChangingCurrency}){
+setHistoricalDate,hPerror,setHpError,changingCurrency,setChangingCurrency,loadingStats,setLoadingStats}){
 
 const [process,setProcess] = useState('Price_Change_Percentage_24h_In_Currency_Above')
 const [processHistoricalPrices,setProcessHistoricalPrices] = useState()
 const [fetchData,setFetchData] = useState()
 const [hPrices,setHPrices] = useState([])
+const numberField = useRef(null)
 	
 
 const typeOfTools = (e)=>{
@@ -55,12 +56,17 @@ setHistoricalDate(e.target.value)
 const switchOff = ()=>{setOpenTools(false)}
 
 const dispatchTool = (tool,params)=>{
+if(number.trim().length > 0 ){
 setProcessHistoricalPrices('');
 var formatHeaderText = headerText.split(' ').join('_')
 setProcess(formatHeaderText+'_'+funcParams)	
 setFetchData(currency+formatHeaderText+'_'+funcParams+number)	
 setHpError('')
-
+}
+else{
+setLoadingStats('Please add a number to the number field')	
+return false
+}
 }
 
 const switchHistorical = ()=>{setSwitchHeader(true)}
@@ -68,9 +74,11 @@ const switchHistorical = ()=>{setSwitchHeader(true)}
 const switchCoinDetials = ()=>{setSwitchHeader(false)}
 
 const dispatchHistoricalPrices = (tool,params)=>{
+if(switchHeader){
 var hpText = currency+coinSym+historicalDate
 setProcessHistoricalPrices(hpText)	
-
+setLoadingStats('Loading coin stats........')
+}
 }
 
 
@@ -79,13 +87,14 @@ return(
 <Suspense>
 <FetchCryptoInfo activeCoins={activeCoins} setActiveCoins={setActiveCoins} number={number} setNumber={number,setNumber} process={process}
  setProcess={setProcess} currency={currency} switchHeader={switchHeader} setSwitchHeader={setSwitchHeader} fetchData={fetchData} 
- setFetchData={setFetchData} changingCurrency={changingCurrency} setChangingCurrency ={setChangingCurrency} hPerror={hPerror} setHpError={setHpError} />
+ setFetchData={setFetchData} changingCurrency={changingCurrency} setChangingCurrency ={setChangingCurrency} hPerror={hPerror} setHpError={setHpError}
+ loadingStats={loadingStats} setLoadingStats={setLoadingStats} />
 </Suspense>  
 
 <FetchHistoricalPrices coinSym={coinSym} setCoinSym={setCoinSym} historicalDate={historicalDate} setHistoricalDate={setHistoricalDate}
  processHistoricalPrices={processHistoricalPrices} setProcessHistoricalPrices={setProcessHistoricalPrices} currency={currency} 
  switchHeader={switchHeader} setSwitchHeader={setSwitchHeader} hPrices={hPrices} setHPrices={setHPrices} activeCoins={activeCoins}
- setActiveCoins={setActiveCoins} hPerror={hPerror} setHpError={setHpError} /> 
+ setActiveCoins={setActiveCoins} hPerror={hPerror} setHpError={setHpError} setLoadingStats={setLoadingStats} /> 
  
 <DispalyAllHistoricalPrices coinSym={coinSym} setCoinSym={setCoinSym} historicalDate={historicalDate} setHistoricalDate={setHistoricalDate}
  processHistoricalPrices={processHistoricalPrices} setProcessHistoricalPrices={setProcessHistoricalPrices} currency={currency} 
@@ -98,12 +107,12 @@ return(
 <div  className={styles.tools_close}><MdPowerSettingsNew className={styles.tools_closeIcon} /></div>
 <div  className={styles.form}>
 <form >
-<Select options={toolOptionsList}  defaultValue = {toolOptionsList[16]}  className={styles.select} onChange={(e)=>{typeOfTools(e);switchCoinDetials()}} />
+<Select options={toolOptionsList}  defaultValue = {toolOptionsList[9]}  className={styles.select} onChange={(e)=>{typeOfTools(e);switchCoinDetials()}} />
 <div className={styles.formDivs}>
 <button type='button' type = 'button'  className={styles.formAbvBel_Btns} onClick = {above} >Above</button> <button type='button' type = 'button' className={styles.formAbvBel_Btns} onClick = {below} >Below</button>
 </div>
 <div className={styles.formDivs}>
-<input type= 'number' placeholder='Type numder'  className={styles.formInput} onChange = {typeNum}  />
+<input type= 'number' placeholder='Type numder'  className={styles.formInput} onChange = {typeNum} onMouseOver = {()=>{switchCoinDetials()}} ref={numberField}   />
 </div>
 <div className={styles.formDivs}>
 <button type='button'  className={styles.formProcessBtn} onClick = {dispatchTool} >Process</button>
@@ -115,7 +124,7 @@ return(
 <h4 className={styles.header}>Historical Prices</h4>
 <form >
 <div className={styles.formDivs}>
-<input type= 'text' placeholder='bitcoin'  className={styles.formInput} onChange={(e)=>{setCoinSym(e.target.value.toLowerCase());switchHistorical();setHpError('')}} />
+<input type= 'text' placeholder='bitcoin'  className={styles.formInput} onChange={(e)=>{setCoinSym(e.target.value.toLowerCase());switchHistorical();setHpError('')}}   />
 </div>
 <div className={styles.formDivs}>
 <input type= 'text' placeholder='Date eg 22-10-2015 '  className={styles.formInput} onChange={(e)=>{setHistoricalDate(e.target.value)}}/>

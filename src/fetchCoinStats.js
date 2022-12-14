@@ -6,7 +6,7 @@ var tempArr = []
 
 
 export const FetchCryptoInfo = ({activeCoins,setActiveCoins,number,setNumber,process,setProcess,currency,switchHeader,setSwitchHeader,fetchData,
-setFetchData,changingCurrency,setChangingCurrency,hPerror,setHpError})=>{
+setFetchData,changingCurrency,setChangingCurrency,hPerror,setHpError,loadingStats,setLoadingStats})=>{
 
 var convertCurrency = currency.toLowerCase()
 
@@ -31,7 +31,7 @@ Low_24h_Below:{method: (mcoinz)=> mcoinz.low_24h <= Number(number)},
 Price_Change_24h_Above:{method: (mcoinz)=> mcoinz.price_change_24h >= Number(number)},
 Price_Change_24h_Below:{method: (mcoinz)=> mcoinz.price_change_24h <= Number(number)},
 Price_Change_Percentage_24h_Above:{method: (mcoinz)=> mcoinz.price_change_percentage_24h >= Number(number)},
-Price_Change_Percentage_24h_Above:{method: (mcoinz)=> mcoinz.price_change_percentage_24h <= Number(number)},
+Price_Change_Percentage_24h_Below:{method: (mcoinz)=> mcoinz.price_change_percentage_24h <= Number(number)},
 Market_Cap_Change_24h_Above:{method: (mcoinz)=> mcoinz.market_cap_change_24h >= Number(number)},
 Market_Cap_Change_24h_Below:{method: (mcoinz)=> mcoinz.market_cap_change_24h <= Number(number)},
 Market_Cap_Change_Percentage_24h_Above:{method: (mcoinz)=> mcoinz.market_cap_change_percentage_24h >= Number(number)},
@@ -76,9 +76,9 @@ console.log(finalArr)
 	
 	if(!switchHeader){
 	const moon0 =   setTimeout(()=>{
-		
+		   setLoadingStats('Loading coin stats........')
            axios.get(moonUrl1).then((res)=> {return res.data.filter(allToolsFunction[process].method)}).then((result)=> tempArr.push(...result)).catch((err)=>{})
-         },50)
+         },10)
 	     }
 		 return ()=>{clearTimeout(moon0)}
         },[process,currency,switchHeader,fetchData])
@@ -113,20 +113,65 @@ console.log(finalArr)
           return ()=>{clearTimeout(moon3)}
         },[process,currency,switchHeader,fetchData])   
 		
+		
+		
+    const moonUrl5 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${convertCurrency}&order=market_cap_desc&per_page=250&page=5&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
+    useEffect(()=>{
+	
+	if(!switchHeader){
+	const moon4 =   setTimeout(()=>{
+		
+           axios.get(moonUrl5).then((res)=> {return res.data.filter(allToolsFunction[process].method)}).then((result)=> tempArr.push(...result)).catch((err)=>{})
+         },1000)
+	     }
+		 return ()=>{clearTimeout(moon4)}
+        },[process,currency,switchHeader,fetchData])
+
+      const moonUrl6 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${convertCurrency}&order=market_cap_desc&per_page=250&page=6&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
+      useEffect(()=>{
+	  if(!switchHeader){
+      const moon5 =   setTimeout(()=>{
+           axios.get(moonUrl6).then((res)=> {return res.data.filter(allToolsFunction[process].method)}).then((result)=> tempArr.push(...result)).catch((err)=>{})
+           },1100)
+	       }
+           return ()=>{clearTimeout(moon5)}
+        },[process,currency,switchHeader,fetchData])   
+
+        const moonUrl7 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${convertCurrency}&order=market_cap_desc&per_page=250&page=7&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
+        useEffect(()=>{ 
+		if(!switchHeader){
+        const moon6 = setTimeout(()=>{
+           axios.get(moonUrl7).then((res)=> {return res.data.filter(allToolsFunction[process].method)}).then((result)=> tempArr.push(...result)).catch((err)=>{})
+          },1300)
+		  }
+          return ()=>{clearTimeout(moon6)}
+        },[process,currency,switchHeader,fetchData])   
+
+        const moonUrl8 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${convertCurrency}&order=market_cap_desc&per_page=250&page=8&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
+        useEffect(()=>{
+        if(!switchHeader){			
+        const moon7 = setTimeout(()=>{
+        axios.get(moonUrl8).then((res)=> {return res.data.filter(allToolsFunction[process].method)}).then((result)=> tempArr.push(...result)).catch((err)=>{})
+          },1400)
+		  }
+          return ()=>{clearTimeout(moon7)}
+        },[process,currency,switchHeader,fetchData])   
+		
 
           useEffect(()=>{
-          const moonUrl5 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${convertCurrency}&order=market_cap_desc&per_page=250&page=5&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
+          const moonUrl9 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${convertCurrency}&order=market_cap_desc&per_page=250&page=9&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
           if(!switchHeader){
-		  const moon4 = setTimeout(()=>{
-           axios.get(moonUrl5).then((res)=> {return res.data.filter(allToolsFunction[process].method)}).then((result)=> tempArr.push(...result)).then(()=>{addPagination([...tempArr])}).catch((err)=>{setHpError(`Can't retrive coin stats`)})
-          },1000)
+		  const moon8 = setTimeout(()=>{
+		  setLoadingStats('')
+          axios.get(moonUrl9).then((res)=> {return res.data.filter(allToolsFunction[process].method)}).then((result)=> tempArr.push(...result)).then(()=>{addPagination([...tempArr])}).catch((err)=>{setHpError(`Can't retrive coin stats`);setLoadingStats('')})
+          },1500)
           }
           const emptyArr = setTimeout(()=>{
             tempArr.length = 0
 			setChangingCurrency('')
           },5000)
 
-          return ()=>{clearTimeout(moon4);clearTimeout(emptyArr)}
+          return ()=>{clearTimeout(moon8);clearTimeout(emptyArr)}
         },[process,currency,switchHeader,fetchData]) 
 
 }
