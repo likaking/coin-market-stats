@@ -8,7 +8,7 @@ import {FaCaretDown,FaCaretUp,FaTrashAlt,FaStar,FaInfoCircle,FaWindowClose} from
 
 export function DispalyAllHistoricalPrices({activeCoins,setActiveCoins,openModal,currencySymbol,setCurrencySymbol,coinSym,setCoinSym,
 historicalDate,setHistoricalDate,processHistoricalPrices,setProcessHistoricalPrices,currency,switchHeader,setSwitchHeader,hPrices,
-setHPrices,searchGems,setSearchGems}){
+setHPrices,searchGems,setSearchGems,currencySymbolDisplay,setCurrencySymbolDisplay}){
 
 const deleteIcon = useRef([]);
 const infoIconR = useRef([]);
@@ -114,10 +114,9 @@ return(
     var realInex = index;
     return (
     <div key={cryp.id+index} ref = {(el)=> container.current[index]=el} className={styles.dipedCrypto_R_container}  onMouseEnter = {()=>hoverIn(index)} onMouseLeave = {()=>hoverOut(index)}  > 
-   
-    <div className={styles.dipedCrypto_R_container_price}>{currencySymbol}{Number(cryp.market_data.current_price[currency.toLowerCase()]).toLocaleString()}</div>  
-    <div className={styles.dipedCrypto_R_container_totalVolume}>{currencySymbol}{Number(cryp.market_data.total_volume[currency.toLowerCase()]).toLocaleString()}  </div> 
-	<div className={styles.dipedCrypto_R_container_marketCap}>{currencySymbol}{Number(cryp.market_data.market_cap[currency.toLowerCase()]).toLocaleString()}  </div> 
+    <div className={styles.dipedCrypto_R_container_price}>{currencySymbolDisplay}{Number(cryp.market_data.current_price[currency.toLowerCase()]).toLocaleString()}</div>  
+    <div className={styles.dipedCrypto_R_container_totalVolume}>{currencySymbolDisplay}{Number(cryp.market_data.total_volume[currency.toLowerCase()]).toLocaleString()}  </div> 
+	<div className={styles.dipedCrypto_R_container_marketCap}>{currencySymbolDisplay}{Number(cryp.market_data.market_cap[currency.toLowerCase()]).toLocaleString()}  </div> 
 	
 	
 	

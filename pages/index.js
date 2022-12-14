@@ -25,6 +25,7 @@ const  Footer = React.lazy(()=> import('./footer/footer.js'))
 export default function Home(setCmvErrorsx={setCmvErrorsx}) {
   const [currency,setCurrency] = useState('USD')
   const [currencySymbol,setCurrencySymbol] = useState('$')
+  const [currencySymbolDisplay,setCurrencySymbolDisplay] = useState('$')
   const [currencyPlural,setCurrencyPlural] = useState('US dollars')
   const [currencySingular,setCurrencySingular] = useState('US dollar')
   const [finalComp, setFinalComp] = useState([])   
@@ -83,7 +84,7 @@ setCurrency(currency)
       
   <Header />
 
-  <main >
+  <main style={{minHeight:'50vh'}} >
 
   <div className={styles.cmv_top}></div>
   <div className={styles.cmvBody}>
@@ -116,7 +117,7 @@ setCurrency(currency)
   modalSearch={modalSearch} setModalSearch={setModalSearch} startModal={startModal} setStartModal={setStartModal} index={index}
   setIndex={setIndex} priceAlertzPing ={priceAlertzPing} setPriceAlertzPing={setPriceAlertzPing} currencySymbol={currencySymbol}
   setCurrencySymbol={setCurrencySymbol} switchHeader={switchHeader} setSwitchHeader={setSwitchHeader} arraySelector={arraySelector} 
-  setArraySelector={setArraySelector} render={render} setRender={setRender}  />
+  setArraySelector={setArraySelector} render={render} setRender={setRender} currencySymbolDisplay={currencySymbolDisplay} setCurrencySymbolDisplay={setCurrencySymbolDisplay}  />
  
   <PaginationValues  currencySymbol={currencySymbol} setCurrencySymbol={setCurrencySymbol} headerText={headerText} setHeaderText={setHeaderText}
   funcParams={funcParams} setFuncParams={setFuncParams} number={number} setNumber={setNumber} switchHeader={switchHeader} 
@@ -129,8 +130,8 @@ setCurrency(currency)
   openTools={openTools} setOpenTools={setOpenTools} headerText={headerText} setHeaderText={setHeaderText} funcParams={funcParams} setFuncParams={setFuncParams}
   number={number} setNumber={setNumber} switchHeader={switchHeader} setSwitchHeader={setSwitchHeader} coinSym={coinSym} setCoinSym={setCoinSym}
   historicalDate={historicalDate} setHistoricalDate={setHistoricalDate} hPerror={hPerror} setHpError={setHpError} changingCurrency={changingCurrency}
-  setChangingCurrency ={setChangingCurrency} loadingStats={loadingStats}
-  setLoadingStats={setLoadingStats} />
+  setChangingCurrency ={setChangingCurrency} loadingStats={loadingStats} setLoadingStats={setLoadingStats} 
+  currencySymbolDisplay={currencySymbolDisplay} setCurrencySymbolDisplay={setCurrencySymbolDisplay} currencySymbol={currencySymbol} setCurrencySymbol={setCurrencySymbol} />
   
   <ToolsOnButton openTools={openTools} setOpenTools={setOpenTools} searchGems={searchGems} setSearchGems={setSearchGems} />
   <CurrenciesWaterMark currencySymbol ={currencySymbol} setCurrencySymbol={setCurrencySymbol} />

@@ -18,11 +18,8 @@ setChangingCurrency,arraySelector,setArraySelector,render,setRender}){
           top: 0, 
           left: 0,
           behavior: 'smooth',
-        
-         
-        });
-
-      };
+        })
+        };
 	  
  const setRenderValue = ()=>{
  setRender(()=>Number(10)) 	 
@@ -39,7 +36,7 @@ return(
 <div style = {{textAlign:'center'}}  className = {styles.page_Contianer}>
 {
 activeCoins.length > 1 && activeCoins.map((page,index)=> 
-<span className = {styles.pageNum} onClick = {()=>{selectArrayIndex(index);setRenderValue;scrollToTop()}} key={index} >{index + 1}</span>
+<span className = {styles.pageNum} onClick = {()=>{setRenderValue;selectArrayIndex(index);scrollToTop()}} key={index} >{index + 1}</span>
 )
 }
 </div>

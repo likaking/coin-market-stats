@@ -42,7 +42,7 @@ return(
 <div className = {styles.CMVCurrencies}>
 <div className = {styles.CMVCurrencies_main}>
 <div className = {styles.CMVCurrencies_changeCurrency}>
-<input type = 'text' placeholder='Type currency : eg Euro'  className = {styles.CMVCurrencies_input} onChange = {(text)=>{setChangeCurrency(text.target.value.toLocaleUpperCase())}}  ref={changexy} />
+<input type = 'text' placeholder='eg Euro'  className = {styles.CMVCurrencies_input} onChange = {(text)=>{setChangeCurrency(text.target.value.toLocaleUpperCase())}}  ref={changexy} />
 <div className = {styles.CMVCurrencies_currentCurrency}><p>{symbolNative}{'  '}{currency} </p><span><FaRegCheckCircle  className = {styles.CMVCurrencies_check}/></span></div>
 </div>
 <div  className = {styles.CMVCurrencies_currencyInfo} >

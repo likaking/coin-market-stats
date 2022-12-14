@@ -6,7 +6,8 @@ var tempArr = []
 
 
 export const FetchCryptoInfo = ({activeCoins,setActiveCoins,number,setNumber,process,setProcess,currency,switchHeader,setSwitchHeader,fetchData,
-setFetchData,changingCurrency,setChangingCurrency,hPerror,setHpError,loadingStats,setLoadingStats})=>{
+setFetchData,changingCurrency,setChangingCurrency,hPerror,setHpError,loadingStats,setLoadingStats,currencySymbolDisplay,setCurrencySymbolDisplay,
+currencySymbol,setCurrencySymbol})=>{
 
 var convertCurrency = currency.toLowerCase()
 
@@ -163,7 +164,7 @@ console.log(finalArr)
           if(!switchHeader){
 		  const moon8 = setTimeout(()=>{
 		  setLoadingStats('')
-          axios.get(moonUrl9).then((res)=> {return res.data.filter(allToolsFunction[process].method)}).then((result)=> tempArr.push(...result)).then(()=>{addPagination([...tempArr])}).catch((err)=>{setHpError(`Can't retrive coin stats`);setLoadingStats('')})
+          axios.get(moonUrl9).then((res)=> {return res.data.filter(allToolsFunction[process].method)}).then((result)=> tempArr.push(...result)).then(()=>{addPagination([...tempArr])}).then(()=>setCurrencySymbolDisplay(currencySymbol)).catch((err)=>{setHpError(`Can't retrive coin stats`);setLoadingStats('')})
           },1500)
           }
           const emptyArr = setTimeout(()=>{

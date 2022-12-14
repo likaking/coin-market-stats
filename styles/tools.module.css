@@ -8,7 +8,7 @@ right:0;
 margin-left: auto;
 margin-right: auto;
 z-index: 5;
-background: rgb(255,255,255);
+background:white;
 box-shadow: 0 0 2px 2px rgb(231, 227, 230);
 border-radius:1em 1em 10em 10em ;
 transition: 0.4s;
@@ -72,8 +72,18 @@ gap:5%
 width:100%;
 height:2.5em;
 border-radius: 0.3em;
-border:1px solid rgb(199, 199, 200);
-color:rgb(49, 51, 53);
+border:1px solid rgba(104, 142, 158, 0.534);
+color:rgb(69, 101, 115);
+outline:none;
+background: transparent;
+box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 1px rgba(0, 0, 0, 0.2);
+}
+.formInput:focus{
+width:100%;
+height:2.5em;
+border-radius: 0.3em;
+border:1px solid rgba(104, 142, 158, 0.877);
+color:rgb(69, 101, 115);
 outline:none;
 background: transparent;
 box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 1px rgba(0, 0, 0, 0.2);
@@ -86,14 +96,14 @@ font-size:1em;
 width:50%;
 height:3rem;
 border-radius: 0.3em;
-color: rgb(49, 51, 53);
-border:1px solid rgb(199, 199, 200);
+color: rgba(69, 101, 115, 0.753);
+border:1px solid rgba(104, 142, 158, 0.534);
 box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 1px rgba(0, 0, 0, 0.2);
 background-image: linear-gradient(to left, #ffffff, #fefefe, #fdfdfd, #fcfcfc, #fbfbfb);
 transition: 0.5s;
 }
 .formAbvBel_Btns:hover{
-color:rgb(179, 196, 200);
+color: rgba(69, 101, 115, 0.753);
 border:1px solid rgb(191, 208, 211);
 background: conic-gradient(from 315deg, #F5FFFF, #FCFFFF);
 transition: 0.5s
@@ -103,14 +113,14 @@ font-size:1em;
 width:100%;
 height:2.5rem;
 border-radius: 0.3em;
-color: rgb(49, 51, 53);
-border:1px solid rgb(199, 199, 200);
+color: rgba(69, 101, 115, 0.753);
+border:1px solid rgba(104, 142, 158, 0.534);
 box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 1px rgba(0, 0, 0, 0.2);
 background-image: linear-gradient(to left, #ffffff, #fefefe, #fdfdfd, #fcfcfc, #fbfbfb);
 transition: 0.5s;
 }
 .formProcessBtn:hover{
-color:rgb(179, 196, 200);
+color: rgba(69, 101, 115, 0.753);
 border:1px solid rgb(191, 208, 211);
 background: conic-gradient(from 315deg, #F5FFFF, #FCFFFF);
 transition: 0.5s
@@ -119,15 +129,15 @@ transition: 0.5s
 font-size:1em;
 width:30%;
 height:5.2rem;
-color: rgb(49, 51, 53);
+color: rgba(69, 101, 115, 0.753);
 border-radius: 12em 12em 12em 12em;
-border:2px solid rgb(199, 199, 200);
+border:2px solid rgba(104, 142, 158, 0.877);
 box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 2px rgba(0, 0, 0, 0.2);
 background-image: linear-gradient(to left, #ffffff, #fefefe, #fdfdfd, #fcfcfc, #fbfbfb);
 transition: 0.5s
 }
 .formProcessBtnHP:hover{
-color:rgb(179, 196, 200);
+color: rgba(69, 101, 115, 0.753);
 border:2px solid rgb(191, 208, 211);
 background: conic-gradient(from 315deg, #F5FFFF, #FCFFFF);
 transition: 0.5s
@@ -135,7 +145,7 @@ transition: 0.5s
 .header{
 margin:0;
 padding:0;
-color: rgb(120, 120, 120);
+color: rgb(82, 120, 136);
 text-align:center
 }
 .formHP{
@@ -292,7 +302,7 @@ transition: 0.4s
 .formOn{
 width: 10%;
 text-align:center;
-bottom:10%;
+bottom:2%;
 left:0;
 right:0;
 margin-left: auto;

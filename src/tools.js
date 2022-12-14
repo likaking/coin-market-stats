@@ -17,7 +17,7 @@ import {DispalyAllHistoricalPrices} from '../src/displayHistoricalPrices.js'
 export default function Tools({activeCoins,setActiveCoins,buy,setBuy,Speech,setQuickData,setCoinArr,currency,searchGems,setSearchGems,openModal,setOpenModal,
 modalSearch,setModalSearch,startModal,setStartModal,index,setIndex,priceAlertzPing,setPriceAlertzPing,currencySymbol,setCurrencySymbol,openTools,
 setOpenTools,headerText,setHeaderText,funcParams,setFuncParams,number,setNumber,switchHeader,setSwitchHeader,coinSym,setCoinSym,historicalDate,
-setHistoricalDate,hPerror,setHpError,changingCurrency,setChangingCurrency,loadingStats,setLoadingStats}){
+setHistoricalDate,hPerror,setHpError,changingCurrency,setChangingCurrency,loadingStats,setLoadingStats,currencySymbolDisplay,setCurrencySymbolDisplay}){
 
 const [process,setProcess] = useState('Price_Change_Percentage_24h_In_Currency_Above')
 const [processHistoricalPrices,setProcessHistoricalPrices] = useState()
@@ -56,7 +56,7 @@ setHistoricalDate(e.target.value)
 const switchOff = ()=>{setOpenTools(false)}
 
 const dispatchTool = (tool,params)=>{
-if(number.trim().length > 0 ){
+if(number.length > 0 ){
 setProcessHistoricalPrices('');
 var formatHeaderText = headerText.split(' ').join('_')
 setProcess(formatHeaderText+'_'+funcParams)	
@@ -88,18 +88,21 @@ return(
 <FetchCryptoInfo activeCoins={activeCoins} setActiveCoins={setActiveCoins} number={number} setNumber={number,setNumber} process={process}
  setProcess={setProcess} currency={currency} switchHeader={switchHeader} setSwitchHeader={setSwitchHeader} fetchData={fetchData} 
  setFetchData={setFetchData} changingCurrency={changingCurrency} setChangingCurrency ={setChangingCurrency} hPerror={hPerror} setHpError={setHpError}
- loadingStats={loadingStats} setLoadingStats={setLoadingStats} />
+ loadingStats={loadingStats} setLoadingStats={setLoadingStats} currencySymbolDisplay={currencySymbolDisplay} 
+ setCurrencySymbolDisplay={setCurrencySymbolDisplay}  currencySymbol={currencySymbol} setCurrencySymbol={setCurrencySymbol} />
 </Suspense>  
 
 <FetchHistoricalPrices coinSym={coinSym} setCoinSym={setCoinSym} historicalDate={historicalDate} setHistoricalDate={setHistoricalDate}
  processHistoricalPrices={processHistoricalPrices} setProcessHistoricalPrices={setProcessHistoricalPrices} currency={currency} 
  switchHeader={switchHeader} setSwitchHeader={setSwitchHeader} hPrices={hPrices} setHPrices={setHPrices} activeCoins={activeCoins}
- setActiveCoins={setActiveCoins} hPerror={hPerror} setHpError={setHpError} setLoadingStats={setLoadingStats} /> 
+ setActiveCoins={setActiveCoins} hPerror={hPerror} setHpError={setHpError} setLoadingStats={setLoadingStats} currencySymbol ={currencySymbol} setCurrencySymbol={setCurrencySymbol} currencySymbolDisplay={currencySymbolDisplay} 
+ setCurrencySymbolDisplay={setCurrencySymbolDisplay}  /> 
  
 <DispalyAllHistoricalPrices coinSym={coinSym} setCoinSym={setCoinSym} historicalDate={historicalDate} setHistoricalDate={setHistoricalDate}
  processHistoricalPrices={processHistoricalPrices} setProcessHistoricalPrices={setProcessHistoricalPrices} currency={currency} 
  switchHeader={switchHeader} setSwitchHeader={setSwitchHeader} hPrices={hPrices} setHPrices={setHPrices} activeCoins={activeCoins} setActiveCoins={setActiveCoins}
- searchGems={searchGems} setSearchGems={setSearchGems} currencySymbol ={currencySymbol} setCurrencySymbol={setCurrencySymbol}
+ searchGems={searchGems} setSearchGems={setSearchGems} currencySymbol ={currencySymbol} setCurrencySymbol={setCurrencySymbol} currencySymbolDisplay={currencySymbolDisplay} 
+ setCurrencySymbolDisplay={setCurrencySymbolDisplay}
  />
  
 <div  className={styles.tools_container} style = {{display: openTools ? 'block' : 'none'}} >
@@ -107,7 +110,12 @@ return(
 <div  className={styles.tools_close}><MdPowerSettingsNew className={styles.tools_closeIcon} /></div>
 <div  className={styles.form}>
 <form >
-<Select options={toolOptionsList}  defaultValue = {toolOptionsList[9]}  className={styles.select} onChange={(e)=>{typeOfTools(e);switchCoinDetials()}} />
+<Select options={toolOptionsList}  defaultValue = {toolOptionsList[9]}  className={styles.select} onChange={(e)=>{typeOfTools(e);switchCoinDetials()}} styles={{
+    control: (baseStyles, state) => ({
+      ...baseStyles,
+      borderColor: 'rgba(104, 142, 158, 0.534)',
+    }),
+  }} />
 <div className={styles.formDivs}>
 <button type='button' type = 'button'  className={styles.formAbvBel_Btns} onClick = {above} >Above</button> <button type='button' type = 'button' className={styles.formAbvBel_Btns} onClick = {below} >Below</button>
 </div>

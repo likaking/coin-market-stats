@@ -8,7 +8,7 @@ import {FaCaretDown,FaCaretUp,FaTrashAlt,FaStar,FaInfoCircle,FaWindowClose} from
 
 export function DisplayCoin({activeCoins,buy,setBuy,setActiveCoins,Speech,setQuickData,setCoinArr,currency,searchGems,openModal,setOpenModal,
 modalSearch,setModalSearch,startModal,setStartModal,index,setIndex,priceAlertzPing,setPriceAlertzPing,currencySymbol,setCurrencySymbol,
-switchHeader,setSwitchHeader,arraySelector,setArraySelector,render, setRender}){
+switchHeader,setSwitchHeader,arraySelector,setArraySelector,render,setRender,currencySymbolDisplay,setCurrencySymbolDisplay}){
 
 const deleteIcon = useRef([]);
 const infoIconR = useRef([]);
@@ -88,15 +88,26 @@ var oldScroll = 0
 const renderStats = ()=>{
 //var scrollPosition = window.scrollY
 
-if(window.scrollY < oldScroll && render < 101){
-setRender((render)=> render + 3)	
+if(window.scrollY > oldScroll && render < 101){
+setRender((render)=> render + 5)		
 }
-else{
-setRender((render)=> render + 0)
-}
-console.log(render)	
+
 oldScroll = window.scrollY;
 }
+
+
+/*
+var oldScroll = 0
+//var scrolling = window !== 'undefined' && window.scrollY
+const renderStats = ()=>{
+//var scrollPosition = window.scrollY
+
+if(render < 101){
+setRender((render)=> render + 5)	
+}
+console.log(render)	
+}
+*/
 
 useEffect(() => {
 window.addEventListener('scroll', renderStats);
@@ -156,12 +167,12 @@ return(
     var realInex = index;
   return (
 index < render &&     <div key={itemz.id+index} ref = {(el)=> container.current[index]=el} className={styles.dipedCrypto_R_container}  onMouseEnter = {()=>hoverIn(index)} onMouseLeave = {()=>hoverOut(index)}  > 
-    <div className={styles.dipedCrypto_R_container_price}>{itemz.current_price < 1 &&<span>{currencySymbol}{itemz.current_price}</span>} {itemz.current_price >= 1 &&<span>{currencySymbol}{itemz.current_price.toLocaleString()}</span>}</div>  
+    <div className={styles.dipedCrypto_R_container_price}>{itemz.current_price < 1 &&<span>{currencySymbolDisplay}{itemz.current_price}</span>} {itemz.current_price >= 1 &&<span>{currencySymbol}{itemz.current_price.toLocaleString()}</span>}</div>  
 	<div className={styles.dipedCrypto_R_container_hourlyChange} style={{color: Number(itemz.price_change_percentage_1h_in_currency) < 0 ?'red' : 'rgb(28, 187, 44)'}}><FaCaretDown style={{display: Number(itemz.price_change_percentage_1h_in_currency) < 0?'block' : 'none' }}  className={styles.dipedCrypto_R_faCaretUp} /> <FaCaretUp style={{display: Number(itemz.price_change_percentage_1h_in_currency) >= 0 ? 'block' : 'none'  }} className={styles.dipedCrypto_R_faCaretUp} />{Number(itemz.price_change_percentage_1h_in_currency) < 0 ? Number(itemz.price_change_percentage_1h_in_currency).toFixed(2).slice(1) : Number(itemz.price_change_percentage_1h_in_currency).toFixed(2)}</div> 
 	<div className={styles.dipedCrypto_R_container_24hChange} style={{color: Number(itemz.price_change_percentage_24h_in_currency) < 0 ?'red' : 'rgb(28, 187, 44)'}}><FaCaretDown style={{display: Number(itemz.price_change_percentage_24h_in_currency) < 0?'block' : 'none' }}  className={styles.dipedCrypto_R_faCaretUp} /> <FaCaretUp style={{display: Number(itemz.price_change_percentage_24h_in_currency) >= 0 ? 'block' : 'none'  }} className={styles.dipedCrypto_R_faCaretUp} />{Number(itemz.price_change_percentage_24h_in_currency) < 0 ? Number(itemz.price_change_percentage_24h_in_currency).toFixed(2).slice(1) : Number(itemz.price_change_percentage_24h_in_currency).toFixed(2)}</div> 
 	<div className={styles.dipedCrypto_R_container_7d} style={{color: Number(itemz.price_change_percentage_7d_in_currency) < 0 ?'red' : 'rgb(28, 187, 44)'}}><FaCaretDown style={{display: Number(itemz.price_change_percentage_7d_in_currency) < 0?'block' : 'none' }}  className={styles.dipedCrypto_R_faCaretUp} /> <FaCaretUp style={{display: Number(itemz.price_change_percentage_7d_in_currency) >= 0 ? 'block' : 'none'  }} className={styles.dipedCrypto_R_faCaretUp} />{Number(itemz.price_change_percentage_7d_in_currency) < 0 ? Number(itemz.price_change_percentage_7d_in_currency).toFixed(2).slice(1) : Number(itemz.price_change_percentage_7d_in_currency).toFixed(2)}</div> 
-	<div className={styles.dipedCrypto_R_container_mktCap}>{currencySymbol}{Number(itemz.market_cap.toFixed()).toLocaleString()}</div>
-    <div className={styles.dipedCrypto_R_container_volume}>{currencySymbol}{Number(itemz.total_volume.toFixed()).toLocaleString()}</div>
+	<div className={styles.dipedCrypto_R_container_mktCap}>{currencySymbolDisplay}{Number(itemz.market_cap.toFixed()).toLocaleString()}</div>
+    <div className={styles.dipedCrypto_R_container_volume}>{currencySymbolDisplay}{Number(itemz.total_volume.toFixed()).toLocaleString()}</div>
 	<div className={styles.circulatingSupply}>{Number(itemz.circulating_supply.toFixed()).toLocaleString()} {itemz.symbol.toUpperCase()}</div>
 	<div className={styles.sparkline}><div className={styles.sparkline_content}  >
 	<Sparklines data={itemz.sparkline_in_7d.price}  width={100} height={50} margin={8}   >
