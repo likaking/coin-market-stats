@@ -131,7 +131,7 @@ setCurrency(currency)
   number={number} setNumber={setNumber} switchHeader={switchHeader} setSwitchHeader={setSwitchHeader} coinSym={coinSym} setCoinSym={setCoinSym}
   historicalDate={historicalDate} setHistoricalDate={setHistoricalDate} hPerror={hPerror} setHpError={setHpError} changingCurrency={changingCurrency}
   setChangingCurrency ={setChangingCurrency} loadingStats={loadingStats} setLoadingStats={setLoadingStats} 
-  currencySymbolDisplay={currencySymbolDisplay} setCurrencySymbolDisplay={setCurrencySymbolDisplay} currencySymbol={currencySymbol} setCurrencySymbol={setCurrencySymbol} />
+  currencySymbolDisplay={currencySymbolDisplay} setCurrencySymbolDisplay={setCurrencySymbolDisplay} />
   
   <ToolsOnButton openTools={openTools} setOpenTools={setOpenTools} searchGems={searchGems} setSearchGems={setSearchGems} />
   <CurrenciesWaterMark currencySymbol ={currencySymbol} setCurrencySymbol={setCurrencySymbol} />
