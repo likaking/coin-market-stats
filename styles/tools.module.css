@@ -68,7 +68,7 @@ display: -webkit-box;
 display: -webkit-flex;
 display: -ms-flexbox;
 display: flex;
-gap:5%;
+gap:6%;
 -webkit-box-justify-content:center;
 justify-content:center;
 
@@ -405,7 +405,7 @@ border-radius: 0em
 }
 .formAbvBel_Btns{
 font-size:3vw;
-width:50%;
+width:47%;
 height:3.7em
 }
 .formProcessBtn{
