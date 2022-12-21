@@ -175,8 +175,10 @@ padding-bottom: 1rem;
  font-size: 1em;
  cursor: pointer;
  }
-
-
+ .li{
+ padding-left: 0.5rem;	 
+ padding-right: 0.5rem;
+ }
 
 @media screen and (max-width: 930px) {     
 .footer{

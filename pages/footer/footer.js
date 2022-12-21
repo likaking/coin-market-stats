@@ -78,20 +78,20 @@ export default function Footer() {
        <div className={styles.footer_links}>
         <div className={styles.footer_links_contianer}>
           <ul>
-            <Link href = '' scroll = {false}><li> About </li></Link>
-            <Link href = '' scroll = {false}><li>Menu </li></Link>
-            <Link href = '' scroll = {false}><li>Blog </li></Link>
-            <Link href = '' scroll = {false}><li>Gallery </li></Link>
-            <Link href = '' scroll = {false}><li>Faq </li></Link>
-            <Link href = '' scroll = {false}><li>Contact </li></Link>
+            <Link href = '' scroll = {false}><li className={styles.li}> About </li></Link>
+            <Link href = '' scroll = {false}><li className={styles.li} >Menu </li></Link>
+            <Link href = '' scroll = {false}><li className={styles.li} >Blog </li></Link>
+            <Link href = '' scroll = {false}><li className={styles.li} >Gallery </li></Link>
+            <Link href = '' scroll = {false}><li className={styles.li} >Faq </li></Link>
+            <Link href = '' scroll = {false}><li className={styles.li}>Contact </li></Link>
           </ul>
         </div>
         <div className={styles.footer_Social}>
         <ul className={styles.footer_ul}>
-            <li> <FaFacebook /> </li>
-            <li> <FaTwitter /> </li>
-           <li> <FaTiktok /> </li>
-            <li> <FaYoutube /> </li>  
+            <li className={styles.li}> <FaFacebook /> </li>
+            <li className={styles.li}> <FaTwitter /> </li>
+            <li className={styles.li}> <FaTiktok /> </li>
+            <li className={styles.li}> <FaYoutube /> </li>  
           </ul>
         </div>
        <button className={styles.upButton} onClick = {scrollToTop} style={{display: visible ? 'inline' : 'none'}}><FaArrowUp /></button>

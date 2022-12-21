@@ -114,10 +114,11 @@ return(
     control: (baseStyles, state) => ({
       ...baseStyles,
       borderColor: 'rgba(104, 142, 158, 0.534)',
+	  height:typeof window !== 'undefined' && window.innerWidth <= 930 ? '60px' : '45px',
     }),
   }} />
 <div className={styles.formDivs}>
-<button type='button' type = 'button'  className={styles.formAbvBel_Btns} onClick = {above} >Above</button> <button type='button' type = 'button' className={styles.formAbvBel_Btns} onClick = {below} >Below</button>
+<button type='button' type = 'button'  className={styles.formAbvBel_Btns} onClick = {above} >Above</button> <button type='button' type = 'button' className={styles.formAbvBel_Btns} style={{maginLeft:'0.3rem'}} onClick = {below} >Below</button>
 </div>
 <div className={styles.formDivs}>
 <input type= 'number' placeholder='Type numder'  className={styles.formInput} onChange = {typeNum} onMouseOver = {()=>{switchCoinDetials()}} ref={numberField}   />

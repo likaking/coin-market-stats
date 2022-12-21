@@ -22,7 +22,7 @@ var numberOfResult = activeCoins.flat().length
 return(
 <>
 <div style = {{height:'6em',width:'100%',position:'relative',paddingLeft:'0.5rem',paddingRight:'0.5rem'}}>
-<p style = {{position:'absolute',top:'-16%',fontWeight:'bold',left:'0',right:'0',marginLeft:'auto',marginRight:'auto',textAlign:'center',color:'rgb(76, 85, 88)'}}><span style={{color: loadingStats.includes('Please add a number to the number field') ? 'red' : 'rgba(40, 156, 150, 0.651)'}}>{loadingStats}</span></p>
+<p style = {{position:'absolute',top:'-35%',fontWeight:'bold',left:'0',right:'0',marginLeft:'auto',marginRight:'auto',textAlign:'center',color:'rgb(76, 85, 88)'}}><span style={{color: loadingStats.includes('Please add a number to the number field') ? 'red' : 'rgba(40, 156, 150, 0.651)'}}>{loadingStats}</span></p>
 {!switchHeader ? <h2 style ={{textAlign:'center',color:'rgb(56, 88, 84)'}} >{headerText} {funcParams} {switchCurrencyPercentage}</h2> : <h2 style ={{textAlign:'center',color:'rgb(56, 88, 84)'}}>Historical Price Of {coinSym.slice(0,1).toUpperCase()+coinSym.slice(1)} on {historicalDate} </h2>}
 {!switchHeader && activeCoins.length > 0  && <div style={{textAlign:'center'}}>{numberOfResult} {resultStatus} | Page {arraySelector + 1} {' of '} {activeCoins.length} </div>}
 {switchHeader && <div  style ={{textAlign:'center',color:'red'}}>{hPerror}</div>}
