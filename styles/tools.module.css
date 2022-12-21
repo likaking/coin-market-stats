@@ -476,7 +476,7 @@ font-size:4.2vw
 width: 90%;
 height: 39.4em;
 position: fixed;
-bottom:13%;
+bottom:7%;
 left:0;
 right:0;
 margin-left: auto;
@@ -577,7 +577,7 @@ transition: 0.4s
 .formOn{
 width: auto;
 text-align:center;
-bottom:10%;
+bottom:6%;
 left:0;
 right:0;
 margin-left: auto;
@@ -599,16 +599,16 @@ font-size:4.2vw
 }
 .tools_container{
 width: 90%;
-height: 37.5em;
+height: 36.5em;
 position: fixed;
-bottom:15%;
+bottom:6%;
 }
 .formOn{
 bottom:1%;
 }
 .select{
 width:100%;
-height:3.4em;	
+height:3.42em;	
 font-size:3.5vw;
 background-color:none
 }
