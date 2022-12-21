@@ -79,7 +79,8 @@ setCurrency(currency)
   <Head>
   <title>Coin Market Stats</title>
   <meta name="Coin Market Stats" content="Real time crpto stats  for free" />
-  <link rel="icon" href="/favicon.PNG" />
+  <link rel="icon" href="favicon.PNG" />
+   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   </Head>
       
   <Header />
