@@ -68,9 +68,10 @@ display: -webkit-box;
 display: -webkit-flex;
 display: -ms-flexbox;
 display: flex;
+gap:5%;
 -webkit-box-justify-content:center;
 justify-content:center;
-gap:5%
+
 }
 .formInput{
 width:100%;
@@ -88,13 +89,13 @@ color:rgb(199, 199, 200);
 }
 .formAbvBel_Btns{
 font-size:1em;
-width:50%;
+width:47%;
 height:3rem;
 border-radius: 0.3em;
 color: rgba(69, 101, 115, 0.753);
 border:1px solid rgba(104, 142, 158, 0.534);
 box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 1px rgba(0, 0, 0, 0.2);
-background-color: blue;
+background-image: linear-gradient(to left, #ffffff, #fefefe, #fdfdfd, #fcfcfc, #fbfbfb);
 transition: 0.5s;
 }
 .formAbvBel_Btns:hover{

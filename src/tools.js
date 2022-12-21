@@ -118,7 +118,7 @@ return(
     }),
   }} />
 <div className={styles.formDivs}>
-<button type='button' type = 'button'  className={styles.formAbvBel_Btns} onClick = {above} >Above</button>{''}<button type='button' type = 'button' className={styles.formAbvBel_Btns} style={{maginLeft:'0.3rem'}} onClick = {below} >Below</button>
+<button type='button' type = 'button'  className={styles.formAbvBel_Btns} onClick = {above} style={{maginRight:'auto'}} o >Above</button>{''}<button type='button' type = 'button' className={styles.formAbvBel_Btns} style={{maginLeft:'auto'}} onClick = {below} >Below</button>
 </div>
 <div className={styles.formDivs}>
 <input type= 'number' placeholder='Type numder'  className={styles.formInput} onChange = {typeNum} onMouseOver = {()=>{switchCoinDetials()}} ref={numberField}   />
