@@ -64,10 +64,10 @@ width:100%;
 }
 .formDivs{
 margin: 0.7em 0em 0.7em 0em;
- display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
 -webkit-box-justify-content:center;
 justify-content:center;
 gap:5%
@@ -94,7 +94,7 @@ border-radius: 0.3em;
 color: rgba(69, 101, 115, 0.753);
 border:1px solid rgba(104, 142, 158, 0.534);
 box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 1px rgba(0, 0, 0, 0.2);
-background-image: linear-gradient(to left, #ffffff, #fefefe, #fdfdfd, #fcfcfc, #fbfbfb);
+background-color: blue;
 transition: 0.5s;
 }
 .formAbvBel_Btns:hover{
@@ -379,7 +379,7 @@ padding:1.2rem 1.2rem 0.5rem 1.2rem
 }
 .select{
 width:100%;
-height:2.5em;	
+height:2.4em;	
 font-size:3.5vw;
 background-color:none
 }
