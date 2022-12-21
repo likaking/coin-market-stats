@@ -606,22 +606,14 @@ bottom:15%;
 .formOn{
 bottom:1%;
 }
+.select{
+width:100%;
+height:3.4em;	
+font-size:3.5vw;
+background-color:none
+}
 }
 
-@media screen and (max-width: 380px) {
-.header{
-font-size:4.2vw	
-}
-.tools_container{
-width: 90%;
-height: 36em;
-position: fixed;
-bottom:5%;
-}
-.formOn{
-bottom:1%;
-}
-}
 
 @media screen and (max-width: 300px) {
 .header{
