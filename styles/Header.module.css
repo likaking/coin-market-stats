@@ -91,11 +91,12 @@
     
     @media screen and (max-width: 920px) {
       .nav_bar{
-        height: 5.2vh;
+        height: 5em;
+		border: 1px solid red;
         }
       .nav_bar__logo{
-        width: auto;
-        height:70%;
+        width: 10%;
+        height:auto;
         position: relative;
         }
         .nav_bar__compName{
@@ -145,6 +146,8 @@
         }
         .nav_bar__menu_a {
         color: rgb(197, 196, 197);
+		margin-left:0.3em;
+		margin-right:0.3em;
         text-align: center;
         text-decoration: none;
         }
@@ -159,13 +162,13 @@
     
     @media screen and (max-width: 830px) {
       .nav_bar{
-        height: 5.2vh;
+        height:5em;
         position: fixed;
         top: 0;
         }
       .nav_bar__logo{
-        width: auto;
-        height:70%;
+        width: 10%;
+        height:auto;
         position: relative;
         }
         .nav_bar__logo_icon{
@@ -201,12 +204,10 @@
         justify-content: flex-start;
         padding-right: 1vw;
         padding-left: 1.5vw;
-        
-      
         }
         .nav_bar__logo{
-        width: auto;
-        height:60%;
+        width: 20%;
+        height:auto;
         position: relative;
         }
         .nav_bar__logo_icon{
@@ -347,8 +348,8 @@
         justify-content: flex-start;
         }
         .nav_bar__logo{
-        width: auto;
-        height:60%;
+        width: 20%;
+        height:auto;
         position: relative;
         }
         .nav_bar__logo_icon{
