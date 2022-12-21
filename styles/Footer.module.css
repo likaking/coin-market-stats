@@ -93,6 +93,9 @@
 }
 .footer_links{
 width: 50%;
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
 display: flex;
 margin: auto;
 gap: 2rem;
@@ -105,6 +108,9 @@ padding-bottom: 0rem;
 .footer_links_contianer >ul{
     color: rgb(216, 216, 216); 
     list-style: none;
+     display: -webkit-box;
+     display: -webkit-flex;
+     display: -ms-flexbox;
     display: flex;
     font-size: 0.6em;
     gap: 1.5vw;
@@ -126,7 +132,10 @@ padding-bottom: 0rem;
 }
 .footer_Social >ul{
    list-style: none;
-   display: flex; 
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
    margin: 0;
    padding: 0;
    gap: 1.5vw;
@@ -134,27 +143,23 @@ padding-bottom: 0rem;
 
 }
 .footer_ul{
-   margin-left: auto; 
+margin-left: auto; 
 }
 .footer_Social >ul>li{
-   font-size: 2vw;
-   transition: 0.4s;
-  
-  
+font-size: 2vw;
+transition: 0.4s;
  }
  .footer_Social >ul>li :hover{
 color: rgb(184, 214, 228);
 transition: 0.4s;    
 }
  .copyRight{
-    color: rgb(216, 216, 216); 
-    font-size: 0.6em;
-    width: 50%;
-    margin: auto;
-    padding-bottom: 1rem;
-    
- 
- }
+color: rgb(216, 216, 216); 
+font-size: 0.6em;
+width: 50%;
+margin: auto;
+padding-bottom: 1rem;
+}
  .upButton{
  position: fixed;
  right: 2vw;
