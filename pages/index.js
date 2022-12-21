@@ -86,8 +86,6 @@ setCurrency(currency)
   <Header />
 
   <main style={{minHeight:'50vh'}} >
-
-  <div className={styles.cmv_top}></div>
   <div className={styles.cmvBody}>
   
   <HeaderActivities currencySymbol={currencySymbol} setCurrencySymbol={setCurrencySymbol} headerText={headerText} setHeaderText={setHeaderText}
