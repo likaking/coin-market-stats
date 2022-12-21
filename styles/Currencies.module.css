@@ -1,8 +1,8 @@
 .CMVCurrencies{
     width: 80%;
+	height: 5rem;
     margin: auto;
-    padding-top: 0rem;
-	
+    padding-top: 0rem;	
 }
 .CMVCurrencies_main{
     height: auto;

@@ -2,9 +2,7 @@
 padding-top: 0rem;
 height: auto;
 }
-.cmv_top{ 
-width: 100%;
-}
+
 .banner{
 width: 100%;
 height: 57vh;
@@ -286,9 +284,6 @@ padding-right: 0rem;
 height: 25em;
 background-position: 10%;
 }
-.cmv_top{ 
-height: 0;
-}
 .banner_div_L{
 flex: 0.4;
 }
@@ -385,12 +380,7 @@ display: none;
 }
 }
 
-@media screen and (max-width: 820px) {
-.cmvBody{
-padding-top: 7vw;
-height: auto;
-}
-}
+
 
 
 
