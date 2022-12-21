@@ -117,8 +117,8 @@ return(
 	  height:typeof window !== 'undefined' && window.innerWidth <= 930 ? '60px' : '45px',
     }),
   }} />
-<div className={styles.formDivs}>
-<button type='button' type = 'button'  className={styles.formAbvBel_Btns} onClick = {above} style={{maginRight:'auto'}} >Above</button>{''}<button type='button' type = 'button' className={styles.formAbvBel_Btns} style={{maginLeft:'auto'}} onClick = {below} >Below</button>
+<div className={styles.BtnDivs}>
+<button type='button' type = 'button'  className={styles.formAbvBel_Btns} onClick = {above}  style={{marginRight:'auto'}} >Above</button><span>{' '}</span><button type='button' type = 'button' className={styles.formAbvBel_Btns} style={{maginLeft:'auto'}} onClick = {below} >Below</button>
 </div>
 <div className={styles.formDivs}>
 <input type= 'number' placeholder='Type numder'  className={styles.formInput} onChange = {typeNum} onMouseOver = {()=>{switchCoinDetials()}} ref={numberField}   />

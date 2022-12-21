@@ -68,7 +68,6 @@ display: -webkit-box;
 display: -webkit-flex;
 display: -ms-flexbox;
 display: flex;
-gap:6%;
 -webkit-box-justify-content:center;
 justify-content:center;
 
@@ -183,6 +182,13 @@ transition: 0.4s
 color: rgb(161, 220, 82);
 transition: 0.4s
 }
+.BtnDivs{
+margin: 0.7em 0em 0.7em 0em;
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+}
 
 
 
@@ -257,6 +263,13 @@ display:flex;
 justify-content:center;
 gap:1.5vw
 }
+.BtnDivs{
+margin: 0.7em 0em 0.7em 0em;
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+}
 .formInput{
 width:100%;
 height:3.5vh;
@@ -265,7 +278,7 @@ border-radius: 0em
 }
 .formAbvBel_Btns{
 font-size:2vw;
-width:50%;
+width:47%;
 height:5.5vh
 }
 .formProcessBtn{
@@ -527,7 +540,7 @@ border-radius: 0em
 }
 .formAbvBel_Btns{
 font-size:4vw;
-width:50%;
+width:47%;
 height:3.8em
 }
 .formProcessBtn{
