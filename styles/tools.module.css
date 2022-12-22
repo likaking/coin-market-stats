@@ -603,7 +603,27 @@ font-size:4.2vw
 }
 .tools_container{
 width: 90%;
-height: 35.8em;
+height: 37em;
+position: fixed;
+bottom:2%;
+}
+.formOn{
+bottom:1%;
+}
+.select{
+width:100%;
+height:3.42em;	
+font-size:3.5vw;
+background-color:none
+}
+}
+@media screen and (max-width: 380px) {
+.header{
+font-size:4.2vw	
+}
+.tools_container{
+width: 90%;
+height: 35.5em;
 position: fixed;
 bottom:2%;
 }
