@@ -52,22 +52,29 @@ const tableHeader = useRef(null)
     return item.symbol.includes(searchGems.toLowerCase())});
 	
 
-    const Vip = (gem)=>{
-    const getGem = activeCoins.map((coinz)=>{
 
+    const Vip = (gem,index)=>{
+		
+		
+		
+    const getGem = activeCoins[Number(arraySelector)].map((coinz)=>{
+    
     if(coinz.id === gem){
-        return {...coinz, vip:coinz.vip === true ? false : true}
+	coinz.vip === false
+    return {...coinz, vip:coinz.vip === true ? false : true}
     }
-   return coinz
-   })
-
-   setActiveCoins(getGem)
-   }
+    return coinz
+    })
+  
+    setActiveCoins(activeCoins[Number(arraySelector)]=[getGem])
+    }
    
+   
+   console.log(activeCoins[0])
 useEffect(() => {
     window.addEventListener('scroll', isSticky);
     return () => {
-        window.removeEventListener('scroll', isSticky);
+    window.removeEventListener('scroll', isSticky);
     };
 });
  
@@ -152,7 +159,8 @@ return(
     !switchHeader && search? search?.map((itemz,index)=> 
 	
 	index < render && <div key={itemz.id+index} ref = {(el)=> containerL.current[index]=el}  onMouseEnter = {()=>hoverIn(index)} onMouseLeave = {()=>hoverOut(index)} 
-     className={styles.dipedCrypto_L_container}>  <div className={styles.dipedCrypto_L_rank}><div></div> <div></div> <div>{index + 1} | {'#'}{itemz.market_cap_rank} </div> </div>  <div className={styles.dipedCrypto_L_Star_container}> <span ref={(el)=> star.current[index] = el} ><FaStar className={styles.dipedCrypto_L_Star} style = {{color:itemz.vip === true ? 'rgb(228, 161, 36)' :'rgb(207, 207, 207)'}}   onClick={()=>{Vip(itemz.id)}} /></span> </div>
+     className={styles.dipedCrypto_L_container}>  <div className={styles.dipedCrypto_L_rank}><div></div> <div></div> <div>{index + 1} | {'#'}{itemz.market_cap_rank} </div> </div> 
+	 <div className={styles.dipedCrypto_L_Star_container}> <span ref={(el)=> star.current[index] = el} ><FaStar className={styles.dipedCrypto_L_Star} style = {{color:itemz.vip === true ? 'rgb(228, 161, 36)' :'rgb(207, 207, 207)'}}   onClick={()=>{Vip(itemz.id,index)}} /></span> </div>
      <div className={styles.dipedCrypto_L_img_container}><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >
      <img src={itemz.image} alt = {itemz.id}  className={styles.dipedCrypto_L_img} loading='lazy' /></a> </div> 
      <div className={itemz.id.length >= 18 ? styles.dipedCrypto_L_id_direction : styles.dipedCrypto_L_id}><div className={styles.dipedCrypto_L_id_span} ><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >{itemz.id[0].toUpperCase() + itemz.id.slice(1).toLowerCase() }</a></div><div className={styles.dipedCrypto_L_symbol}><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >{itemz.symbol.toUpperCase()}</a></div> </div> </div>) : null

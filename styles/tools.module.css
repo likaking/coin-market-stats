@@ -151,6 +151,7 @@ padding:0.2rem 1rem 0rem 1rem
 font-size:1.5em;
 text-align: center;
 padding-top:0.5rem;
+
 }
 .formOnOff_Icon{
 transition: 0.4s;
@@ -162,6 +163,7 @@ transition: 0.4s
 }
 .formOn{
 width: fit-content;
+height:fit-content;
 text-align:center;
 font-size:4vw;
 bottom:-1%;
@@ -173,10 +175,11 @@ z-index: 5;
 transition: 0.4s;
 position: fixed;
 z-index:5;
+border:1px solid red
 }
 .formOn_Icon{
 color: rgba(71, 22, 22, 0.123);
-transition: 0.4s
+transition: 0.4s;
 }
 .formOn_Icon:hover{
 color: rgb(161, 220, 82);
@@ -319,6 +322,7 @@ margin-right: auto;
 z-index: 5;	
 transition: 0.4s;
 position: fixed;
+border:1px solid red
 }
 .formOn_Icon{
 color: rgba(71, 22, 22, 0.123);
@@ -575,7 +579,7 @@ color:rgb(220, 82, 92);
 transition: 0.4s	
 }
 .formOn{
-width: auto;
+width: fit-content;
 text-align:center;
 bottom:6%;
 left:0;

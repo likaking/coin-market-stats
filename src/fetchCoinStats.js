@@ -63,8 +63,6 @@ while(cloneArr.length !== 0){
 var sliceOut = cloneArr.splice(0,100)
 finalArr.push(sliceOut)
 setActiveCoins(finalArr)	
-console.log(arr)
-
 }	
 }
 
