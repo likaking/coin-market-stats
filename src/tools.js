@@ -111,7 +111,7 @@ return(
  searchGems={searchGems} setSearchGems={setSearchGems} currencySymbol ={currencySymbol} setCurrencySymbol={setCurrencySymbol} currencySymbolDisplay={currencySymbolDisplay} 
  setCurrencySymbolDisplay={setCurrencySymbolDisplay}
  />
-<div style={{position:'fixed',top:0,bottom:0}}>
+
 <div  className={styles.tools_container} style = {{display: openTools ? 'block' : 'none'}} >
 <div  className={styles.tools_inner_container}>
 <div  className={styles.tools_close}><MdPowerSettingsNew className={styles.tools_closeIcon} /></div>
@@ -154,7 +154,7 @@ return(
 <div className={styles.formOnOff}><span   ><MdPowerSettingsNew  className={styles.formOnOff_Icon}  onClick ={switchOff}  /></span></div>
 </div>
 </div>
-</div>
+
 </>
 )
 }
