@@ -92,8 +92,9 @@
     .dipedCrypto_R_container_hourlyChange{
     font-weight: 500; 
     flex: 0.081; 
-	text-align:right;
+    display: flex; 
 	word-break:break-all;
+	justify-content: flex-end;
 	position:relative;
     }
     .dipedCrypto_R_container_24hChange{        
@@ -108,7 +109,8 @@
     .dipedCrypto_R_container_7d{
     font-weight: 500;
     flex: 0.081;
-	text-align:right;
+	display:flex;
+    justify-content:right;
 	word-break:break-all;
 	position:relative;
     }
@@ -130,14 +132,19 @@
     flex: 0.22;
 	font-weight: 500; 
     transition: .4s;
-    text-align:right;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    vertical-align: baseline; 
 	word-break:break-all;
     }
 	.sparkline{
     flex: 0.14;
     text-align: right;
     transition: .4s;
-    text-align:right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 	height:90%;
 	width:100%;
 	word-break:break-all;
