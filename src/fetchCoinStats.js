@@ -5,11 +5,13 @@ import axios from 'axios'
 var tempArr = []
 
 
-export const FetchCryptoInfo = ({activeCoins,setActiveCoins,number,setNumber,process,setProcess,currency,switchHeader,setSwitchHeader,fetchData,
+export const FetchCryptoInfo = ({activeCoins,setActiveCoins,activeCoinsParent,setActiveCoinsParent,number,setNumber,process,setProcess,currency,switchHeader,setSwitchHeader,fetchData,
 setFetchData,changingCurrency,setChangingCurrency,hPerror,setHpError,loadingStats,setLoadingStats,currencySymbolDisplay,setCurrencySymbolDisplay,
-currencySymbol,setCurrencySymbol})=>{
+currencySymbol,setCurrencySymbol,updateAllVips,setUpdateAllVips})=>{
 
 var convertCurrency = currency.toLowerCase()
+
+
 
 
 const allToolsFunction = {
@@ -61,9 +63,10 @@ var finalArr = []
 
 while(cloneArr.length !== 0){
 var sliceOut = cloneArr.splice(0,100)
-finalArr.push(sliceOut)
-setActiveCoins(finalArr)	
+finalArr.push(sliceOut)	
 }	
+setActiveCoins(finalArr)
+setUpdateAllVips(true)
 }
 
 

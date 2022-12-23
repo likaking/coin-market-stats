@@ -1,7 +1,17 @@
 .page_Contianer{
+margin:auto;
+padding-top:1rem;
 display:flex;
-gap:0.5em;
+gap:0.2em;
 color:gray;
 cursor:pointer;
-justify-content: center
+justify-content: center;
+width:90%;
+word-break: normal;
+}
+
+
+.pageNum{
+margin-left:0.7rem;
+margin-right:0.7rem;
 }

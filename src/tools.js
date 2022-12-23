@@ -14,14 +14,17 @@ import {FetchHistoricalPrices} from '../src/historicalPrices.js'
 import {DispalyAllHistoricalPrices} from '../src/displayHistoricalPrices.js'
 
 
-export default function Tools({activeCoins,setActiveCoins,buy,setBuy,Speech,setQuickData,setCoinArr,currency,searchGems,setSearchGems,openModal,setOpenModal,
+export default function Tools({activeCoins,setActiveCoins,activeCoinsParent,setActiveCoinsParent,buy,setBuy,Speech,setQuickData,setCoinArr,currency,searchGems,setSearchGems,openModal,setOpenModal,
 modalSearch,setModalSearch,startModal,setStartModal,index,setIndex,priceAlertzPing,setPriceAlertzPing,currencySymbol,setCurrencySymbol,openTools,
 setOpenTools,headerText,setHeaderText,funcParams,setFuncParams,number,setNumber,switchHeader,setSwitchHeader,coinSym,setCoinSym,historicalDate,
-setHistoricalDate,hPerror,setHpError,changingCurrency,setChangingCurrency,loadingStats,setLoadingStats,currencySymbolDisplay,setCurrencySymbolDisplay}){
+setHistoricalDate,hPerror,setHpError,changingCurrency,setChangingCurrency,loadingStats,setLoadingStats,currencySymbolDisplay,setCurrencySymbolDisplay,
+updateAllVips,setUpdateAllVips}){
 
 const [process,setProcess] = useState('Price_Change_Percentage_24h_In_Currency_Above')
 const [processHistoricalPrices,setProcessHistoricalPrices] = useState()
 const [fetchData,setFetchData] = useState()
+const [counterProcess,setCounterProcess] = useState(0)
+const [counterHistory,setCounterHistory] = useState(0)
 const [hPrices,setHPrices] = useState([])
 const numberField = useRef(null)
 	
@@ -56,10 +59,11 @@ setHistoricalDate(e.target.value)
 const switchOff = ()=>{setOpenTools(false)}
 
 const dispatchTool = (tool,params)=>{
+setCounterProcess((counterProcess)=> counterProcess + 1)
 if(number.length > 0 ){
 setProcessHistoricalPrices('');
 var formatHeaderText = headerText.split(' ').join('_')
-setProcess(formatHeaderText+'_'+funcParams)	
+setProcess(formatHeaderText+'_'+funcParams+counterProcess)	
 setFetchData(currency+formatHeaderText+'_'+funcParams+number)	
 setHpError('')
 }
@@ -74,8 +78,9 @@ const switchHistorical = ()=>{setSwitchHeader(true)}
 const switchCoinDetials = ()=>{setSwitchHeader(false)}
 
 const dispatchHistoricalPrices = (tool,params)=>{
+setCounterHistory((counterHistory)=> counterHistory + 1)
 if(switchHeader){
-var hpText = currency+coinSym+historicalDate
+var hpText = currency+coinSym+historicalDate+counterHistory
 setProcessHistoricalPrices(hpText)	
 setLoadingStats('Loading coin stats........')
 }
@@ -85,17 +90,18 @@ setLoadingStats('Loading coin stats........')
 return(
 <>
 <Suspense>
-<FetchCryptoInfo activeCoins={activeCoins} setActiveCoins={setActiveCoins} number={number} setNumber={number,setNumber} process={process}
+<FetchCryptoInfo activeCoins={activeCoins} setActiveCoins={setActiveCoins} activeCoinsParent={activeCoinsParent} setActiveCoinsParent={setActiveCoinsParent} number={number} setNumber={number,setNumber} process={process}
  setProcess={setProcess} currency={currency} switchHeader={switchHeader} setSwitchHeader={setSwitchHeader} fetchData={fetchData} 
  setFetchData={setFetchData} changingCurrency={changingCurrency} setChangingCurrency ={setChangingCurrency} hPerror={hPerror} setHpError={setHpError}
  loadingStats={loadingStats} setLoadingStats={setLoadingStats} currencySymbolDisplay={currencySymbolDisplay} 
- setCurrencySymbolDisplay={setCurrencySymbolDisplay}  currencySymbol={currencySymbol} setCurrencySymbol={setCurrencySymbol} />
+ setCurrencySymbolDisplay={setCurrencySymbolDisplay}  currencySymbol={currencySymbol} setCurrencySymbol={setCurrencySymbol} updateAllVips={updateAllVips} setUpdateAllVips={setUpdateAllVips} />
 </Suspense>  
 
 <FetchHistoricalPrices coinSym={coinSym} setCoinSym={setCoinSym} historicalDate={historicalDate} setHistoricalDate={setHistoricalDate}
  processHistoricalPrices={processHistoricalPrices} setProcessHistoricalPrices={setProcessHistoricalPrices} currency={currency} 
  switchHeader={switchHeader} setSwitchHeader={setSwitchHeader} hPrices={hPrices} setHPrices={setHPrices} activeCoins={activeCoins}
- setActiveCoins={setActiveCoins} hPerror={hPerror} setHpError={setHpError} setLoadingStats={setLoadingStats} currencySymbol ={currencySymbol} setCurrencySymbol={setCurrencySymbol} currencySymbolDisplay={currencySymbolDisplay} 
+ setActiveCoins={setActiveCoins} activeCoinsParent={activeCoinsParent} setActiveCoinsParent={setActiveCoinsParent} hPerror={hPerror} setHpError={setHpError} setLoadingStats={setLoadingStats} currencySymbol ={currencySymbol} 
+ setCurrencySymbol={setCurrencySymbol} currencySymbolDisplay={currencySymbolDisplay} 
  setCurrencySymbolDisplay={setCurrencySymbolDisplay}  /> 
  
 <DispalyAllHistoricalPrices coinSym={coinSym} setCoinSym={setCoinSym} historicalDate={historicalDate} setHistoricalDate={setHistoricalDate}
@@ -114,7 +120,7 @@ return(
     control: (baseStyles, state) => ({
       ...baseStyles,
       borderColor: 'rgba(104, 142, 158, 0.534)',
-	  height:typeof window !== 'undefined' && window.innerWidth <= 930 ? '60px' : '45px',
+	  height:typeof window !== 'undefined' && window.innerWidth <= 930 ? '45px' : '45px',
     }),
   }} />
 <div className={styles.BtnDivs}>

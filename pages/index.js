@@ -47,13 +47,15 @@ export default function Home(setCmvErrorsx={setCmvErrorsx}) {
   const [switchHeader,setSwitchHeader] = useState(false)
   const [coinSym,setCoinSym] = useState('bitcoin')			
   const [historicalDate,setHistoricalDate] = useState('12-11-2018')	
-  const [historicalData,setHistoricalData] = useState()	
-  const [activeCoins,setActiveCoins] = useState([])
+  const [historicalData,setHistoricalData] = useState()
+  const [arraySelector,setArraySelector] = useState(0)	
+  const [activeCoinsParent,setActiveCoinsParent] = useState([[],[]])  
+  const [activeCoins,setActiveCoins] = useState([[],[]])
   const [hPerror,setHpError] = useState()	
   const [changingCurrency,setChangingCurrency] = useState()	
-  const [arraySelector,setArraySelector] = useState(0)	
   const [render, setRender] = useState(10)
   const [loadingStats,setLoadingStats] = useState('')
+  const [updateAllVips,setUpdateAllVips] = useState(false)
   
 
 // Unused!
@@ -91,7 +93,7 @@ setCurrency(currency)
   <HeaderActivities currencySymbol={currencySymbol} setCurrencySymbol={setCurrencySymbol} headerText={headerText} setHeaderText={setHeaderText}
   funcParams={funcParams} setFuncParams={setFuncParams} number={number} setNumber={setNumber} switchHeader={switchHeader} 
   setSwitchHeader={setSwitchHeader} coinSym={coinSym} setCoinSym={setCoinSym} historicalDate={historicalDate} setHistoricalDate={setHistoricalDate} 
-  activeCoins={activeCoins} setActiveCoins={setActiveCoins} hPerror={hPerror} setHpError={setHpError} changingCurrency={changingCurrency}
+  activeCoins={activeCoins} setActiveCoins={setActiveCoins} activeCoinsParent={activeCoinsParent} setActiveCoinsParent={setActiveCoinsParent} hPerror={hPerror} setHpError={setHpError} changingCurrency={changingCurrency}
   setChangingCurrency ={setChangingCurrency} arraySelector={arraySelector} setArraySelector={setArraySelector} loadingStats={loadingStats}
   setLoadingStats={setLoadingStats} />
   
@@ -116,21 +118,22 @@ setCurrency(currency)
   modalSearch={modalSearch} setModalSearch={setModalSearch} startModal={startModal} setStartModal={setStartModal} index={index}
   setIndex={setIndex} priceAlertzPing ={priceAlertzPing} setPriceAlertzPing={setPriceAlertzPing} currencySymbol={currencySymbol}
   setCurrencySymbol={setCurrencySymbol} switchHeader={switchHeader} setSwitchHeader={setSwitchHeader} arraySelector={arraySelector} 
-  setArraySelector={setArraySelector} render={render} setRender={setRender} currencySymbolDisplay={currencySymbolDisplay} setCurrencySymbolDisplay={setCurrencySymbolDisplay}  />
+  setArraySelector={setArraySelector} render={render} setRender={setRender} currencySymbolDisplay={currencySymbolDisplay}
+  setCurrencySymbolDisplay={setCurrencySymbolDisplay} updateAllVips={updateAllVips} setUpdateAllVips={setUpdateAllVips}  />
  
   <PaginationValues  currencySymbol={currencySymbol} setCurrencySymbol={setCurrencySymbol} headerText={headerText} setHeaderText={setHeaderText}
   funcParams={funcParams} setFuncParams={setFuncParams} number={number} setNumber={setNumber} switchHeader={switchHeader} 
   setSwitchHeader={setSwitchHeader} coinSym={coinSym} setCoinSym={setCoinSym} historicalDate={historicalDate} setHistoricalDate={setHistoricalDate} 
-  activeCoins={activeCoins} setActiveCoins={setActiveCoins} hPerror={hPerror} setHpError={setHpError} changingCurrency={changingCurrency}
+  activeCoins={activeCoins} setActiveCoins={setActiveCoins} activeCoinsParent={activeCoinsParent} setActiveCoinsParent={setActiveCoinsParent} hPerror={hPerror} setHpError={setHpError} changingCurrency={changingCurrency}
   setChangingCurrency ={setChangingCurrency} arraySelector={arraySelector} setArraySelector={setArraySelector} render={render} setRender={setRender}  />
   
-  <Tools activeCoins={activeCoins} setActiveCoins={setActiveCoins} buy={buy} setBuy={setBuy} currency={currency} setCurrency={setCurrency} currencyPlural={currencyPlural} setCurrencyPlural={setCurrencyPlural} 
+  <Tools activeCoins={activeCoins} setActiveCoins={setActiveCoins} activeCoinsParent={activeCoinsParent} setActiveCoinsParent={setActiveCoinsParent} buy={buy} setBuy={setBuy} currency={currency} setCurrency={setCurrency} currencyPlural={currencyPlural} setCurrencyPlural={setCurrencyPlural} 
   currencySingular={currencySingular} setCurrencySingular={setCurrencySingular} currencySymbol ={currencySymbol} setCurrencySymbol={setCurrencySymbol}
   openTools={openTools} setOpenTools={setOpenTools} headerText={headerText} setHeaderText={setHeaderText} funcParams={funcParams} setFuncParams={setFuncParams}
   number={number} setNumber={setNumber} switchHeader={switchHeader} setSwitchHeader={setSwitchHeader} coinSym={coinSym} setCoinSym={setCoinSym}
   historicalDate={historicalDate} setHistoricalDate={setHistoricalDate} hPerror={hPerror} setHpError={setHpError} changingCurrency={changingCurrency}
   setChangingCurrency ={setChangingCurrency} loadingStats={loadingStats} setLoadingStats={setLoadingStats} 
-  currencySymbolDisplay={currencySymbolDisplay} setCurrencySymbolDisplay={setCurrencySymbolDisplay} />
+  currencySymbolDisplay={currencySymbolDisplay} setCurrencySymbolDisplay={setCurrencySymbolDisplay} updateAllVips={updateAllVips} setUpdateAllVips={setUpdateAllVips} />
   
   <ToolsOnButton openTools={openTools} setOpenTools={setOpenTools} searchGems={searchGems} setSearchGems={setSearchGems} />
   <CurrenciesWaterMark currencySymbol ={currencySymbol} setCurrencySymbol={setCurrencySymbol} />

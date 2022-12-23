@@ -8,7 +8,9 @@ import {FaCaretDown,FaCaretUp,FaTrashAlt,FaStar,FaInfoCircle,FaWindowClose} from
 
 export function DisplayCoin({activeCoins,buy,setBuy,setActiveCoins,Speech,setQuickData,setCoinArr,currency,searchGems,openModal,setOpenModal,
 modalSearch,setModalSearch,startModal,setStartModal,index,setIndex,priceAlertzPing,setPriceAlertzPing,currencySymbol,setCurrencySymbol,
-switchHeader,setSwitchHeader,arraySelector,setArraySelector,render,setRender,currencySymbolDisplay,setCurrencySymbolDisplay}){
+switchHeader,setSwitchHeader,arraySelector,setArraySelector,render,setRender,currencySymbolDisplay,setCurrencySymbolDisplay,
+updateAllVips,setUpdateAllVips}){
+
 
 const deleteIcon = useRef([]);
 const infoIconR = useRef([]);
@@ -51,26 +53,56 @@ const tableHeader = useRef(null)
     const search = activeCoins[Number(arraySelector)]?.filter((item)=>{
     return item.symbol.includes(searchGems.toLowerCase())});
 	
-
-
-    const Vip = (gem,index)=>{
-		
-		
-		
-    const getGem = activeCoins[Number(arraySelector)].map((coinz)=>{
     
-    if(coinz.id === gem){
-	coinz.vip === false
+	const [vipCrypto,setVipCrypto] = useState(['rubic','synapse-2','build','blocksquare','kilt-protocol'])
+
+    useEffect(()=>{
+	var cloned = activeCoins
+	
+	const updateVip = ()=>{
+	
+	const isVip = activeCoins[Number(arraySelector)].map((imVip)=>{
+	
+    const checkVip = vipCrypto.find((vip)=>{ return vip === imVip.id})
+	
+    if(checkVip !== undefined){
+	if(!imVip.hasOwnProperty('vip')){	
+	imVip.vip = true
+	}	
+	}	
+	return imVip	
+	})	
+	cloned[Number(arraySelector)] = isVip
+	setActiveCoins(cloned)	
+	}
+    updateAllVips && updateVip()
+	setUpdateAllVips(false)
+   
+	},[ updateAllVips])
+	
+
+    const Vip = async(gem,index)=>{
+	if(vipCrypto.indexOf(gem) === -1){
+	setVipCrypto([...vipCrypto,gem])
+	}
+    var  clone =  [...activeCoins]
+    const getGem =  await clone[Number(arraySelector)].map((coinz)=>{
+	
+    if(coinz.id === gem ){
+	if(!coinz.hasOwnProperty('vip')){
+	coinz.vip = 'true'
+	}
     return {...coinz, vip:coinz.vip === true ? false : true}
     }
-    return coinz
+    return coinz;
     })
-  
-    setActiveCoins(activeCoins[Number(arraySelector)]=[getGem])
+	
+    clone[Number(arraySelector)] = getGem
+	setActiveCoins(clone)
     }
    
-   
-   console.log(activeCoins[0])
+
+
 useEffect(() => {
     window.addEventListener('scroll', isSticky);
     return () => {
@@ -163,7 +195,7 @@ return(
 	 <div className={styles.dipedCrypto_L_Star_container}> <span ref={(el)=> star.current[index] = el} ><FaStar className={styles.dipedCrypto_L_Star} style = {{color:itemz.vip === true ? 'rgb(228, 161, 36)' :'rgb(207, 207, 207)'}}   onClick={()=>{Vip(itemz.id,index)}} /></span> </div>
      <div className={styles.dipedCrypto_L_img_container}><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >
      <img src={itemz.image} alt = {itemz.id}  className={styles.dipedCrypto_L_img} loading='lazy' /></a> </div> 
-     <div className={itemz.id.length >= 18 ? styles.dipedCrypto_L_id_direction : styles.dipedCrypto_L_id}><div className={styles.dipedCrypto_L_id_span} ><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >{itemz.id[0].toUpperCase() + itemz.id.slice(1).toLowerCase() }</a></div><div className={styles.dipedCrypto_L_symbol}><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >{itemz.symbol.toUpperCase()}</a></div> </div> </div>) : null
+     <div className={itemz.id.length >= 18 ? styles.dipedCrypto_L_id_direction : styles.dipedCrypto_L_id}><div className={styles.dipedCrypto_L_id_span} ><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >{itemz.id[0].toUpperCase() + itemz.id.slice(1).toLowerCase()}</a></div> <div className={styles.dipedCrypto_L_symbol}><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >{itemz.symbol.toUpperCase()}</a></div> </div> </div>) : null
 }
 </div>
 }
