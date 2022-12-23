@@ -127,6 +127,7 @@ padding-bottom: 0rem;
     gap: 1.5vw;
     cursor: pointer;
     flex: 1;  
+	margin-top:2rem;
     z-index: 3;
    
 }

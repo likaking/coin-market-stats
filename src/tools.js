@@ -119,7 +119,7 @@ return(
 <Select options={toolOptionsList}  defaultValue = {toolOptionsList[9]}  className={styles.select} onChange={(e)=>{typeOfTools(e);switchCoinDetials()}} styles={{
     control: (baseStyles, state) => ({
       ...baseStyles,
-      borderColor: 'rgba(104, 142, 158, 0.534)',
+      borderColor: 'rgb(94, 129, 139)',
 	  height:typeof window !== 'undefined' && window.innerWidth <= 930 ? '45px' : '45px',
     }),
   }} />

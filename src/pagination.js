@@ -35,7 +35,7 @@ return(
 
 <div style = {{textAlign:'center'}}  className = {styles.page_Contianer}>
 {
-activeCoins.flat().length > 1 && activeCoins.map((page,index)=> 
+activeCoins.length > 1 && activeCoins.map((page,index)=> 
 <span className = {styles.pageNum} onClick = {()=>{setRenderValue;selectArrayIndex(index);scrollToTop()}} key={index} >{index + 1}</span>
 )
 }
