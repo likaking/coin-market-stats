@@ -58,12 +58,12 @@ setHistoricalDate(e.target.value)
 
 const switchOff = ()=>{setOpenTools(false)}
 
-const dispatchTool = (tool,params)=>{
+const dispatchTool = (tool,params)=>{	
 setCounterProcess((counterProcess)=> counterProcess + 1)
 if(number.length > 0 ){
 setProcessHistoricalPrices('');
 var formatHeaderText = headerText.split(' ').join('_')
-setProcess(formatHeaderText+'_'+funcParams+counterProcess)	
+setProcess(formatHeaderText+'_'+funcParams)	
 setFetchData(currency+formatHeaderText+'_'+funcParams+number)	
 setHpError('')
 }
@@ -94,7 +94,8 @@ return(
  setProcess={setProcess} currency={currency} switchHeader={switchHeader} setSwitchHeader={setSwitchHeader} fetchData={fetchData} 
  setFetchData={setFetchData} changingCurrency={changingCurrency} setChangingCurrency ={setChangingCurrency} hPerror={hPerror} setHpError={setHpError}
  loadingStats={loadingStats} setLoadingStats={setLoadingStats} currencySymbolDisplay={currencySymbolDisplay} 
- setCurrencySymbolDisplay={setCurrencySymbolDisplay}  currencySymbol={currencySymbol} setCurrencySymbol={setCurrencySymbol} updateAllVips={updateAllVips} setUpdateAllVips={setUpdateAllVips} />
+ setCurrencySymbolDisplay={setCurrencySymbolDisplay}  currencySymbol={currencySymbol} setCurrencySymbol={setCurrencySymbol}
+ updateAllVips={updateAllVips} setUpdateAllVips={setUpdateAllVips} counterProcess={counterProcess} setCounterProcess={setCounterProcess} />
 </Suspense>  
 
 <FetchHistoricalPrices coinSym={coinSym} setCoinSym={setCoinSym} historicalDate={historicalDate} setHistoricalDate={setHistoricalDate}

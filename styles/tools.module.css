@@ -51,7 +51,6 @@ color:rgb(220, 82, 92);
 transition: 0.4s;
 }
 .form{
-border:0px solid red;
 padding:1rem 1rem 0.5rem 1rem
 }
 .select{
@@ -144,7 +143,6 @@ color: rgb(82, 120, 136);
 text-align:center
 }
 .formHP{
-border:0px solid red;
 padding:0.2rem 1rem 0rem 1rem
 }
 .formOnOff{
@@ -175,7 +173,6 @@ z-index: 5;
 transition: 0.4s;
 position: fixed;
 z-index:5;
-border:1px solid red
 }
 .formOn_Icon{
 color: rgba(71, 22, 22, 0.123);
@@ -322,7 +319,6 @@ margin-right: auto;
 z-index: 5;	
 transition: 0.4s;
 position: fixed;
-border:1px solid red
 }
 .formOn_Icon{
 color: rgba(71, 22, 22, 0.123);
@@ -354,7 +350,7 @@ font-size:3vw
 .tools_container{
 width: 70%;
 height: 34.7em;
-position: fixed;
+position: relative;
 bottom:5%;
 left:0;
 right:0;

@@ -7,7 +7,7 @@ var tempArr = []
 
 export const FetchCryptoInfo = ({activeCoins,setActiveCoins,activeCoinsParent,setActiveCoinsParent,number,setNumber,process,setProcess,currency,switchHeader,setSwitchHeader,fetchData,
 setFetchData,changingCurrency,setChangingCurrency,hPerror,setHpError,loadingStats,setLoadingStats,currencySymbolDisplay,setCurrencySymbolDisplay,
-currencySymbol,setCurrencySymbol,updateAllVips,setUpdateAllVips})=>{
+currencySymbol,setCurrencySymbol,updateAllVips,setUpdateAllVips,counterProcess,setCounterProcess})=>{
 
 var convertCurrency = currency.toLowerCase()
 
@@ -79,11 +79,11 @@ setUpdateAllVips(true)
 	if(!switchHeader){
 	const moon0 =   setTimeout(()=>{
 		   setLoadingStats('Loading coin stats........')
-           axios.get(moonUrl1).then((res)=> {return res.data.filter(allToolsFunction[process].method)}).then((result)=> tempArr.push(...result)).catch((err)=>{})
+           axios.get(moonUrl1).then((res)=> {return res.data.filter(allToolsFunction[process].method)}).then((result)=> tempArr.push(...result)).then(()=> console.log(tempArr)).catch((err)=>{})
          },10)
 	     }
 		 return ()=>{clearTimeout(moon0)}
-        },[process,currency,switchHeader,fetchData])
+        },[process,currency,switchHeader,fetchData,counterProcess])
 
       const moonUrl2 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${convertCurrency}&order=market_cap_desc&per_page=250&page=2&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
       useEffect(()=>{
@@ -93,7 +93,7 @@ setUpdateAllVips(true)
            },200)
 	       }
            return ()=>{clearTimeout(moon1)}
-        },[process,currency,switchHeader,fetchData])   
+        },[process,currency,switchHeader,fetchData,counterProcess])   
 
         const moonUrl3 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${convertCurrency}&order=market_cap_desc&per_page=250&page=3&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
         useEffect(()=>{ 
@@ -103,7 +103,7 @@ setUpdateAllVips(true)
           },400)
 		  }
           return ()=>{clearTimeout(moon2)}
-        },[process,currency,switchHeader,fetchData])   
+        },[process,currency,switchHeader,fetchData,counterProcess])   
 
         const moonUrl4 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${convertCurrency}&order=market_cap_desc&per_page=250&page=4&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
         useEffect(()=>{
@@ -113,7 +113,7 @@ setUpdateAllVips(true)
           },800)
 		  }
           return ()=>{clearTimeout(moon3)}
-        },[process,currency,switchHeader,fetchData])   
+        },[process,currency,switchHeader,fetchData,counterProcess])   
 		
 		
 		
@@ -127,7 +127,7 @@ setUpdateAllVips(true)
          },1000)
 	     }
 		 return ()=>{clearTimeout(moon4)}
-        },[process,currency,switchHeader,fetchData])
+        },[process,currency,switchHeader,fetchData,counterProcess])
 
       const moonUrl6 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${convertCurrency}&order=market_cap_desc&per_page=250&page=6&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
       useEffect(()=>{
@@ -137,7 +137,7 @@ setUpdateAllVips(true)
            },1100)
 	       }
            return ()=>{clearTimeout(moon5)}
-        },[process,currency,switchHeader,fetchData])   
+        },[process,currency,switchHeader,fetchData,counterProcess])   
 
         const moonUrl7 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${convertCurrency}&order=market_cap_desc&per_page=250&page=7&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
         useEffect(()=>{ 
@@ -147,7 +147,7 @@ setUpdateAllVips(true)
           },1300)
 		  }
           return ()=>{clearTimeout(moon6)}
-        },[process,currency,switchHeader,fetchData])   
+        },[process,currency,switchHeader,fetchData,counterProcess])   
 
         const moonUrl8 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${convertCurrency}&order=market_cap_desc&per_page=250&page=8&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
         useEffect(()=>{
@@ -157,7 +157,7 @@ setUpdateAllVips(true)
           },1400)
 		  }
           return ()=>{clearTimeout(moon7)}
-        },[process,currency,switchHeader,fetchData])   
+        },[process,currency,switchHeader,fetchData,counterProcess])   
 		
 
           useEffect(()=>{
@@ -165,7 +165,7 @@ setUpdateAllVips(true)
           if(!switchHeader){
 		  const moon8 = setTimeout(()=>{
 		  setLoadingStats('')
-          axios.get(moonUrl9).then((res)=> {return res.data.filter(allToolsFunction[process].method)}).then((result)=> tempArr.push(...result)).then(()=>{addPagination([...tempArr])}).then(()=>setCurrencySymbolDisplay(currencySymbol)).catch((err)=>{setHpError(`Can't retrive coin stats`);setLoadingStats('')})
+          axios.get(moonUrl9).then((res)=> {return res.data.filter(allToolsFunction[process].method)}).then((result)=> tempArr.push(...result)).then(()=>{addPagination([...tempArr])}).then(()=>setCurrencySymbolDisplay(currencySymbol)).catch((err)=>{console.log(err);setHpError(`Can't retrive coin stats`);setLoadingStats('')})
           },1500)
           }
           const emptyArr = setTimeout(()=>{
@@ -174,6 +174,6 @@ setUpdateAllVips(true)
           },5000)
 
           return ()=>{clearTimeout(moon8);clearTimeout(emptyArr)}
-        },[process,currency,switchHeader,fetchData]) 
+        },[process,currency,switchHeader,fetchData,counterProcess]) 
 
 }

@@ -54,7 +54,7 @@ const tableHeader = useRef(null)
     return item.symbol.includes(searchGems.toLowerCase())});
 	
     
-	const [vipCrypto,setVipCrypto] = useState(['rubic','synapse-2','build','blocksquare','kilt-protocol'])
+	const [vipCrypto,setVipCrypto] = useState([])
 
     useEffect(()=>{
 	var cloned = activeCoins
@@ -195,7 +195,7 @@ return(
 	 <div className={styles.dipedCrypto_L_Star_container}> <span ref={(el)=> star.current[index] = el} ><FaStar className={styles.dipedCrypto_L_Star} style = {{color:itemz.vip === true ? 'rgb(228, 161, 36)' :'rgb(207, 207, 207)'}}   onClick={()=>{Vip(itemz.id,index)}} /></span> </div>
      <div className={styles.dipedCrypto_L_img_container}><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >
      <img src={itemz.image} alt = {itemz.id}  className={styles.dipedCrypto_L_img} loading='lazy' /></a> </div> 
-     <div className={itemz.id.length >= 18 ? styles.dipedCrypto_L_id_direction : styles.dipedCrypto_L_id}><div className={styles.dipedCrypto_L_id_span} ><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >{itemz.id[0].toUpperCase() + itemz.id.slice(1).toLowerCase()}</a></div> <div className={styles.dipedCrypto_L_symbol}><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >{itemz.symbol.toUpperCase()}</a></div> </div> </div>) : null
+     <div className={itemz.id.length >= 15 ? styles.dipedCrypto_L_id_direction : styles.dipedCrypto_L_id}><div className={styles.dipedCrypto_L_id_span} ><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >{itemz.id[0].toUpperCase() + itemz.id.slice(1).toLowerCase()}</a></div> <div className={styles.dipedCrypto_L_symbol}><a href={`https://www.coingecko.com/en/coins/${itemz.id}`} target='_blank' >{itemz.symbol.toUpperCase()}</a></div> </div> </div>) : null
 }
 </div>
 }
