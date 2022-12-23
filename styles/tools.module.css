@@ -350,7 +350,7 @@ font-size:3vw
 .tools_container{
 width: 70%;
 height: 34.7em;
-position: fixed;
+position: relative;
 bottom:5%;
 left:0;
 right:0;
