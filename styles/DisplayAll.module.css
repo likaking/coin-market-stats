@@ -110,7 +110,7 @@
     font-weight: 500;
     flex: 0.081;
 	display:flex;
-    justify-content:right;
+    justify-content: flex-end;
 	word-break:break-all;
 	position:relative;
     }
@@ -134,7 +134,7 @@
     transition: .4s;
     display: flex;
     align-items: right;
-    justify-content: right;
+    justify-content: flex-end;
     vertical-align: baseline; 
 	word-break:break-all;
     }
