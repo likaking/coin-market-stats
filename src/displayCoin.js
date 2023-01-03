@@ -55,16 +55,14 @@ const tableHeader = useRef(null)
 	
     
 	const [vipCrypto,setVipCrypto] = useState([])
-
-    useEffect(()=>{
+    
+	// Add vip true to every crpto in the VipCrypto State/Arrr. //Inject 'vip = true' for all VIP crypto
+	
+    useLayoutEffect(()=>{
 	var cloned = activeCoins
-	
 	const updateVip = ()=>{
-	
 	const isVip = activeCoins[Number(arraySelector)].map((imVip)=>{
-	
     const checkVip = vipCrypto.find((vip)=>{ return vip === imVip.id})
-	
     if(checkVip !== undefined){
 	if(!imVip.hasOwnProperty('vip')){	
 	imVip.vip = true
@@ -76,9 +74,11 @@ const tableHeader = useRef(null)
 	setActiveCoins(cloned)	
 	}
     updateAllVips && updateVip()
-	setUpdateAllVips(false)
+	
+	
+	return ()=> setUpdateAllVips(false)
    
-	},[ updateAllVips])
+	},[vipCrypto,updateAllVips])
 	
 
     const Vip = async(gem,index)=>{
@@ -101,18 +101,18 @@ const tableHeader = useRef(null)
 	setActiveCoins(clone)
     }
    
+    
 
-
-useEffect(() => {
+    useEffect(() => {
     window.addEventListener('scroll', isSticky);
     return () => {
     window.removeEventListener('scroll', isSticky);
     };
-});
+    });
  
     const isSticky = (e) => {
     const scrollTop = window.scrollY;
-    scrollTop >= 250 ? setSticky(true): setSticky(false);       
+    scrollTop >= 150 ? setSticky(true): setSticky(false);       
     };
 		
 useEffect(()=>{

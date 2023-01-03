@@ -27,7 +27,7 @@
     flex:0.1;
     }
     .dipedCrypto_L_Star{ 
-    transition: 0.4s;	
+    
     }
     .dipedCrypto_L_img_container{
     flex:0.15;
@@ -166,7 +166,6 @@
     color: rgb(39, 39, 41);
 	font-size:0.9rem;
 	display:none
-	
     }
 	.dipedCrypto_HR{
     display: flex;
@@ -221,10 +220,10 @@
      top: 0;
      left: 0;
      width: 100%;
-     z-index: 999;
+     z-index: 10;
      box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
      background-color: rgb(254, 255, 255) !important;
-     animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+     animation: 10ms ease-in-out 0s normal none 1 running fadeInDown;
      padding-top: 0px;
      padding-bottom: 0px;
      display: flex;
@@ -236,17 +235,16 @@
      display: flex;
 	 align-items:center;
 	 justify-content:center;
-     padding: 0.3em 0em 0.5em 0em;
+     padding: 1rem 0em 1rem 0em;
 	 border-top: 1px solid  rgba(186, 202, 200, 0.308);
      border-bottom: 1px solid  rgba(186, 202, 200, 0.308);
-     color: rgb(24, 102, 94);
+     color: rgb(28, 59, 61);
     }
 	.tableHeader :nth-child(1){
     flex: 0.22;
 	display:flex;
     font-weight: 700;
 	font-size:0.9rem;
-    color: rgb(39, 39, 41);
     }
     .tableHeader :nth-child(2){
      flex: 0.78;
@@ -254,7 +252,6 @@
 	 display:flex;
      padding-left: 0rem;
 	 font-size:0.9rem;
-     color: rgb(39, 39, 41);
      }
 	 .tableHeader_L :nth-child(1){ 
 	  flex:0.13;

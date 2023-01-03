@@ -120,9 +120,27 @@ return(
 <Select options={toolOptionsList}  defaultValue = {toolOptionsList[9]}  className={styles.select} onChange={(e)=>{typeOfTools(e);switchCoinDetials()}} styles={{
     control: (baseStyles, state) => ({
       ...baseStyles,
-      borderColor: 'rgb(94, 129, 139)',
+      borderColor: 'rgba(86, 231, 241, 0.589)',
+	  "&:hover" : {
+	  borderColor: 'rgba(86, 231, 241, 0.589)',  
+	  },
 	  height:typeof window !== 'undefined' && window.innerWidth <= 930 ? '45px' : '45px',
     }),
+	singleValue: baseStyles => ({
+      ...baseStyles,
+	  color:'rgba(63, 194, 187, 0.801)',
+    }),
+	dropdownIndicator: baseStyles => ({
+      ...baseStyles,
+	  color:'rgba(63, 194, 187, 0.801)',
+	   "&:hover" : {
+	  color:'rgba(63, 194, 187, 0.801)',  
+	  },
+    }),
+	indicatorSeparator: baseStyles => ({
+      ...baseStyles,
+	  backgroundColor:'rgba(63, 194, 187, 0.801)',
+    })
   }} />
 <div className={styles.BtnDivs}>
 <button type='button' type = 'button'  className={styles.formAbvBel_Btns} onClick = {above}  style={{marginRight:'auto'}} >Above</button><span>{' '}</span><button type='button' type = 'button' className={styles.formAbvBel_Btns} style={{maginLeft:'auto'}} onClick = {below} >Below</button>

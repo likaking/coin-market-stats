@@ -30,13 +30,14 @@ setChangingCurrency,arraySelector,setArraySelector,render,setRender}){
  }
   
 
+
 return(
 <>
 
-<div style = {{textAlign:'center'}}  className = {styles.page_Contianer}>
+<div style = {{textAlign:'center',color:'rgb(56, 139, 145)'}}  className = {styles.page_Contianer}>
 {
 activeCoins.length > 1 && activeCoins.map((page,index)=> 
-<span className = {styles.pageNum} onClick = {()=>{setRenderValue;selectArrayIndex(index);scrollToTop()}} key={index} >{index + 1}</span>
+<span className = {styles.pageNum} onClick = {()=>{setRenderValue;selectArrayIndex(index);scrollToTop()}} key={index} style = {{fontWeight: arraySelector === index ? 'bold' : 'normal'}} >{index + 1}</span>
 )
 }
 </div>

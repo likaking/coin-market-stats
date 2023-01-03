@@ -56,7 +56,6 @@ index < 1 && <div key = {xy.symbol+index} className = {styles.CMVCurrencies_curr
 </div>
 </div>
 </div>
-{/*<h4  className = {styles.CMVCurrencies_LS}><Link href='/localstorage'>Use With Local Storage</Link></h4>*/}
 </>
 )
 }

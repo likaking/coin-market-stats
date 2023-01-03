@@ -75,31 +75,32 @@ justify-content:center;
 width:100%;
 height:2.5rem;
 border-radius: 0.3rem;
-border:1px solid rgb(94, 129, 139);
-color:rgb(69, 101, 115);
+border:1px solid rgba(86, 231, 241, 0.789);
+color: rgba(63, 194, 187, 0.801);
 outline:none;
 background: transparent;
+border-radius: 0.3em;
 box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 1px rgba(0, 0, 0, 0.2);
 }
 
 .formInput::placeholder{
-color:rgb(199, 199, 200);
+color: rgba(63, 194, 187, 0.301);
 }
 .formAbvBel_Btns{
 font-size:1em;
 width:47%;
 height:3rem;
 border-radius: 0.3em;
-color: rgba(69, 101, 115, 0.753);
-border:1px solid rgb(94, 129, 139);
+color: rgba(63, 194, 187, 0.801);
+border:1px solid rgba(86, 231, 241, 0.603);
 box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 1px rgba(0, 0, 0, 0.2);
-background-image: linear-gradient(to left, #ffffff, #fefefe, #fdfdfd, #fcfcfc, #fbfbfb);
+background-color: transparent;
 transition: 0.5s;
 }
 .formAbvBel_Btns:hover{
-color: rgba(69, 101, 115, 0.753);
-border:1px solid rgb(191, 208, 211);
-background: conic-gradient(from 315deg, #F5FFFF, #FCFFFF);
+color: rgb(232, 249, 250);
+border:0px solid rgb(86, 231, 241);
+background-image: -webkit-radial-gradient(rgba(86, 231, 241, 0.562),rgba(63, 194, 188, 0.589));
 transition: 0.5s
 }
 .formProcessBtn{
@@ -107,39 +108,39 @@ font-size:1em;
 width:100%;
 height:2.5rem;
 border-radius: 0.3em;
-color: rgba(69, 101, 115, 0.753);
-border:1px solid rgb(94, 129, 139);
+color: rgba(63, 194, 187, 0.801);
+border:1px solid rgba(86, 231, 241, 0.603);
+background-color: transparent;
 box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 1px rgba(0, 0, 0, 0.2);
-background-image: linear-gradient(to left, #ffffff, #fefefe, #fdfdfd, #fcfcfc, #fbfbfb);
 transition: 0.5s;
 }
 .formProcessBtn:hover{
-color: rgba(69, 101, 115, 0.753);
-border:1px solid rgb(191, 208, 211);
-background: conic-gradient(from 315deg, #F5FFFF, #FCFFFF);
+color: rgb(232, 249, 250);
+border:0px solid rgb(86, 231, 241);
+background-image: -webkit-radial-gradient(rgba(86, 231, 241, 0.562),rgba(63, 194, 188, 0.589));
 transition: 0.5s
 }
 .formProcessBtnHP{
 font-size:1em;
 width:30%;
 height:5.2rem;
-color: rgba(69, 101, 115, 0.753);
 border-radius: 12em 12em 12em 12em;
-border:2px solid rgb(94, 129, 139);
-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 2px rgba(0, 0, 0, 0.2);
-background-image: linear-gradient(to left, #ffffff, #fefefe, #fdfdfd, #fcfcfc, #fbfbfb);
+color: rgba(63, 194, 187, 0.801);
+border:2px solid rgba(86, 231, 241, 0.603);
+box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 1px rgba(0, 0, 0, 0.2);
+background-color: transparent;
 transition: 0.5s
 }
 .formProcessBtnHP:hover{
-color: rgba(69, 101, 115, 0.753);
-border:2px solid rgb(191, 208, 211);
-background: conic-gradient(from 315deg, #F5FFFF, #FCFFFF);
+color: rgb(232, 249, 250);
+border:0px solid rgb(86, 231, 241);
+background-image: -webkit-radial-gradient(rgba(86, 231, 241, 0.562),rgba(63, 194, 188, 0.589));
 transition: 0.5s
 }
 .header{
 margin:0;
 padding:0;
-color: rgb(82, 120, 136);
+color: rgba(63, 194, 187, 0.801);
 text-align:center
 }
 .formHP{
@@ -189,6 +190,7 @@ display: -webkit-flex;
 display: -ms-flexbox;
 display: flex;
 }
+
 
 
 
@@ -274,7 +276,7 @@ display: flex;
 width:100%;
 height:3.5vh;
 font-size:2vw;
-border-radius: 0em
+border-radius: 0.3em
 }
 .formAbvBel_Btns{
 font-size:2vw;
@@ -356,7 +358,7 @@ left:0;
 right:0;
 margin-left: auto;
 margin-right: auto;
-z-index: 500;
+z-index: 5;
 box-shadow: 0 0 3px 3px rgb(231, 227, 230);
 border-radius:1em 1em 20em 20em ;
 transition: 0.4s;
@@ -414,7 +416,7 @@ gap:1.5vw
 width:100%;
 height:2.5em;
 font-size:2.8vw;
-border-radius: 0em
+border-radius:0.3em
 }
 .formAbvBel_Btns{
 font-size:3vw;
@@ -536,7 +538,7 @@ gap:3vw
 width:100%;
 height:3em;
 font-size:4vw;
-border-radius: 0em
+border-radius:0.3em
 }
 .formAbvBel_Btns{
 font-size:4vw;

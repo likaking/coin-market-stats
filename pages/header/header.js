@@ -44,7 +44,6 @@ Coin Market Stats
 <li><a href = "#" className={styles.nav_bar__menu_aMobile}>Market</a></li>
 <li><a href = "#" className={styles.nav_bar__menu_aMobile}>Community</a></li>
   </ul>
-  <div ><FaBattleNet className={styles.nav_Mobilemenu_battleNet} /></div>
   </div>
 
  </div>

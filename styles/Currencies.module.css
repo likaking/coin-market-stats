@@ -7,7 +7,8 @@
 .CMVCurrencies_main{
     height: auto;
     width: 60%;
-    border: 1px solid rgb(94, 129, 139);
+	font-size:1.3rem;
+    border: 1px solid rgba(86, 231, 241, 0.789);
     margin: auto;
     position: relative;
     box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2), 0 1px 2px 0 rgba(177, 177, 177, 0.19);
@@ -29,9 +30,12 @@
    height: 2.4em;
    padding-left: 0.2rem;
    border: 0em;
-   color: rgb(53, 91, 102);
+   color: rgba(63, 194, 187, 0.801);
    outline: none;
    background-color: transparent;
+}
+.CMVCurrencies_input::placeholder{
+   color: rgba(63, 194, 188, 0.411);  
 }
 .CMVCurrencies_input:focus{
     outline: none !important;
@@ -53,12 +57,12 @@
     margin-left: auto;
     font-weight: 500;
     font-size: 1.2vw;
-    color: rgb(53, 91, 102);
+    color: rgba(63, 194, 187, 0.801);
 }
 .CMVCurrencies_check{
     padding: 0%;
     margin-top: 0.37rem;
-    color: rgb(53, 91, 102);
+    color: rgba(63, 194, 187, 0.801);
 }
 .CMVCurrencies_currencyInfo{
     position: absolute; 
@@ -68,19 +72,21 @@
 }
 .CMVCurrencies_currencylist{
     padding: 0.4em ;
-	border-top: 0px solid rgb(177, 179, 206); 
-	border-left: 1px solid rgb(177, 179, 206); 
-	border-right: 1px solid rgb(177, 179, 206); 
-    border-bottom: 1px solid rgb(177, 179, 206);  
+	font-size:1.3vw;
+	border-top: 0px solid rgba(86, 231, 241, 0.789); 
+	border-left: 1px solid rgba(86, 231, 241, 0.789); 
+	border-right: 1px solid rgba(86, 231, 241, 0.789); 
+    border-bottom: 1px solid rgba(86, 231, 241, 0.789);  
 	border-bottom-left-radius:1em;
 	border-bottom-right-radius:1em;
     border-style: dashed;
-    color: rgb(53, 91, 102);
+    color: rgba(63, 194, 187, 0.801);
+	cursor:pointer
 }
 .CMVCurrencies_LS{
     text-align: center;
     margin-top: 2em;
-    color: rgb(58, 112, 128);
+    color: rgba(63, 194, 187, 0.801);
 	
 }
 
@@ -140,8 +146,7 @@
         padding: 0rem;  
     }
     .CMVCurrencies_currencylist{
-        padding: 0.5em;
-        border: 1px solid rgb(73, 73, 73);  
+        padding: 0.5em; 
         border-style: dashed;
     }
     }
@@ -156,8 +161,9 @@
     height: auto;
     width: 100%;
     margin: auto;
+	padding: 0 0.2rem 0 0.7rem;
+	font-size:1rem;
     position: relative;
-   
     }
 .CMVCurrencies_changeCurrency{
     display: flex;
@@ -197,11 +203,20 @@
 	font-size:4vw
 }
 .CMVCurrencies_currencyInfo{
-    position: absolute;
+    position: absolute; 
     width: 50%;
     padding: 0rem;
+
 }
 .CMVCurrencies_currencylist{
-    padding: 0.2em;
+    padding: 0.4em ;
+	border-top: 0px solid rgba(86, 231, 241, 0.789); 
+	border-left: 1px solid rgba(86, 231, 241, 0.789); 
+	border-right: 1px solid rgba(86, 231, 241, 0.789); 
+    border-bottom: 1px solid rgba(86, 231, 241, 0.789);  
+	border-bottom-left-radius:1em;
+	border-bottom-right-radius:1em;
+    border-style: dashed;
+    color: rgb(53, 91, 102);
 }
 }
